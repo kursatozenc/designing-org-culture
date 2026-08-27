@@ -1,5 +1,8 @@
 // Everyone who has taught, assisted, or visited the class.
 //
+// `lead: true` marks whoever carries the course across years — rendered
+// ahead of the rest of the teaching team, at a larger size.
+//
 // A person holds a ROLE PER COHORT, not one role forever — Martin Gonzalez
 // instructed in 2023 and 2025 and guest-lectured in 2026; Kate Judson has
 // come back as a guest twice. So each person carries `appearances`, and the
@@ -23,6 +26,7 @@ export const people = [
   {
     slug: "kursat-ozenc",
     name: "Kursat Ozenc",
+    lead: true,
     affiliation: "Executive Design Director, JPMorganChase",
     appearances: [
       { cohort: "winter-2019", role: "instructor" },
@@ -112,14 +116,6 @@ export const people = [
     appearances: [{ cohort: "winter-2023", role: "guest" }],
   },
   {
-    slug: "richard-buchanan",
-    photo: "/brand/people/richard-buchanan.jpg",
-    name: "Richard Buchanan",
-    affiliation: "Case Western Reserve University",
-    topic: "Designing with ethics",
-    appearances: [{ cohort: "winter-2023", role: "guest" }],
-  },
-  {
     slug: "lisa-wocken",
     photo: "/brand/people/lisa-wocken.jpg",
     name: "Lisa Wocken",
@@ -204,14 +200,16 @@ export const roles = [
 
 const roleOrder = roles.map((r) => r.slug);
 
-/** People who have held `role`, each with the cohort slugs they held it in. */
+/** People who have held `role`, each with the cohort slugs they held it in.
+ *  Leads sort to the top of their group. */
 export function peopleByRole(role) {
   return people
     .filter((p) => p.appearances.some((a) => a.role === role))
     .map((p) => ({
       ...p,
       cohorts: p.appearances.filter((a) => a.role === role).map((a) => a.cohort),
-    }));
+    }))
+    .sort((a, b) => Boolean(b.lead) - Boolean(a.lead));
 }
 
 /** Everyone attached to one cohort, each with the role they held that year. */
@@ -222,7 +220,11 @@ export function peopleForCohort(slug) {
       ...p,
       role: p.appearances.find((a) => a.cohort === slug).role,
     }))
-    .sort((a, b) => roleOrder.indexOf(a.role) - roleOrder.indexOf(b.role));
+    .sort(
+      (a, b) =>
+        roleOrder.indexOf(a.role) - roleOrder.indexOf(b.role) ||
+        Boolean(b.lead) - Boolean(a.lead),
+    );
 }
 
 /** Cohort slugs a person appears in, any role — for "all years" display. */

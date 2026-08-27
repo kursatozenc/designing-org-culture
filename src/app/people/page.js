@@ -40,13 +40,24 @@ export default function PeoplePage() {
                 return (
                   <div
                     key={p.slug}
-                    className="grid gap-x-8 gap-y-2 border-b border-line py-6 sm:grid-cols-[1fr_auto]"
+                    className={`grid gap-x-8 gap-y-2 border-b border-line sm:grid-cols-[1fr_auto] ${
+                      p.lead ? "py-8" : "py-6"
+                    }`}
                   >
                     <div className="flex items-start gap-5">
-                      <Portrait person={p} />
+                      <Portrait person={p} size={p.lead ? 104 : 72} />
                       <div>
-                        <p className="display flex flex-wrap items-baseline gap-x-3 text-xl uppercase">
+                        <p
+                          className={`display flex flex-wrap items-baseline gap-x-3 uppercase ${
+                            p.lead ? "text-2xl" : "text-xl"
+                          }`}
+                        >
                           {p.name}
+                          {p.lead && (
+                            <span className="spec border border-ink px-2 py-0.5 text-ink">
+                              Lead
+                            </span>
+                          )}
                           {isCurrent && (
                             <span className="spec text-cyan-deep">Current</span>
                           )}
