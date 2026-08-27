@@ -1,22 +1,35 @@
 @import "tailwindcss";
 
+/* Palette sampled from Kursat's hand-drawn culture icons: the blobs are
+   #48d8e4 over black ink. The interface shares that exact cyan so the
+   drawings read as native rather than pasted on. */
 :root {
   --paper: #ffffff;
-  --ink: #111111;
-  --ink-soft: #55575c;
-  --line: #dcdcdc;
-  --accent: #1f9e93;
-  --accent-soft: #e4f5f3;
+  --ink: #0b0b0c;
+  /* neutrals carry a slight cyan bias so greys sit with the accent */
+  --ink-soft: #545e61;
+  --ink-faint: #6c7679;   /* contrast-checked against paper for small labels */
+  --line: #dfe4e5;
+  --line-strong: #b9c2c4;
+  --cyan: #48d8e4;        /* graphic fill only — too light for text on white */
+  --cyan-deep: #0c6d78;   /* the type/link-safe sibling */
+  --cyan-wash: #eafafc;
+  --night: #0b0b0c;
 }
 
 @theme inline {
   --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
   --color-line: var(--line);
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-line-strong: var(--line-strong);
+  --color-cyan: var(--cyan);
+  --color-cyan-deep: var(--cyan-deep);
+  --color-cyan-wash: var(--cyan-wash);
+  --color-night: var(--night);
+  --font-sans: var(--font-archivo), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 body {
@@ -25,6 +38,58 @@ body {
   font-family: var(--font-sans);
 }
 
-.grid-rule {
-  border-color: var(--line);
+/* ---- Swiss display: wide grotesque, tight tracking ---- */
+.display {
+  font-variation-settings: "wdth" 118;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+/* ---- mono spec labels: years, numbers, metadata ---- */
+.spec {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.rule-tick::before {
+  content: "";
+  display: block;
+  width: 2rem;
+  border-top: 2px solid var(--cyan);
+  margin-bottom: 1.25rem;
+}
+
+/* faint vertical column rules — the grid, made visible */
+.gridlines {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--line) 0 1px,
+    transparent 1px 25%
+  );
+}
+
+/* the hand breaking the grid */
+.tilt-mark {
+  transform: rotate(-4.5deg);
+}
+
+a,
+button {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan-deep);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,6 +1,8 @@
 // The eight "forces" that make up a culture — drawn from Kursat's hand-drawn
-// icon set (public/brand/culture-forces.png). Used to tag cohort highlights
-// and partner projects so the taxonomy stays consistent year to year.
+// icon set. Each icon is cropped out of the original "Shapes of Culture"
+// sheet into public/brand/forces/, so a force can carry its own mark
+// anywhere on the site. Used to tag cohorts and partner projects so the
+// taxonomy stays consistent year to year.
 
 export const forces = [
   { slug: "policy", label: "Policy", detail: "Formal rules and decisions that shape what people are allowed and expected to do." },
@@ -11,7 +13,11 @@ export const forces = [
   { slug: "behaviors", label: "Behaviors", detail: "What people actually do, moment to moment." },
   { slug: "artifacts", label: "Artifacts", detail: "The physical and digital objects a culture produces and leaves behind." },
   { slug: "metrics", label: "Metrics", detail: "What a group chooses to measure — and so, implicitly, what it values." },
-];
+].map((f, i) => ({
+  ...f,
+  number: String(i + 1).padStart(2, "0"),
+  icon: `/brand/forces/${f.slug}.png`,
+}));
 
 export function getForce(slug) {
   return forces.find((f) => f.slug === slug);

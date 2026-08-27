@@ -29,107 +29,143 @@ export default async function CohortPage({ params }) {
     <>
       <Header />
       <main className="flex-1">
-        <div className="mx-auto max-w-3xl px-6 py-16">
-          <Link href="/cohorts" className="text-sm text-ink-soft hover:text-ink">
-            ← All cohorts
-          </Link>
+        <section className="border-b border-line">
+          <div className="mx-auto max-w-6xl px-6 pt-12 pb-14">
+            <Link href="/cohorts" className="spec text-ink-soft hover:text-cyan-deep">
+              ← The archive
+            </Link>
 
-          <div className="mt-6 flex items-baseline justify-between gap-4">
-            <h1 className="text-3xl font-medium">{cohort.term}</h1>
-            {cohort.current && (
-              <span className="rounded-full bg-accent-soft px-3 py-1 text-xs text-accent">
-                Current
+            <div className="mt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2">
+              <span
+                className="font-mono text-[clamp(3.5rem,12vw,8rem)] leading-none tabular-nums"
+                style={{ letterSpacing: "-0.05em" }}
+              >
+                {cohort.year}
               </span>
-            )}
-          </div>
+              <div>
+                <p className="display text-2xl uppercase">
+                  {cohort.termLabel ?? cohort.term}
+                </p>
+                {cohort.current && (
+                  <p className="spec mt-1 text-cyan-deep">Current cohort</p>
+                )}
+              </div>
+            </div>
 
-          {cohort.dates && <p className="mt-2 text-sm text-ink-soft">{cohort.dates}</p>}
-          {cohort.schedule && (
-            <p className="mt-1 text-sm text-ink-soft">{cohort.schedule}</p>
-          )}
-          {cohort.instructors && (
-            <p className="mt-4 text-sm">
-              <span className="text-ink-soft">Instructors: </span>
-              {cohort.instructors.join(", ")}
-              {cohort.teachingAssistant && (
-                <>
-                  {" · "}
-                  <span className="text-ink-soft">TA: </span>
-                  {cohort.teachingAssistant}
-                </>
+            <dl className="mt-10 grid gap-x-10 gap-y-5 sm:grid-cols-3">
+              {cohort.dates && (
+                <div>
+                  <dt className="spec text-ink-faint">Dates</dt>
+                  <dd className="mt-1.5 text-sm text-ink">{cohort.dates}</dd>
+                </div>
               )}
-            </p>
-          )}
+              {cohort.schedule && (
+                <div>
+                  <dt className="spec text-ink-faint">Meets</dt>
+                  <dd className="mt-1.5 text-sm text-ink">{cohort.schedule}</dd>
+                </div>
+              )}
+              {cohort.instructors && (
+                <div>
+                  <dt className="spec text-ink-faint">Teaching team</dt>
+                  <dd className="mt-1.5 text-sm text-ink">
+                    {cohort.instructors.join(", ")}
+                    {cohort.teachingAssistant &&
+                      ` · TA ${cohort.teachingAssistant}`}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
+        </section>
 
+        <div className="mx-auto max-w-6xl px-6 py-14">
           {cohort.pendingAudit && (
-            <p className="mt-6 border border-line bg-accent-soft/40 p-4 text-sm text-ink-soft">
-              This cohort&apos;s materials are still being audited for what&apos;s safe
-              to publish. Check back once the review is done.
+            <p className="mb-12 border-l-2 border-cyan bg-cyan-wash p-5 text-sm leading-relaxed text-ink-soft">
+              This cohort&apos;s materials are still being reviewed for what is
+              safe to publish. Check back once the audit is done.
             </p>
           )}
 
           {cohort.summary && (
-            <p className="mt-8 text-base leading-relaxed">{cohort.summary}</p>
+            <p className="max-w-2xl text-lg leading-relaxed">{cohort.summary}</p>
           )}
 
           {cohort.modules?.length > 0 && (
-            <div className="mt-10">
-              <h2 className="text-lg font-medium">Arc</h2>
-              <div className="mt-4 space-y-6">
-                {cohort.modules.map((m) => (
-                  <div key={m.title} className="border-l-2 border-line pl-4">
-                    <p className="text-sm font-medium">
-                      {m.title}
+            <section className="mt-16">
+              <h2 className="display border-b-2 border-ink pb-3 text-xl uppercase">
+                Arc
+              </h2>
+              <ol>
+                {cohort.modules.map((m, i) => (
+                  <li
+                    key={m.title}
+                    className="grid grid-cols-[3rem_1fr] gap-x-6 border-b border-line py-7"
+                  >
+                    <span className="spec text-ink-faint">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <p className="display text-base uppercase">{m.title}</p>
                       {m.weeks && (
-                        <span className="ml-2 text-xs text-ink-soft">{m.weeks}</span>
+                        <p className="spec mt-1.5 text-ink-faint">{m.weeks}</p>
                       )}
-                    </p>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                      {m.detail}
-                    </p>
-                  </div>
+                      <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
+                        {m.detail}
+                      </p>
+                    </div>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ol>
+            </section>
           )}
 
           {cohort.letterGradeProject && (
-            <div className="mt-10">
-              <h2 className="text-lg font-medium">Letter-grade project</h2>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+            <section className="mt-16">
+              <h2 className="display border-b-2 border-ink pb-3 text-xl uppercase">
+                Letter-grade project
+              </h2>
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-soft">
                 {cohort.letterGradeProject}
               </p>
-            </div>
+            </section>
           )}
 
           {cohortPartners.length > 0 && (
-            <div className="mt-10">
-              <h2 className="text-lg font-medium">Partners</h2>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {cohortPartners.map((p) => (
-                  <Link
-                    key={p.slug}
-                    href="/partners"
-                    className="border border-line p-4 hover:border-ink"
-                  >
-                    <p className="text-sm font-medium">{p.name}</p>
-                    {p.challenge && (
-                      <p className="mt-1 text-xs leading-relaxed text-ink-soft">
-                        {p.challenge}
-                      </p>
-                    )}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <section className="mt-16">
+              <h2 className="display border-b-2 border-ink pb-3 text-xl uppercase">
+                Partners
+              </h2>
+              {cohortPartners.map((p) => (
+                <Link
+                  key={p.slug}
+                  href="/partners"
+                  className="group block border-b border-line py-7"
+                >
+                  <p className="display text-lg uppercase group-hover:text-cyan-deep">
+                    {p.name}
+                  </p>
+                  {p.challenge && (
+                    <p className="mt-2 max-w-2xl text-base leading-relaxed text-ink-soft">
+                      {p.challenge}
+                    </p>
+                  )}
+                </Link>
+              ))}
+            </section>
           )}
 
           {cohort.forces?.length > 0 && (
-            <div className="mt-10 flex flex-wrap gap-2">
-              {cohort.forces.map((f) => (
-                <ForcePill key={f} slug={f} />
-              ))}
-            </div>
+            <section className="mt-16">
+              <h2 className="display border-b-2 border-ink pb-3 text-xl uppercase">
+                Forces in play
+              </h2>
+              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-6">
+                {cohort.forces.map((f) => (
+                  <ForcePill key={f} slug={f} size="lg" />
+                ))}
+              </div>
+            </section>
           )}
         </div>
       </main>

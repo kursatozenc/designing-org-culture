@@ -10,6 +10,9 @@ export const cohorts = [
     slug: "autumn-2026",
     year: "2026",
     term: "Autumn 2026",
+    termLabel: "Autumn",
+    headline:
+      "Culture design for technological adoption and human flourishing.",
     current: true,
     dates: "Sept 22 – Dec 6, 2026",
     schedule: "Tuesdays & Thursdays, 3:30–5:20pm, Stanford d.school",
@@ -38,6 +41,9 @@ export const cohorts = [
     slug: "winter-2025",
     year: "2025",
     term: "Winter 2025",
+    termLabel: "Winter",
+    headline:
+      "Startup culture challenges, tackled as live design experiments.",
     current: false,
     dates: "Jan 7 – Mar 13, 2025",
     schedule: "Tuesdays & Thursdays, 4:30–6:20pm, d.school Studio 3",
@@ -69,6 +75,8 @@ export const cohorts = [
     slug: "2024",
     year: "2024",
     term: "2024",
+    termLabel: "Pending audit",
+    headline: "Materials still under review for what is public-safe to publish.",
     current: false,
     summary:
       "Archive entry pending a full content audit — this cohort's materials live in Drive under 2024-DOC-DesigningOrgCulture but haven't been reviewed for what's public-safe to publish here yet.",
@@ -80,6 +88,8 @@ export const cohorts = [
     slug: "winter-2020",
     year: "2020",
     term: "Winter 2020",
+    termLabel: "Winter",
+    headline: "Ritual Design for Better Workplaces, focused on well-being.",
     current: false,
     instructors: ["Kursat Ozenc", "Ted Matthews", "Kajal Khanna"],
     summary:
@@ -91,6 +101,8 @@ export const cohorts = [
     slug: "winter-2019",
     year: "2019",
     term: "Winter 2019",
+    termLabel: "Winter",
+    headline: "Ritual Design pop-up, building a workplace ritual toolkit.",
     current: false,
     instructors: ["Kursat Ozenc", "Josh McVeigh-Shutz"],
     summary:
