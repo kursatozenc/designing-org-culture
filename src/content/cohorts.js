@@ -108,7 +108,7 @@ export const cohorts = [
     headline: "Needs confirming — was there a distinct 2024 offering?",
     current: false,
     summary:
-      "Open question rather than a cohort. The Drive folder named 2024-DOC-DesigningOrgCulture actually holds Winter 2023 material (the Scaling Org Culture syllabus and roster), so it is not yet clear whether a separate 2024 offering ran. Needs confirming before this becomes a real archive entry.",
+      "Open question rather than a cohort. The Drive folder named 2024-DOC-DesigningOrgCulture actually holds Winter 2023 material (the Scaling Org Culture syllabus and roster), so it is not yet clear whether a separate 2024 offering ran. Needs confirming before this becomes a real cohort entry.",
     pendingAudit: true,
     partners: [],
     forces: [],
