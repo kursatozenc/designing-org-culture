@@ -37,7 +37,7 @@ export default async function CohortPage({ params }) {
         <section className="border-b border-line">
           <div className="mx-auto max-w-6xl px-6 pt-12 pb-14">
             <Link href="/cohorts" className="spec text-ink-soft hover:text-cyan-deep">
-              ← The archive
+              ← All cohorts
             </Link>
 
             <div className="mt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2">

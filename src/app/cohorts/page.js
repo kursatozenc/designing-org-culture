@@ -11,7 +11,7 @@ export default function CohortsPage() {
       <Header />
       <main className="flex-1">
         <div className="mx-auto max-w-6xl px-6 pt-16 pb-8">
-          <p className="spec text-ink-soft">The archive</p>
+          <p className="spec text-ink-soft">Year by year</p>
           <h1 className="display mt-6 text-[clamp(2.25rem,6vw,4rem)] uppercase">
             Cohorts
           </h1>

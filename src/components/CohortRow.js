@@ -4,7 +4,7 @@ import { getPartnerBySlug } from "@/content/partners";
 
 /**
  * One line in the cohort ledger. Deliberately a table-like row rather than a
- * card: the archive gains a row per year forever, and rows stay legible at
+ * card: the list gains a row per year forever, and rows stay legible at
  * twenty entries where a card grid would not.
  */
 export default function CohortRow({ cohort }) {

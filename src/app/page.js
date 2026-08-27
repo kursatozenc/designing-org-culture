@@ -124,7 +124,7 @@ export default function Home() {
               </div>
               <p className="max-w-sm text-sm leading-relaxed text-white/60">
                 Every cohort project is tagged with the forces it actually
-                moved, which is what keeps this archive comparable across years.
+                moved, which is what keeps the cohorts comparable across years.
               </p>
             </div>
 
@@ -154,11 +154,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---- The archive, as a ledger ---- */}
+        {/* ---- Every year the class has run, as a ledger ---- */}
         <section className="mx-auto max-w-6xl px-6 py-20">
           <div className="flex items-end justify-between gap-6 border-b-2 border-ink pb-4">
             <h2 className="display text-[clamp(1.75rem,4vw,2.75rem)] uppercase">
-              The archive
+              Year by year
             </h2>
             <Link href="/cohorts" className="spec text-ink-soft hover:text-cyan-deep">
               All cohorts →

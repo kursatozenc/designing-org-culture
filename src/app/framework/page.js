@@ -89,7 +89,7 @@ export default function FrameworkPage() {
               Eight designable forces
             </h2>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/60">
-              Every partner project in the archive is tagged with the forces it
+              Every partner project on the site is tagged with the forces it
               actually moved, so cohorts stay comparable across years.
             </p>
 
