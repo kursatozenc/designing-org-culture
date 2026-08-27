@@ -66,7 +66,7 @@ export const cohorts = [
           "Reframing the problem, prototyping culture interventions, and final presentations back to partner organizations.",
       },
     ],
-    partners: ["metaphysic-ai", "akkio", "intrinsic-ai", "sypartners"],
+    partners: ["metaphysic-ai", "intrinsic-ai", "sypartners"],
     letterGradeProject:
       "AI Agent Adoption and Culture Design — a case study + custom AI agent concept for a company implementing agentic AI.",
     forces: ["norms", "stories", "metrics"],

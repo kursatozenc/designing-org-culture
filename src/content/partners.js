@@ -10,12 +10,6 @@ export const partners = [
     challenge: "Remote-first culture design.",
   },
   {
-    slug: "akkio",
-    name: "Akkio.ai",
-    cohorts: ["winter-2025"],
-    challenge: "",
-  },
-  {
     slug: "intrinsic-ai",
     name: "Intrinsic.ai",
     cohorts: ["winter-2025"],
