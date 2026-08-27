@@ -1,105 +1,220 @@
-// Everyone who has taught, assisted, or visited the class. Like partners,
-// people persist across cohorts rather than being re-entered each year — a
-// person gains a cohort slug and the archive gets deeper on its own.
+// Everyone who has taught, assisted, or visited the class.
 //
-// This is the single source of truth for a cohort's teaching team; the
-// cohort pages read from here rather than keeping their own copy.
+// A person holds a ROLE PER COHORT, not one role forever — Martin Gonzalez
+// instructed in 2023 and 2025 and guest-lectured in 2026; Kate Judson has
+// come back as a guest twice. So each person carries `appearances`, and the
+// site reads roles and years back out of that.
 //
-// Deliberately NOT listed: students (their work and grades are private), and
-// partner-org contacts, who appear in the Drive planning docs alongside
-// personal email addresses. Naming private individuals publicly is the
-// course's call to make with their consent, not something to infer from a
-// planning doc.
+// This is the single source of truth for who taught a cohort; the cohort
+// pages read their roster from here rather than keeping a second copy.
+//
+// Sources: the Winter 2023, Winter 2025, and Autumn 2026 syllabi in the
+// Drive archive. Deliberately NOT listed: students, and partner-org contacts
+// who appear only in planning docs alongside personal email addresses —
+// naming a private individual publicly is the course's call to make with
+// their consent.
 
 export const people = [
   // ---- Teaching team ----
   {
     slug: "kursat-ozenc",
     name: "Kursat Ozenc",
-    role: "instructor",
     affiliation: "Executive Design Director, JPMorganChase",
-    cohorts: ["winter-2019", "winter-2020", "winter-2025", "autumn-2026"],
-  },
-  {
-    slug: "shannon-mahon",
-    name: "Shannon Mahon",
-    role: "instructor",
-    cohorts: ["autumn-2026"],
+    appearances: [
+      { cohort: "winter-2019", role: "instructor" },
+      { cohort: "winter-2020", role: "instructor" },
+      { cohort: "winter-2023", role: "instructor" },
+      { cohort: "winter-2025", role: "instructor" },
+      { cohort: "autumn-2026", role: "instructor" },
+    ],
   },
   {
     slug: "martin-gonzalez",
     name: "Martin Gonzalez",
-    role: "instructor",
     affiliation: "Principal of Org Design and Development, Google DeepMind",
-    cohorts: ["winter-2025"],
+    appearances: [
+      { cohort: "winter-2023", role: "instructor" },
+      { cohort: "winter-2025", role: "instructor" },
+      { cohort: "autumn-2026", role: "guest" },
+    ],
+  },
+  {
+    slug: "shannon-mahon",
+    name: "Shannon Mahon",
+    appearances: [{ cohort: "autumn-2026", role: "instructor" }],
   },
   {
     slug: "ted-matthews",
     name: "Ted Matthews",
-    role: "instructor",
     affiliation: "Oslo School of Architecture and Design",
-    cohorts: ["winter-2020"],
+    appearances: [{ cohort: "winter-2020", role: "instructor" }],
   },
   {
     slug: "kajal-khanna",
     name: "Kajal Khanna",
-    role: "instructor",
     affiliation: "Stanford Medicine",
-    cohorts: ["winter-2020"],
+    appearances: [{ cohort: "winter-2020", role: "instructor" }],
   },
   {
     slug: "josh-mcveigh-shutz",
     name: "Josh McVeigh-Shutz",
-    role: "instructor",
     affiliation: "San Francisco State University",
-    cohorts: ["winter-2019"],
+    appearances: [{ cohort: "winter-2019", role: "instructor" }],
   },
 
   // ---- Teaching assistants ----
   {
+    slug: "sonya-kotov",
+    name: "Sonya Kotov",
+    appearances: [{ cohort: "winter-2023", role: "ta" }],
+  },
+  {
     slug: "gatsby-frimpong",
     name: "Gatsby Frimpong",
-    role: "ta",
     affiliation: "MS Design ’25",
-    cohorts: ["winter-2025"],
+    appearances: [{ cohort: "winter-2025", role: "ta" }],
   },
 
   // ---- Guest speakers ----
   {
+    slug: "claudy-jules",
+    name: "Claudy Jules",
+    affiliation: "Partner, McKinsey",
+    topic: "Challenges in scaling culture in startups",
+    appearances: [{ cohort: "winter-2023", role: "guest" }],
+  },
+  {
+    slug: "darren-murph",
+    name: "Darren Murph",
+    affiliation: "Head of Remote, GitLab",
+    topic: "Building culture in remote working teams",
+    appearances: [{ cohort: "winter-2023", role: "guest" }],
+  },
+  {
+    slug: "gina-maya-rudan",
+    name: "Gina “Maya” Rudan",
+    affiliation: "Cultural Alchemist, Google X",
+    topic: "Cultural rituals at Google X",
+    appearances: [{ cohort: "winter-2023", role: "guest" }],
+  },
+  {
+    slug: "michael-norton",
+    name: "Michael Norton",
+    affiliation: "Harvard Business School",
+    topic: "Rituals and the IKEA effect",
+    appearances: [{ cohort: "winter-2023", role: "guest" }],
+  },
+  {
+    slug: "richard-buchanan",
+    name: "Richard Buchanan",
+    affiliation: "Case Western Reserve University",
+    topic: "Designing with ethics",
+    appearances: [{ cohort: "winter-2023", role: "guest" }],
+  },
+  {
+    slug: "lisa-wocken",
+    name: "Lisa Wocken",
+    affiliation: "DAO researcher; founding member, TalentDAO",
+    topic: "Culture in blockchain-based DAOs",
+    appearances: [{ cohort: "winter-2023", role: "guest" }],
+  },
+  {
+    slug: "takuo-fukuda",
+    name: "Takuo Fukuda",
+    affiliation: "SYPartners",
+    topic: "Discovery share-out expert",
+    appearances: [{ cohort: "winter-2023", role: "guest" }],
+  },
+  {
     slug: "kate-judson",
     name: "Kate Judson",
-    role: "guest",
     affiliation: "Adobe",
-    cohorts: ["winter-2025"],
+    topic: "Employee pathways",
+    appearances: [
+      { cohort: "winter-2023", role: "guest" },
+      { cohort: "winter-2025", role: "guest" },
+    ],
+  },
+  {
+    // Syllabus spells this "Laila Vons Albansleben"; corrected against her
+    // public profile — Head of Culture & Collaboration at MURAL.
+    slug: "laila-von-alvensleben",
+    name: "Laïla von Alvensleben",
+    affiliation: "Head of Culture & Collaboration, MURAL",
+    topic: "Creative rituals",
+    appearances: [{ cohort: "winter-2025", role: "guest" }],
+  },
+  {
+    slug: "alan-ratliff",
+    name: "Alan Ratliff",
+    topic: "Creative rituals",
+    appearances: [{ cohort: "winter-2025", role: "guest" }],
+  },
+  {
+    slug: "christian-busch",
+    name: "Christian Busch",
+    affiliation: "Author, The Serendipity Mindset",
+    appearances: [{ cohort: "winter-2025", role: "guest" }],
+  },
+  {
+    slug: "anna-davda",
+    name: "Anna Davda",
+    affiliation: "formerly Waymo",
+    topic: "Co-creating with ethics",
+    appearances: [{ cohort: "winter-2025", role: "guest" }],
+  },
+  {
+    slug: "bob-sutton",
+    name: "Bob Sutton",
+    affiliation: "Stanford University",
+    topic: "Creative rituals",
+    appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
   {
     slug: "elen-kiss",
     name: "Elen Kiss",
-    role: "guest",
     affiliation: "Nubank",
-    cohorts: ["autumn-2026"],
+    topic: "Employee pathways",
+    appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
 
   // ---- Coaches ----
-  // None recorded yet. Add them here with role: "coach" and they appear
-  // automatically; the section stays hidden while the list is empty.
+  // The syllabi refer to coaches giving feedback during the design phase but
+  // never name them. Add them here with role "coach" on an appearance and
+  // the section appears on its own; it stays hidden while the list is empty.
 ];
 
 export const roles = [
   { slug: "instructor", label: "Teaching team" },
   { slug: "ta", label: "Teaching assistants" },
-  { slug: "guest", label: "Guest speakers" },
   { slug: "coach", label: "Coaches" },
+  { slug: "guest", label: "Guest speakers" },
 ];
 
+const roleOrder = roles.map((r) => r.slug);
+
+/** People who have held `role`, each with the cohort slugs they held it in. */
 export function peopleByRole(role) {
-  return people.filter((p) => p.role === role);
+  return people
+    .filter((p) => p.appearances.some((a) => a.role === role))
+    .map((p) => ({
+      ...p,
+      cohorts: p.appearances.filter((a) => a.role === role).map((a) => a.cohort),
+    }));
 }
 
-/** Everyone attached to one cohort, in the role order above. */
+/** Everyone attached to one cohort, each with the role they held that year. */
 export function peopleForCohort(slug) {
-  const order = roles.map((r) => r.slug);
   return people
-    .filter((p) => p.cohorts.includes(slug))
-    .sort((a, b) => order.indexOf(a.role) - order.indexOf(b.role));
+    .filter((p) => p.appearances.some((a) => a.cohort === slug))
+    .map((p) => ({
+      ...p,
+      role: p.appearances.find((a) => a.cohort === slug).role,
+    }))
+    .sort((a, b) => roleOrder.indexOf(a.role) - roleOrder.indexOf(b.role));
+}
+
+/** Cohort slugs a person appears in, any role — for "all years" display. */
+export function allCohorts(person) {
+  return [...new Set(person.appearances.map((a) => a.cohort))];
 }

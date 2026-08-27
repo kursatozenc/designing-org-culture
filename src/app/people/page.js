@@ -23,7 +23,7 @@ export default function PeoplePage() {
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft">
             Everyone who has taught the class or come in to teach alongside it.
             Like the partner list, this one accumulates — a name earns a year
-            and stays.
+            and stays, and some names come back in a different chair.
           </p>
         </div>
 
@@ -34,6 +34,7 @@ export default function PeoplePage() {
                 {g.label}
               </h2>
               {g.members.map((p) => {
+                // scoped to this role: Martin is current as a guest, not as an instructor
                 const isCurrent = p.cohorts.includes(current.slug);
                 return (
                   <div
@@ -51,6 +52,9 @@ export default function PeoplePage() {
                         <p className="mt-1.5 text-sm text-ink-soft">
                           {p.affiliation}
                         </p>
+                      )}
+                      {p.topic && (
+                        <p className="mt-1 text-sm text-ink-faint">{p.topic}</p>
                       )}
                     </div>
                     <p className="spec text-ink-faint sm:pt-2 sm:text-right">

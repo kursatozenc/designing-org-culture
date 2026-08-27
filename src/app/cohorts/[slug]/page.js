@@ -170,8 +170,15 @@ export default async function CohortPage({ params }) {
                   href="/people"
                   className="group flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-line py-6"
                 >
-                  <span className="display text-lg uppercase group-hover:text-cyan-deep">
-                    {g.name}
+                  <span>
+                    <span className="display block text-lg uppercase group-hover:text-cyan-deep">
+                      {g.name}
+                    </span>
+                    {g.topic && (
+                      <span className="mt-1 block text-sm text-ink-soft">
+                        {g.topic}
+                      </span>
+                    )}
                   </span>
                   {g.affiliation && (
                     <span className="spec text-ink-faint">{g.affiliation}</span>

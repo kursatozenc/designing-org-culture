@@ -210,11 +210,16 @@ export default function Home() {
                 <div key={g.slug}>
                   <p className="spec text-ink-faint">{g.label}</p>
                   <ul className="mt-4 flex flex-col gap-2">
-                    {g.members.map((p) => (
+                    {g.members.slice(0, 6).map((p) => (
                       <li key={p.slug} className="display text-base uppercase">
                         {p.name}
                       </li>
                     ))}
+                    {g.members.length > 6 && (
+                      <li className="spec text-ink-faint">
+                        +{g.members.length - 6} more
+                      </li>
+                    )}
                   </ul>
                 </div>
               ))}

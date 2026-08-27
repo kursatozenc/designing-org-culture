@@ -72,14 +72,43 @@ export const cohorts = [
     forces: ["norms", "stories", "metrics"],
   },
   {
+    slug: "winter-2023",
+    year: "2023",
+    term: "Winter 2023",
+    termLabel: "Winter",
+    headline: "Scaling culture in startups, taught as Design for Business.",
+    current: false,
+    dates: "Jan 10 – Mar 16, 2023",
+    schedule: "Tuesdays & Thursdays, 4:30–5:50pm, d.school Studio 3",
+    course: "How to Scale Organizational Culture",
+    summary:
+      "Run under the Design for Business program as “How to Scale Organizational Culture” — the offering behind scalingorgculture.com. Students designed a psychological-safety ritual for the class itself, then built a culture program with a partner startup, alongside a run of guest talks on remote culture, DAOs, ritual design, and ethics.",
+    modules: [
+      {
+        title: "Module 1: Fundamentals of Culture Design",
+        weeks: "Weeks 1–2",
+        detail:
+          "Human-centered culture design, invisible drivers of behavior, designing team rituals, and measuring the impact of an intervention — practised on the class's own culture.",
+      },
+      {
+        title: "Module 2: Designing a Culture Program for a Partner Startup",
+        weeks: "Weeks 3–10",
+        detail:
+          "Participatory research and bias spotting, culture champions and employee pathways, problem framing, idea books, prototyping culture, and evaluating a new team ritual.",
+      },
+    ],
+    partners: [],
+    forces: ["norms", "practices"],
+  },
+  {
     slug: "2024",
     year: "2024",
     term: "2024",
     termLabel: "Pending audit",
-    headline: "Materials still under review for what is public-safe to publish.",
+    headline: "Needs confirming — was there a distinct 2024 offering?",
     current: false,
     summary:
-      "Archive entry pending a full content audit — this cohort's materials live in Drive under 2024-DOC-DesigningOrgCulture but haven't been reviewed for what's public-safe to publish here yet.",
+      "Open question rather than a cohort. The Drive folder named 2024-DOC-DesigningOrgCulture actually holds Winter 2023 material (the Scaling Org Culture syllabus and roster), so it is not yet clear whether a separate 2024 offering ran. Needs confirming before this becomes a real archive entry.",
     pendingAudit: true,
     partners: [],
     forces: [],
