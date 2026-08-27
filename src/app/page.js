@@ -6,6 +6,7 @@ import ForcePill from "@/components/ForcePill";
 import { cohorts, getCurrentCohort } from "@/content/cohorts";
 import { partners } from "@/content/partners";
 import { forces } from "@/content/forces";
+import { resources } from "@/content/resources";
 
 export default function Home() {
   const current = getCurrentCohort();
@@ -115,6 +116,34 @@ export default function Home() {
                 >
                   {p.name}
                 </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <div className="flex items-baseline justify-between">
+              <h2 className="text-2xl font-medium">Resources</h2>
+              <Link href="/resources" className="text-sm text-accent hover:underline">
+                View all →
+              </Link>
+            </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {resources.slice(0, 3).map((r) => (
+                <a
+                  key={r.slug}
+                  href={r.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-line p-5 hover:border-ink"
+                >
+                  <p className="text-sm font-medium">{r.title}</p>
+                  <p className="mt-2 text-xs text-ink-soft">
+                    {r.author}
+                    {r.year ? ` · ${r.year}` : ""}
+                  </p>
+                </a>
               ))}
             </div>
           </div>

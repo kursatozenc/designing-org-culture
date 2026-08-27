@@ -4,6 +4,7 @@ const LINKS = [
   { href: "/cohorts", label: "Cohorts" },
   { href: "/partners", label: "Partners" },
   { href: "/framework", label: "Framework" },
+  { href: "/resources", label: "Resources" },
 ];
 
 export default function Header() {
