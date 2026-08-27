@@ -15,6 +15,15 @@
   --cyan-deep: #0c6d78;   /* the type/link-safe sibling */
   --cyan-wash: #eafafc;
   --night: #0b0b0c;
+
+  /* Semantic pair from the Culture Forces diagram: the blue family is what
+     a culture believes (invisible), the green family is what it does
+     (visible). Used wherever a force is shown, so colour carries meaning. */
+  --invisible: #48d8e4;
+  --invisible-deep: #0c6d78;
+  --visible: #a5ce38;
+  --visible-deep: #4f6b0f;
+  --paper-warm: #f7f7f7;  /* matches the paper the diagrams were drawn on */
 }
 
 @theme inline {
@@ -28,6 +37,11 @@
   --color-cyan-deep: var(--cyan-deep);
   --color-cyan-wash: var(--cyan-wash);
   --color-night: var(--night);
+  --color-invisible: var(--invisible);
+  --color-invisible-deep: var(--invisible-deep);
+  --color-visible: var(--visible);
+  --color-visible-deep: var(--visible-deep);
+  --color-paper-warm: var(--paper-warm);
   --font-sans: var(--font-archivo), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: var(--font-dm-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }

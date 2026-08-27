@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import CohortRow from "@/components/CohortRow";
 import { cohorts, getCurrentCohort } from "@/content/cohorts";
 import { partners } from "@/content/partners";
-import { forces } from "@/content/forces";
+import { forces, layers } from "@/content/forces";
 import { resources } from "@/content/resources";
 
 export default function Home() {
@@ -45,13 +45,12 @@ export default function Home() {
                 gap and run live culture experiments against it.
               </p>
               <Image
-                src="/brand/forces/shapes-of-culture.png"
-                alt=""
-                width={600}
-                height={376}
+                src="/brand/diagrams/invisible-visible.png"
+                alt="Culture design: the invisible and visible halves of culture, each feeding the other."
+                width={900}
+                height={1120}
                 priority
-                aria-hidden="true"
-                className="tilt-mark hidden w-52 justify-self-end sm:block"
+                className="hidden w-64 justify-self-end sm:block"
               />
             </div>
 
@@ -69,46 +68,88 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---- The forces, on the ground they were drawn for ---- */}
+        {/* ---- The model, at the size it deserves ---- */}
+        <section className="border-b border-line bg-paper-warm">
+          <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 sm:grid-cols-[1fr_1.05fr] sm:items-center">
+            <div>
+              <p className="spec text-ink-soft">The model</p>
+              <h2 className="display mt-5 text-[clamp(1.75rem,4vw,2.75rem)]">
+                Culture is half invisible
+              </h2>
+              <p className="mt-6 max-w-md text-base leading-relaxed text-ink-soft">
+                Beliefs, values, and norms cannot be observed directly. Behaviors,
+                artifacts, and metrics can. Culture design works on the visible
+                half — and reads the invisible half through it.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+                {layers.map((l) => (
+                  <span key={l.slug} className="inline-flex items-center gap-2.5">
+                    <span
+                      aria-hidden="true"
+                      className={`h-2.5 w-2.5 rounded-full ${
+                        l.slug === "invisible" ? "bg-invisible" : "bg-visible"
+                      }`}
+                    />
+                    <span className="spec text-ink-soft">{l.label}</span>
+                  </span>
+                ))}
+              </div>
+              <Link
+                href="/framework"
+                className="spec mt-8 inline-block border-b border-ink pb-1 hover:text-cyan-deep"
+              >
+                Read the framework →
+              </Link>
+            </div>
+            <Image
+              src="/brand/diagrams/culture-forces.png"
+              alt="Culture Forces: beliefs, values and norms in the invisible half; behaviors, artifacts and metrics in the visible half, cycling into each other."
+              width={1400}
+              height={1804}
+              className="w-full"
+            />
+          </div>
+        </section>
+
+        {/* ---- The vocabulary, on the ground it was drawn for ---- */}
         <section className="bg-night text-paper">
           <div className="mx-auto max-w-6xl px-6 py-20">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
-                <p className="spec text-cyan">The vocabulary</p>
-                <h2 className="display mt-4 text-[clamp(1.75rem,4vw,2.75rem)] uppercase">
-                  Eight forces of culture
+                <p className="spec text-invisible">The vocabulary</p>
+                <h2 className="display mt-4 text-[clamp(1.75rem,4vw,2.75rem)]">
+                  Eight designable forces
                 </h2>
               </div>
               <p className="max-w-sm text-sm leading-relaxed text-white/60">
-                Every cohort project traces back to one or more of these. They
-                are how the class names what it is actually designing — and how
-                this archive stays comparable across years.
+                Every cohort project is tagged with the forces it actually
+                moved, which is what keeps this archive comparable across years.
               </p>
             </div>
 
             <ul className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-4">
               {forces.map((f) => (
                 <li key={f.slug}>
-                  <span className="spec text-white/45">{f.number}</span>
                   <Image
                     src={f.icon}
                     alt=""
                     width={600}
                     height={537}
                     aria-hidden="true"
-                    className="mt-3 w-24 object-contain"
+                    className="w-24 object-contain"
                   />
-                  <p className="display mt-4 text-base uppercase">{f.label}</p>
+                  <p className="display mt-4 flex items-center gap-2 text-base">
+                    <span
+                      aria-hidden="true"
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        f.layer === "invisible" ? "bg-invisible" : "bg-visible"
+                      }`}
+                    />
+                    {f.label}
+                  </p>
                 </li>
               ))}
             </ul>
-
-            <Link
-              href="/framework"
-              className="spec mt-14 inline-block border-b border-cyan pb-1 text-cyan hover:text-paper"
-            >
-              Read the framework →
-            </Link>
           </div>
         </section>
 
