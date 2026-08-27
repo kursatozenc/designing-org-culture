@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Portrait from "@/components/Portrait";
 import { roles, peopleByRole } from "@/content/people";
 import { getCohortBySlug, getCurrentCohort } from "@/content/cohorts";
 
@@ -41,21 +42,26 @@ export default function PeoplePage() {
                     key={p.slug}
                     className="grid gap-x-8 gap-y-2 border-b border-line py-6 sm:grid-cols-[1fr_auto]"
                   >
-                    <div>
-                      <p className="display flex flex-wrap items-baseline gap-x-3 text-xl uppercase">
-                        {p.name}
-                        {isCurrent && (
-                          <span className="spec text-cyan-deep">Current</span>
-                        )}
-                      </p>
-                      {p.affiliation && (
-                        <p className="mt-1.5 text-sm text-ink-soft">
-                          {p.affiliation}
+                    <div className="flex items-start gap-5">
+                      <Portrait person={p} />
+                      <div>
+                        <p className="display flex flex-wrap items-baseline gap-x-3 text-xl uppercase">
+                          {p.name}
+                          {isCurrent && (
+                            <span className="spec text-cyan-deep">Current</span>
+                          )}
                         </p>
-                      )}
-                      {p.topic && (
-                        <p className="mt-1 text-sm text-ink-faint">{p.topic}</p>
-                      )}
+                        {p.affiliation && (
+                          <p className="mt-1.5 text-sm text-ink-soft">
+                            {p.affiliation}
+                          </p>
+                        )}
+                        {p.topic && (
+                          <p className="mt-1 text-sm text-ink-faint">
+                            {p.topic}
+                          </p>
+                        )}
+                      </div>
                     </div>
                     <p className="spec text-ink-faint sm:pt-2 sm:text-right">
                       {p.cohorts

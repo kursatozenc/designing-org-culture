@@ -8,6 +8,10 @@
 // This is the single source of truth for who taught a cohort; the cohort
 // pages read their roster from here rather than keeping a second copy.
 //
+// Portraits come from the 2023 "Photos of speakers and partners" folder in
+// Drive, gathered by the teaching team for exactly this purpose. People
+// without one fall back to initials, so a missing photo never breaks the row.
+//
 // Sources: the Winter 2023, Winter 2025, and Autumn 2026 syllabi in the
 // Drive archive. Deliberately NOT listed: students, and partner-org contacts
 // who appear only in planning docs alongside personal email addresses —
@@ -78,6 +82,7 @@ export const people = [
   // ---- Guest speakers ----
   {
     slug: "claudy-jules",
+    photo: "/brand/people/claudy-jules.jpg",
     name: "Claudy Jules",
     affiliation: "Partner, McKinsey",
     topic: "Challenges in scaling culture in startups",
@@ -85,6 +90,7 @@ export const people = [
   },
   {
     slug: "darren-murph",
+    photo: "/brand/people/darren-murph.jpg",
     name: "Darren Murph",
     affiliation: "Head of Remote, GitLab",
     topic: "Building culture in remote working teams",
@@ -92,6 +98,7 @@ export const people = [
   },
   {
     slug: "gina-maya-rudan",
+    photo: "/brand/people/gina-maya-rudan.jpg",
     name: "Gina “Maya” Rudan",
     affiliation: "Cultural Alchemist, Google X",
     topic: "Cultural rituals at Google X",
@@ -106,6 +113,7 @@ export const people = [
   },
   {
     slug: "richard-buchanan",
+    photo: "/brand/people/richard-buchanan.jpg",
     name: "Richard Buchanan",
     affiliation: "Case Western Reserve University",
     topic: "Designing with ethics",
@@ -113,6 +121,7 @@ export const people = [
   },
   {
     slug: "lisa-wocken",
+    photo: "/brand/people/lisa-wocken.jpg",
     name: "Lisa Wocken",
     affiliation: "DAO researcher; founding member, TalentDAO",
     topic: "Culture in blockchain-based DAOs",
@@ -120,6 +129,7 @@ export const people = [
   },
   {
     slug: "takuo-fukuda",
+    photo: "/brand/people/takuo-fukuda.jpg",
     name: "Takuo Fukuda",
     affiliation: "SYPartners",
     topic: "Discovery share-out expert",
@@ -127,6 +137,7 @@ export const people = [
   },
   {
     slug: "kate-judson",
+    photo: "/brand/people/kate-judson.jpg",
     name: "Kate Judson",
     affiliation: "Adobe",
     topic: "Employee pathways",
