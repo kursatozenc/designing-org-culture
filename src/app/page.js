@@ -7,6 +7,7 @@ import { cohorts, getCurrentCohort } from "@/content/cohorts";
 import { partners } from "@/content/partners";
 import { forces, layers } from "@/content/forces";
 import { resources } from "@/content/resources";
+import { roles, peopleByRole } from "@/content/people";
 
 export default function Home() {
   const current = getCurrentCohort();
@@ -188,6 +189,35 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* ---- People ---- */}
+        <section className="mx-auto max-w-6xl px-6 py-20">
+          <div className="flex items-end justify-between gap-6 border-b-2 border-ink pb-4">
+            <h2 className="display text-[clamp(1.75rem,4vw,2.75rem)] uppercase">
+              The room
+            </h2>
+            <Link href="/people" className="spec text-ink-soft hover:text-cyan-deep">
+              All people →
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-10 sm:grid-cols-3">
+            {roles
+              .map((r) => ({ ...r, members: peopleByRole(r.slug) }))
+              .filter((g) => g.members.length > 0)
+              .map((g) => (
+                <div key={g.slug}>
+                  <p className="spec text-ink-faint">{g.label}</p>
+                  <ul className="mt-4 flex flex-col gap-2">
+                    {g.members.map((p) => (
+                      <li key={p.slug} className="display text-base uppercase">
+                        {p.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
           </div>
         </section>
 

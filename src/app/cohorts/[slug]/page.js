@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ForcePill from "@/components/ForcePill";
 import { cohorts, getCohortBySlug } from "@/content/cohorts";
 import { getPartnerBySlug } from "@/content/partners";
+import { peopleForCohort } from "@/content/people";
 
 export function generateStaticParams() {
   return cohorts.map((c) => ({ slug: c.slug }));
@@ -24,6 +25,9 @@ export default async function CohortPage({ params }) {
   const cohortPartners = (cohort.partners ?? [])
     .map(getPartnerBySlug)
     .filter(Boolean);
+  const roster = peopleForCohort(slug);
+  const teaching = roster.filter((p) => p.role !== "guest");
+  const guests = roster.filter((p) => p.role === "guest");
 
   return (
     <>
@@ -65,13 +69,13 @@ export default async function CohortPage({ params }) {
                   <dd className="mt-1.5 text-sm text-ink">{cohort.schedule}</dd>
                 </div>
               )}
-              {cohort.instructors && (
+              {teaching.length > 0 && (
                 <div>
                   <dt className="spec text-ink-faint">Teaching team</dt>
                   <dd className="mt-1.5 text-sm text-ink">
-                    {cohort.instructors.join(", ")}
-                    {cohort.teachingAssistant &&
-                      ` · TA ${cohort.teachingAssistant}`}
+                    {teaching
+                      .map((p) => (p.role === "ta" ? `${p.name} (TA)` : p.name))
+                      .join(", ")}
                   </dd>
                 </div>
               )}
@@ -149,6 +153,28 @@ export default async function CohortPage({ params }) {
                     <p className="mt-2 max-w-2xl text-base leading-relaxed text-ink-soft">
                       {p.challenge}
                     </p>
+                  )}
+                </Link>
+              ))}
+            </section>
+          )}
+
+          {guests.length > 0 && (
+            <section className="mt-16">
+              <h2 className="display border-b-2 border-ink pb-3 text-xl uppercase">
+                Guest speakers
+              </h2>
+              {guests.map((g) => (
+                <Link
+                  key={g.slug}
+                  href="/people"
+                  className="group flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-line py-6"
+                >
+                  <span className="display text-lg uppercase group-hover:text-cyan-deep">
+                    {g.name}
+                  </span>
+                  {g.affiliation && (
+                    <span className="spec text-ink-faint">{g.affiliation}</span>
                   )}
                 </Link>
               ))}

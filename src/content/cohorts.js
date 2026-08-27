@@ -4,6 +4,9 @@
 //
 // `current: true` marks the cohort shown on the homepage. Exactly one
 // entry should carry it at a time.
+//
+// Who taught a cohort lives in people.js, not here — a person accumulates
+// cohort slugs there and the cohort pages read the roster back out.
 
 export const cohorts = [
   {
@@ -16,7 +19,6 @@ export const cohorts = [
     current: true,
     dates: "Sept 22 – Dec 6, 2026",
     schedule: "Tuesdays & Thursdays, 3:30–5:20pm, Stanford d.school",
-    instructors: ["Kursat Ozenc", "Shannon Mahon"],
     course: "DESIGN 276",
     summary:
       "In an era of rapid technological disruption, culture design must work toward both technological adoption and human flourishing. Student teams partner with forward-looking organizations to diagnose systemic challenges, map human-AI workflows, and run live culture experiments.",
@@ -47,8 +49,6 @@ export const cohorts = [
     current: false,
     dates: "Jan 7 – Mar 13, 2025",
     schedule: "Tuesdays & Thursdays, 4:30–6:20pm, d.school Studio 3",
-    instructors: ["Kursat Ozenc", "Martin Gonzalez"],
-    teachingAssistant: "Gatsby Frimpong",
     course: "DESIGN 276",
     summary:
       "Students tackled startup culture challenges and designed culture experiments by leveraging behavioral and experience design frameworks — following a discovery, design, and delivery process to prototype real culture policies, practices, and artifacts with partner organizations.",
@@ -91,7 +91,6 @@ export const cohorts = [
     termLabel: "Winter",
     headline: "Ritual Design for Better Workplaces, focused on well-being.",
     current: false,
-    instructors: ["Kursat Ozenc", "Ted Matthews", "Kajal Khanna"],
     summary:
       "Ritual Design for Better Workplaces, with a focus on well-being — held with Stanford Medicine. Students designed personal rituals and explored how ritual mechanics (trigger, intention, props, acts) can build more intentional culture.",
     partners: ["stanford-medicine"],
@@ -104,7 +103,6 @@ export const cohorts = [
     termLabel: "Winter",
     headline: "Ritual Design pop-up, building a workplace ritual toolkit.",
     current: false,
-    instructors: ["Kursat Ozenc", "Josh McVeigh-Shutz"],
     summary:
       "Ritual Design for Better Workplaces pop-up, co-taught with SF State University. Students built a ritual-design toolkit and worked directly with Airbnb on workplace ritual concepts.",
     partners: ["airbnb"],
