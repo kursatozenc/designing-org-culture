@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -27,6 +28,22 @@ export default function RitualsPage() {
             </p>
           </div>
         </section>
+
+        <figure className="border-b border-line">
+          <Image
+            src="/brand/class/ritual-circle.jpg"
+            alt="Students standing in a circle in the d.school studio, arms raised, running a ritual they designed."
+            width={1600}
+            height={1067}
+            priority
+            className="w-full"
+          />
+          <figcaption className="mx-auto max-w-6xl px-6 py-4">
+            <span className="spec text-ink-faint">
+              A cohort running one of their own rituals · d.school studio
+            </span>
+          </figcaption>
+        </figure>
 
         <div className="mx-auto max-w-6xl px-6 py-14">
           <div className="border-b-2 border-ink pb-4">

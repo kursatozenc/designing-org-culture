@@ -202,6 +202,28 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---- The room itself ---- */}
+        <section className="border-b border-line">
+          <ul className="grid grid-cols-2 gap-px bg-line sm:grid-cols-4">
+            {[
+              { src: "ritual-circle", alt: "Students in a circle running a ritual they designed." },
+              { src: "insights-wall", alt: "A wall of sticky notes and journey maps during synthesis." },
+              { src: "prototyping-table", alt: "A table of figurines and a hand-drawn feedback map, mid-prototype." },
+              { src: "studio-session", alt: "The cohort seated in the d.school studio during a session." },
+            ].map((p) => (
+              <li key={p.src} className="bg-paper">
+                <Image
+                  src={`/brand/class/${p.src}.jpg`}
+                  alt={p.alt}
+                  width={1600}
+                  height={1067}
+                  className="h-full w-full object-cover"
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* ---- Every year the class has run, as a ledger ---- */}
         <section className="mx-auto max-w-6xl px-6 py-20">
           <div className="flex items-end justify-between gap-6 border-b-2 border-ink pb-4">
