@@ -48,7 +48,6 @@ export const people = [
       { cohort: "winter-2023", role: "instructor" },
       { cohort: "winter-2024", role: "instructor" },
       { cohort: "winter-2025", role: "instructor" },
-      { cohort: "autumn-2026", role: "instructor" },
     ],
   },
   {
