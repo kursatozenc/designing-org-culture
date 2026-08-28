@@ -166,7 +166,7 @@ export default function Home() {
               <div>
                 <p className="spec text-ink-soft">The work</p>
                 <h2 className="display mt-5 text-[clamp(1.75rem,4vw,2.75rem)]">
-                  The class designs on itself first
+                  The class is its own first partner
                 </h2>
               </div>
               <Link href="/rituals" className="spec text-ink-soft hover:text-cyan-deep">

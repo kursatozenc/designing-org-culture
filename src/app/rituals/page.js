@@ -18,7 +18,7 @@ export default function RitualsPage() {
           <div className="mx-auto max-w-6xl px-6 pt-16 pb-20">
             <p className="spec text-invisible">The work</p>
             <h1 className="display mt-6 max-w-3xl text-[clamp(2.25rem,6vw,4rem)]">
-              The class designs on itself first
+              The class is its own first partner
             </h1>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-white/60">
               Before anyone touches a partner organization, every cohort spends
