@@ -141,7 +141,10 @@ export const cohorts = [
     headline: "Culture practices for happy, effective teams.",
     current: false,
     dates: "Sept 21 – Dec 2, 2021",
+    schedule: "Tuesdays & Thursdays, 3:15–4:45pm PT, Stanford d.school · 3 units",
     course: "DESINST 221",
+    motto:
+      "A culture undesigned is a culture at the whim of the individuals who move through it.",
     summary:
       "Taught as DESINST 221 — the offering behind designorgculture.netlify.app. Framed around Ann Swidler's argument that people reach into culture as a toolkit during unsettled times: COVID, racial injustice, inequality. Three design projects built up from a team's own identity and ritual, through a culture repertoire of policy, habit, ritual and story provocations, to a culture program with a partner org. Ran an Outside-In Speaker Series across the quarter.",
     modules: [

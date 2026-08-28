@@ -77,11 +77,13 @@ export const people = [
   {
     slug: "ida-benedetto",
     name: "Ida Benedetto",
+    affiliation: "Experience Director & Design Strategist",
     appearances: [{ cohort: "fall-2021", role: "instructor" }],
   },
   {
     slug: "anand-upender",
     name: "Anand Upender",
+    affiliation: "Creative Technologist",
     appearances: [{ cohort: "fall-2021", role: "instructor" }],
   },
 
@@ -91,6 +93,7 @@ export const people = [
     // does not separate roles; Kursat confirms she was the TA.
     slug: "gabi-gavrila",
     name: "Gabi Gavrila",
+    affiliation: "PhD student and sociologist",
     appearances: [{ cohort: "fall-2021", role: "ta" }],
   },
   {
@@ -209,7 +212,8 @@ export const people = [
   {
     slug: "robbie-tilleard",
     name: "Robbie Tilleard",
-    affiliation: "Applied behavioural scientist — UK Behavioural Insights Team, Humu, Fluidly",
+    affiliation:
+      "Applied behavioral scientist — UK Behavioural Insights Team, Humu, Fluidly",
     topic: "Outside-In Speaker Series I",
     appearances: [{ cohort: "fall-2021", role: "guest" }],
   },
@@ -223,14 +227,16 @@ export const people = [
   {
     slug: "monica-worline",
     name: "Monica C. Worline",
-    affiliation: "Center for Positive Organizations, University of Michigan Ross School of Business",
+    affiliation:
+      "Faculty member, Center for Positive Organizations, University of Michigan Ross School of Business",
     topic: "Human flourishing, wellbeing, and positive organizational scholarship",
     appearances: [{ cohort: "fall-2021", role: "guest" }],
   },
   {
     slug: "iris-bohnet",
     name: "Iris Bohnet",
-    affiliation: "Albert Pratt Professor of Business and Government, Harvard Kennedy School",
+    affiliation:
+      "Albert Pratt Professor of Business and Government, and co-director of the Women and Public Policy Program, Harvard Kennedy School",
     topic: "Shaping norms — culture as stories, and DEI",
     appearances: [{ cohort: "fall-2021", role: "guest" }],
   },

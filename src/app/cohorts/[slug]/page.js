@@ -105,6 +105,17 @@ export default async function CohortPage({ params }) {
             </p>
           )}
 
+          {cohort.motto && (
+            <figure className="mb-12 max-w-2xl">
+              <blockquote className="display text-[clamp(1.25rem,2.6vw,1.75rem)] leading-snug text-cyan-deep">
+                &ldquo;{cohort.motto}&rdquo;
+              </blockquote>
+              <figcaption className="spec mt-3 text-ink-faint">
+                The class motto
+              </figcaption>
+            </figure>
+          )}
+
           {cohort.summary && (
             <p className="max-w-2xl text-lg leading-relaxed">{cohort.summary}</p>
           )}
