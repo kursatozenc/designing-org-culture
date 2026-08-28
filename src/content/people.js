@@ -84,15 +84,15 @@ export const people = [
     name: "Anand Upender",
     appearances: [{ cohort: "fall-2021", role: "instructor" }],
   },
-  {
-    // Listed under "Teaching Team" on the Fall 2021 syllabus; whether the
-    // role was instructor or course assistant is not stated there.
-    slug: "gabi-gavrila",
-    name: "Gabi Gavrila",
-    appearances: [{ cohort: "fall-2021", role: "instructor" }],
-  },
 
   // ---- Teaching assistants ----
+  {
+    // The Fall 2021 syllabus lists her under "Teaching Team", a masthead that
+    // does not separate roles; Kursat confirms she was the TA.
+    slug: "gabi-gavrila",
+    name: "Gabi Gavrila",
+    appearances: [{ cohort: "fall-2021", role: "ta" }],
+  },
   {
     slug: "sonya-kotov",
     name: "Sonya Kotov",
