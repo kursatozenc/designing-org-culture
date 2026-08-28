@@ -24,49 +24,51 @@ export default function Home() {
             className="gridlines pointer-events-none absolute inset-0 opacity-60"
             aria-hidden="true"
           />
-          <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-16">
-            <p className="spec text-ink-soft">
-              Stanford d.school
-              <span className="mx-2 text-line-strong">/</span>
-              Design 276
-              <span className="mx-2 text-line-strong">/</span>
-              <span className="text-cyan-deep">{current.term}</span>
-            </p>
+          <div className="relative mx-auto grid max-w-6xl gap-10 px-6 pt-20 pb-16 min-[900px]:grid-cols-[1fr_220px] min-[900px]:items-start min-[900px]:gap-14">
+            <div>
+              <p className="spec text-ink-soft">
+                Stanford d.school
+                <span className="mx-2 text-line-strong">/</span>
+                Design 276
+                <span className="mx-2 text-line-strong">/</span>
+                <span className="text-cyan-deep">{current.term}</span>
+              </p>
 
-            <h1 className="display mt-8 max-w-4xl text-[clamp(2.75rem,8.5vw,6rem)] uppercase">
-              Designing
-              <br />
-              Org Culture
-            </h1>
+              <h1 className="display mt-8 text-[clamp(2.75rem,8.5vw,6rem)] uppercase">
+                Designing
+                <br />
+                Org Culture
+              </h1>
 
-            <div className="mt-12 grid gap-10 sm:grid-cols-[1.35fr_1fr] sm:items-end">
-              <p className="max-w-xl text-lg leading-relaxed text-ink-soft">
+              <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">
                 Culture is not what an organization says it values — it is the
                 policies, rituals, and artifacts people actually live inside.
                 Student teams embed with partner organizations to diagnose that
                 gap and run live culture experiments against it.
               </p>
-              <Image
-                src="/brand/diagrams/invisible-visible.png"
-                alt="Culture design: the invisible and visible halves of culture, each feeding the other."
-                width={900}
-                height={1120}
-                priority
-                className="hidden w-64 justify-self-end sm:block"
-              />
+
+              <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Link
+                  href={`/cohorts/${current.slug}`}
+                  className="spec border border-ink px-6 py-3.5 text-ink hover:bg-ink hover:text-paper"
+                >
+                  This year — {current.term}
+                </Link>
+                <Link href="/partners" className="spec text-cyan-deep hover:text-ink">
+                  Partner with us →
+                </Link>
+              </div>
             </div>
 
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Link
-                href={`/cohorts/${current.slug}`}
-                className="spec border border-ink px-6 py-3.5 text-ink hover:bg-ink hover:text-paper"
-              >
-                This year — {current.term}
-              </Link>
-              <Link href="/partners" className="spec text-cyan-deep hover:text-ink">
-                Partner with us →
-              </Link>
-            </div>
+            {/* Top-aligned with the wordmark, not floating beside the paragraph. */}
+            <Image
+              src="/brand/diagrams/invisible-visible.png"
+              alt="Culture design: the invisible and visible halves of culture, each feeding the other."
+              width={900}
+              height={1120}
+              priority
+              className="hidden w-[220px] justify-self-end self-start min-[900px]:mt-13 min-[900px]:block"
+            />
           </div>
         </section>
 
