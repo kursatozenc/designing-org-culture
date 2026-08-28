@@ -54,6 +54,11 @@ export default async function CohortPage({ params }) {
                 {cohort.current && (
                   <p className="spec mt-1 text-cyan-deep">Current cohort</p>
                 )}
+                {cohort.predecessor && (
+                  <p className="spec mt-1 text-ink-faint">
+                    Ritual Design · before the course
+                  </p>
+                )}
               </div>
             </div>
 
@@ -89,6 +94,14 @@ export default async function CohortPage({ params }) {
             <p className="mb-12 border-l-2 border-cyan bg-cyan-wash p-5 text-sm leading-relaxed text-ink-soft">
               This cohort&apos;s materials are still being reviewed for what is
               safe to publish. Check back once the audit is done.
+            </p>
+          )}
+
+          {cohort.predecessor && (
+            <p className="mb-10 max-w-2xl border-l-2 border-line-strong pl-5 text-sm leading-relaxed text-ink-soft">
+              One of the Ritual Design for Better Workplaces classes that
+              Designing Org Culture grew out of, taught before DESIGN 276
+              existed.
             </p>
           )}
 

@@ -33,6 +33,9 @@ export default function CohortRow({ cohort }) {
         <p className="spec text-ink-faint">
           {cohort.termLabel ?? cohort.term}
           {cohort.current && <span className="text-cyan-deep"> · Current</span>}
+          {cohort.predecessor && (
+            <span className="text-ink-faint"> · Ritual Design</span>
+          )}
         </p>
         <p className="mt-1.5 text-[0.95rem] leading-snug text-ink">
           {cohort.headline ?? cohort.summary}

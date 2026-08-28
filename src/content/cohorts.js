@@ -8,6 +8,10 @@
 // Who taught a cohort lives in people.js, not here — a person accumulates
 // cohort slugs there and the cohort pages read the roster back out.
 
+// `predecessor: true` marks the Ritual Design classes that ran before
+// DESIGN 276 existed. They belong in the year-by-year record — the course grew
+// out of them — but the people who taught them did not teach this course, so
+// nothing should present them as Designing Org Culture faculty.
 export const cohorts = [
   {
     slug: "autumn-2026",
@@ -170,6 +174,8 @@ export const cohorts = [
     termLabel: "Winter",
     headline: "Ritual Design for Better Workplaces, focused on well-being.",
     current: false,
+    predecessor: true,
+    course: "Ritual Design for Better Workplaces",
     summary:
       "Ritual Design for Better Workplaces, with a focus on well-being — held with Stanford Medicine. Students designed personal rituals and explored how ritual mechanics (trigger, intention, props, acts) can build more intentional culture.",
     partners: ["stanford-medicine"],
@@ -182,6 +188,8 @@ export const cohorts = [
     termLabel: "Winter",
     headline: "Ritual Design pop-up, building a workplace ritual toolkit.",
     current: false,
+    predecessor: true,
+    course: "Ritual Design for Better Workplaces (pop-up)",
     summary:
       "Ritual Design for Better Workplaces pop-up, co-taught with SF State University. Students built a ritual-design toolkit and worked directly with Airbnb on workplace ritual concepts.",
     partners: ["airbnb"],
@@ -195,4 +203,9 @@ export function getCurrentCohort() {
 
 export function getCohortBySlug(slug) {
   return cohorts.find((c) => c.slug === slug);
+}
+
+/** True for the Ritual Design classes that preceded DESIGN 276. */
+export function isPredecessor(slug) {
+  return Boolean(getCohortBySlug(slug)?.predecessor);
 }

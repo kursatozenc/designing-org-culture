@@ -7,7 +7,11 @@ import {
   peopleForCohort,
   allCohorts,
 } from "@/content/people";
-import { getCohortBySlug, getCurrentCohort } from "@/content/cohorts";
+import {
+  getCohortBySlug,
+  getCurrentCohort,
+  isPredecessor,
+} from "@/content/cohorts";
 
 export const metadata = { title: "People — Designing Org Culture" };
 
@@ -77,13 +81,24 @@ export default function PeoplePage() {
 
   // Everyone else, by the roles they have held. Anyone in this year's roster is
   // shown above instead, so nobody appears twice.
-  const pastGroups = roles
+  const past = roles
     .map((r) => ({
       ...r,
       members: peopleByRole(r.slug).filter(
         (p) => !p.appearances.some((a) => a.cohort === current.slug),
       ),
     }))
+    .filter((g) => g.members.length > 0);
+
+  // Someone who only ever taught a Ritual Design class did not teach DESIGN 276,
+  // so they are listed under those classes rather than as course faculty.
+  const onlyPredecessor = (p) => p.cohorts.every(isPredecessor);
+  const pastGroups = past.map((g) => ({
+    ...g,
+    members: g.members.filter((p) => !onlyPredecessor(p)),
+  }));
+  const ritualDesign = past
+    .map((g) => ({ ...g, members: g.members.filter(onlyPredecessor) }))
     .filter((g) => g.members.length > 0);
 
   return (
@@ -128,15 +143,43 @@ export default function PeoplePage() {
             Past years
           </h2>
           <div className="mt-10">
-            {pastGroups.map((g) => (
-              <RoleGroup key={g.slug} label={g.label}>
-                {g.members.map((p) => (
-                  <PersonRow key={p.slug} person={p} years={p.cohorts} />
-                ))}
-              </RoleGroup>
-            ))}
+            {pastGroups
+              .filter((g) => g.members.length > 0)
+              .map((g) => (
+                <RoleGroup key={g.slug} label={g.label}>
+                  {g.members.map((p) => (
+                    <PersonRow key={p.slug} person={p} years={p.cohorts} />
+                  ))}
+                </RoleGroup>
+              ))}
           </div>
         </div>
+
+        {/* ---- The classes this course grew out of ---- */}
+        {ritualDesign.length > 0 && (
+          <div className="border-t border-line bg-paper-warm">
+            <div className="mx-auto max-w-6xl px-6 py-14">
+              <p className="spec text-ink-soft">Before the course</p>
+              <h2 className="display mt-4 text-[clamp(1.75rem,4vw,2.75rem)] uppercase">
+                Ritual Design classes
+              </h2>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft">
+                Designing Org Culture grew out of the Ritual Design for Better
+                Workplaces classes of 2019 and 2020. The people who taught those
+                taught ritual design, not this course.
+              </p>
+              <div className="mt-10">
+                {ritualDesign.map((g) => (
+                  <RoleGroup key={g.slug} label={g.label}>
+                    {g.members.map((p) => (
+                      <PersonRow key={p.slug} person={p} years={p.cohorts} />
+                    ))}
+                  </RoleGroup>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
       <Footer />
     </>
