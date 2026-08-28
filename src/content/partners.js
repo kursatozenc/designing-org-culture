@@ -57,11 +57,25 @@ export const partners = [
     challenge: "Scaling culture across a fast-growing sales organization.",
   },
   {
+    slug: "spenmo",
+    name: "Spenmo",
+    cohorts: ["winter-2023"],
+    challenge:
+      "Build cross-regional trust as a Southeast Asian fintech grew across country offices, and align local office cultures with a shared global strategy.",
+  },
+  {
     slug: "boba-guys",
     name: "Boba Guys",
     cohorts: ["fall-2021"],
     challenge:
       "Carry founding values from headquarters down to frontline store teams while the retail footprint grew, against shift turnover and burnout.",
+  },
+  {
+    slug: "mesa",
+    name: "Mesa",
+    cohorts: ["fall-2021"],
+    challenge:
+      "Establish an intentional asynchronous culture in a remote-first, distributed team — clarifying cross-functional norms without adding meetings.",
   },
   {
     slug: "stanford-medicine",

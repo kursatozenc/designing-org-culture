@@ -126,7 +126,7 @@ export const cohorts = [
           "Participatory research and bias spotting, culture champions and employee pathways, problem framing, idea books, prototyping culture, and evaluating a new team ritual.",
       },
     ],
-    partners: ["benchsci", "snappy"],
+    partners: ["benchsci", "snappy", "spenmo"],
     forces: ["norms", "practices"],
   },
   {
@@ -160,7 +160,7 @@ export const cohorts = [
           "Participatory design research, insight crafting and journey mapping, two rounds of experience prototyping with the partner, then a final critique.",
       },
     ],
-    partners: ["boba-guys"],
+    partners: ["boba-guys", "mesa"],
     forces: ["values", "norms", "practices", "stories"],
   },
   {
