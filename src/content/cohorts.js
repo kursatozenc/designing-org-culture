@@ -97,7 +97,7 @@ export const cohorts = [
           "Participatory research, culture champions and employee pathways, the sustainability landscape, problem framing, idea books, prototyping, and evaluating a new team ritual.",
       },
     ],
-    partners: [],
+    partners: ["doerr-school-sustainability", "blue-ocean-barns"],
     forces: ["values", "norms", "practices"],
   },
   {
@@ -126,7 +126,7 @@ export const cohorts = [
           "Participatory research and bias spotting, culture champions and employee pathways, problem framing, idea books, prototyping culture, and evaluating a new team ritual.",
       },
     ],
-    partners: [],
+    partners: ["benchsci", "snappy"],
     forces: ["norms", "practices"],
   },
   {
@@ -160,7 +160,7 @@ export const cohorts = [
           "Participatory design research, insight crafting and journey mapping, two rounds of experience prototyping with the partner, then a final critique.",
       },
     ],
-    partners: [],
+    partners: ["boba-guys"],
     forces: ["values", "norms", "practices", "stories"],
   },
   {

@@ -38,7 +38,7 @@ export const layers = [
   {
     slug: "visible",
     label: "Visible",
-    lede: "What a culture does and leaves behind. Observable, countable, and the only part you can prototype directly.",
+    lede: "What a culture does and leaves behind. Observable, countable, and where most interventions actually get built.",
   },
 ];
 

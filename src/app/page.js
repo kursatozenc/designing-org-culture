@@ -63,7 +63,7 @@ export default function Home() {
             {/* Top-aligned with the wordmark, not floating beside the paragraph. */}
             <Image
               src="/brand/diagrams/invisible-visible.png"
-              alt="Culture design: the invisible and visible halves of culture, each feeding the other."
+              alt="Culture design: invisible and visible forces of culture feeding each other in a continuous cycle."
               width={900}
               height={1120}
               priority
@@ -78,12 +78,14 @@ export default function Home() {
             <div>
               <p className="spec text-ink-soft">The model</p>
               <h2 className="display mt-5 text-[clamp(1.75rem,4vw,2.75rem)]">
-                Culture is half invisible
+                Culture is a living system
               </h2>
               <p className="mt-6 max-w-md text-base leading-relaxed text-ink-soft">
-                Beliefs, values, and norms cannot be observed directly. Behaviors,
-                artifacts, and metrics can. Culture design works on the visible
-                half — and reads the invisible half through it.
+                Invisible forces — beliefs, values, norms — and visible ones —
+                behaviors, practices, artifacts — are constantly interacting. A
+                healthy culture runs that loop as a virtuous cycle; an unhealthy
+                one runs the same loop the other way. Culture design works on
+                both sides of it.
               </p>
               <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
                 {layers.map((l) => (
@@ -107,7 +109,7 @@ export default function Home() {
             </div>
             <Image
               src="/brand/diagrams/culture-forces.png"
-              alt="Culture Forces: beliefs, values and norms in the invisible half; behaviors, artifacts and metrics in the visible half, cycling into each other."
+              alt="Culture Forces: beliefs, values and norms among the invisible forces; behaviors, artifacts and metrics among the visible ones, cycling into each other."
               width={1400}
               height={1804}
               className="w-full"

@@ -30,6 +30,40 @@ export const partners = [
     challenge: "Partner confirmation in progress for Autumn 2026.",
   },
   {
+    slug: "doerr-school-sustainability",
+    name: "Stanford Doerr School of Sustainability",
+    cohorts: ["winter-2024"],
+    challenge:
+      "Shape the culture, identity, and collaborative norms of Stanford's first new school in 70 years — across interdisciplinary research, daily operations, student and postdoc belonging, and translating research outward.",
+  },
+  {
+    slug: "blue-ocean-barns",
+    name: "Blue Ocean Barns",
+    cohorts: ["winter-2024"],
+    challenge:
+      "Keep a decentralized climate-tech team mission-driven and trusting while managing high-stakes execution timelines.",
+  },
+  {
+    slug: "benchsci",
+    name: "BenchSci",
+    cohorts: ["winter-2023"],
+    challenge:
+      "Bridge the cultures of AI engineering and biomedical science as the company scaled, and build psychological safety into fast-failure R&D.",
+  },
+  {
+    slug: "snappy",
+    name: "Snappy",
+    cohorts: ["winter-2023"],
+    challenge: "Scaling culture across a fast-growing sales organization.",
+  },
+  {
+    slug: "boba-guys",
+    name: "Boba Guys",
+    cohorts: ["fall-2021"],
+    challenge:
+      "Carry founding values from headquarters down to frontline store teams while the retail footprint grew, against shift turnover and burnout.",
+  },
+  {
     slug: "stanford-medicine",
     name: "Stanford Medicine",
     cohorts: ["winter-2020"],

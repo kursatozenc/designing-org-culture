@@ -15,15 +15,18 @@ export default function FrameworkPage() {
           <div className="mx-auto max-w-6xl px-6 pt-16 pb-20">
             <p className="spec text-ink-soft">The model</p>
             <h1 className="display mt-6 max-w-3xl text-[clamp(2.25rem,6vw,4rem)]">
-              Culture is half invisible
+              Culture is a living system
             </h1>
             <div className="mt-12 grid gap-14 sm:grid-cols-[1fr_1.05fr] sm:items-center">
               <div>
                 <p className="text-lg leading-relaxed text-ink-soft">
-                  What a group believes cannot be observed directly. What it
-                  does can. Culture design works by treating the visible half —
-                  behaviors, artifacts, metrics — as the material you actually
-                  get to prototype, and reading the invisible half through it.
+                  Not a fixed set of rules, but invisible and visible forces
+                  constantly interacting. What a group believes shapes what it
+                  does; what it does feeds back into what it believes. Healthy
+                  cultures run that loop as a virtuous cycle, unhealthy ones as
+                  a vicious one — and design works on both sides: facilitating
+                  values and norms on the invisible side, prototyping
+                  behaviors, practices, policies and stories on the visible.
                 </p>
                 <dl className="mt-10 grid gap-8">
                   {layers.map((l) => (
@@ -46,7 +49,7 @@ export default function FrameworkPage() {
               </div>
               <Image
                 src="/brand/diagrams/culture-forces.png"
-                alt="Culture Forces: beliefs, values and norms sit in the invisible half; behaviors, artifacts and metrics in the visible half, with arrows cycling between them."
+                alt="Culture Forces: beliefs, values and norms among the invisible forces; behaviors, artifacts and metrics among the visible ones, with arrows cycling between them."
                 width={1400}
                 height={1804}
                 priority
@@ -61,7 +64,7 @@ export default function FrameworkPage() {
           <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:grid-cols-[1.05fr_1fr] sm:items-center">
             <Image
               src="/brand/diagrams/culture-rituals.jpg"
-              alt="Rituals sit between the invisible and visible halves of culture, carrying change in both directions."
+              alt="Rituals sit between the invisible and visible forces of culture, carrying change in both directions."
               width={1400}
               height={1399}
               className="w-full"
