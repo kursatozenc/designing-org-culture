@@ -1,6 +1,12 @@
 // Partners persist independently of any single cohort — an org can appear
 // across multiple years. This is the "don't recreate the partners page
 // every year" piece of the plan.
+//
+// Naming an org here is a public claim about a third party, so each entry
+// should be backed by that cohort's own working files, not by a summary
+// written after the fact. Kursat has confirmed no partner NDAs were signed,
+// so the names themselves are safe to publish; partner-side contacts still
+// are not, and stay out of this file.
 
 export const partners = [
   {
