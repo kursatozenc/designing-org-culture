@@ -8,6 +8,7 @@ import { partners } from "@/content/partners";
 import { forces, layers } from "@/content/forces";
 import { resources } from "@/content/resources";
 import { roles, peopleByRole } from "@/content/people";
+import { rituals } from "@/content/rituals";
 
 export default function Home() {
   const current = getCurrentCohort();
@@ -148,6 +149,53 @@ export default function Home() {
                     />
                     {f.label}
                   </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ---- What students actually make ---- */}
+        <section className="border-b border-line bg-paper-warm">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <p className="spec text-ink-soft">The work</p>
+                <h2 className="display mt-5 text-[clamp(1.75rem,4vw,2.75rem)]">
+                  The class designs on itself first
+                </h2>
+              </div>
+              <Link href="/rituals" className="spec text-ink-soft hover:text-cyan-deep">
+                All rituals →
+              </Link>
+            </div>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft">
+              Two weeks in, before anyone meets a partner org, every cohort
+              designs a ritual for the class&apos;s own culture — and then has
+              to live inside it.
+            </p>
+
+            <ul className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-3">
+              {rituals.slice(0, 3).map((r) => (
+                <li key={r.slug} className="bg-paper p-6">
+                  <Link href="/rituals" className="group block">
+                    <h3 className="display text-lg uppercase group-hover:text-cyan-deep">
+                      {r.name}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                      {r.tagline}
+                    </p>
+                    <dl className="mt-5 space-y-2.5">
+                      <div>
+                        <dt className="spec text-ink-faint">Trigger</dt>
+                        <dd className="mt-1 text-sm text-ink">{r.trigger}</dd>
+                      </div>
+                      <div>
+                        <dt className="spec text-ink-faint">Prop</dt>
+                        <dd className="mt-1 text-sm text-ink">{r.prop}</dd>
+                      </div>
+                    </dl>
+                  </Link>
                 </li>
               ))}
             </ul>

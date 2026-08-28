@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import path from "node:path";
 
-const routes = ["/", "/cohorts", "/cohorts/autumn-2026", "/partners", "/people", "/framework", "/resources"];
+const routes = ["/", "/cohorts", "/cohorts/autumn-2026", "/rituals", "/partners", "/people", "/framework", "/resources"];
 const outDir = new URL("../.screenshots/", import.meta.url).pathname;
 
 const browser = await chromium.launch({
