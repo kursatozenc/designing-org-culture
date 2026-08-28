@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { forces, layers, forcesByLayer } from "@/content/forces";
 
-export const metadata = { title: "Framework — Designing Org Culture" };
+export const metadata = { title: "Framework" };
 
 export default function FrameworkPage() {
   return (

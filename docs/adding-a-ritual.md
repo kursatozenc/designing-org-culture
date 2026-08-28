@@ -71,5 +71,11 @@ At the end of a quarter, the whole "new year" ceremony is:
 2. Add that cohort's people to `src/content/people.js` as `appearances`.
 3. Add the year's rituals here.
 4. Add any new partners to `src/content/partners.js`.
+5. Regenerate the social card, which has the current term baked into it:
+
+   ```bash
+   npm run dev &
+   node scripts/og.mjs
+   ```
 
 No new pages, no new site.

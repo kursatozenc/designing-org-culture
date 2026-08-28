@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import CohortRow from "@/components/CohortRow";
 import { cohorts } from "@/content/cohorts";
 
-export const metadata = { title: "Cohorts — Designing Org Culture" };
+export const metadata = { title: "Cohorts" };
 
 export default function CohortsPage() {
   return (

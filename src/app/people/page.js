@@ -13,7 +13,7 @@ import {
   isPredecessor,
 } from "@/content/cohorts";
 
-export const metadata = { title: "People — Designing Org Culture" };
+export const metadata = { title: "People" };
 
 function PersonRow({ person, years }) {
   return (

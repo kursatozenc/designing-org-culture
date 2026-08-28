@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { partners } from "@/content/partners";
 import { getCohortBySlug } from "@/content/cohorts";
 
-export const metadata = { title: "Partners — Designing Org Culture" };
+export const metadata = { title: "Partners" };
 
 export default function PartnersPage() {
   return (

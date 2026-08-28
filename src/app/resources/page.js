@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { resources } from "@/content/resources";
 
-export const metadata = { title: "Resources — Designing Org Culture" };
+export const metadata = { title: "Resources" };
 
 export default function ResourcesPage() {
   return (

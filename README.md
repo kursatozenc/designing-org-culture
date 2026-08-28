@@ -52,4 +52,35 @@ Until that's wired up, content changes are just edits to the files in `src/conte
 
 ## Deploy
 
-Not yet deployed. Intended target: Vercel, with `designingorgculture.com` as the canonical domain and the legacy sites (Netlify build, `scalingorgculture.com`, the Google Site) redirected to it.
+Target: Vercel, with `designingorgculture.com` as the canonical domain and the
+legacy sites redirected to it.
+
+The repo is deploy-ready — no env vars are required, and Vercel detects Next.js
+with no configuration. `NEXT_PUBLIC_SITE_URL` is optional and only needed if the
+canonical domain changes; it defaults to `https://designingorgculture.com` and
+feeds the social card, canonical URL, `robots.txt`, and `sitemap.xml`.
+
+### First deploy
+
+1. At [vercel.com/new](https://vercel.com/new), import `kursatozenc/designing-org-culture`.
+2. Accept the detected settings (Framework: Next.js) and deploy. It lands on a
+   `*.vercel.app` URL within a couple of minutes.
+3. Every push to `main` redeploys automatically; pull requests get their own
+   preview URL.
+
+### Domain consolidation
+
+The point of the project is that four addresses become one. In Vercel, under
+Project → Settings → Domains, add `designingorgculture.com` and `www`, then
+point the registrar at the records Vercel shows. Once it resolves:
+
+| Old address | What to do |
+| --- | --- |
+| `designingorgculture.com` | Becomes the canonical site. |
+| `scalingorgculture.com` | Redirect at the registrar, or add it in Vercel and set it to redirect to the canonical domain. |
+| `designorgculture.netlify.app` | In Netlify, either delete the site or add a redirect rule to the canonical domain. |
+| The Google Site | Cannot redirect. Replace its content with a link, then unpublish. |
+
+Redirecting rather than deleting is what preserves the links already sitting in
+old syllabi, emails, and student portfolios. `sitemap.xml` lists every page so
+search engines re-index the consolidated site rather than the four it replaces.

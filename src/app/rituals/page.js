@@ -7,7 +7,7 @@ import { rituals } from "@/content/rituals";
 import { getCohortBySlug } from "@/content/cohorts";
 import { tools } from "@/content/tools";
 
-export const metadata = { title: "Rituals — Designing Org Culture" };
+export const metadata = { title: "Rituals" };
 
 export default function RitualsPage() {
   return (

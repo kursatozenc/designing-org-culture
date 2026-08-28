@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const cohort = getCohortBySlug(slug);
-  return { title: cohort ? `${cohort.term} — Designing Org Culture` : "Cohort" };
+  return { title: cohort ? cohort.term : "Cohort" };
 }
 
 export default async function CohortPage({ params }) {
