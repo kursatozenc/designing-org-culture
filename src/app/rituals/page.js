@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import RitualCard from "@/components/RitualCard";
 import { rituals } from "@/content/rituals";
 import { getCohortBySlug } from "@/content/cohorts";
+import { tools } from "@/content/tools";
 
 export const metadata = { title: "Rituals — Designing Org Culture" };
 
@@ -65,6 +66,37 @@ export default function RitualsPage() {
             explains the forces each ritual moves.
           </p>
         </div>
+        <section className="border-t border-line bg-cyan-wash">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <p className="spec text-ink-soft">Make one</p>
+            <h2 className="display mt-5 text-[clamp(1.75rem,4vw,2.75rem)]">
+              Design a ritual of your own
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft">
+              The same mechanics work outside a classroom. These are the
+              course&apos;s companion tools.
+            </p>
+            <ul className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2">
+              {tools.map((t) => (
+                <li key={t.slug} className="bg-paper p-6">
+                  <a
+                    href={t.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <h3 className="display text-lg uppercase group-hover:text-cyan-deep">
+                      {t.name} <span aria-hidden="true">→</span>
+                    </h3>
+                    <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">
+                      {t.blurb}
+                    </p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
