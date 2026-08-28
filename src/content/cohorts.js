@@ -72,6 +72,35 @@ export const cohorts = [
     forces: ["norms", "stories", "metrics"],
   },
   {
+    slug: "winter-2024",
+    year: "2024",
+    term: "Winter 2024",
+    termLabel: "Winter",
+    headline: "Purpose-driven startups, and the culture of scaling climate work.",
+    current: false,
+    dates: "Jan 8 – Mar 13, 2024",
+    schedule: "Mondays & Wednesdays, 3:30–5:20pm, d.school Studio 1",
+    course: "DESIGN 276 · Purpose-driven startups",
+    summary:
+      "Aimed at purpose-driven and climate startups, which have to chase social or environmental impact and financial success at once. After funding, most startups that fail do so for people reasons rather than technical ones — passion and pace outrunning the organizational acumen needed to align mission with action and keep people. The class ritual project asked how you might prevent burnout.",
+    modules: [
+      {
+        title: "Module 1: Fundamentals of Culture Design",
+        weeks: "Weeks 1–2",
+        detail:
+          "Human-centered culture design, invisible drivers of behavior, and designing team rituals — with DP1 framed as: how might we prevent burnout?",
+      },
+      {
+        title: "Module 2: Designing a Culture Program for a Partner Organization",
+        weeks: "Weeks 3–10",
+        detail:
+          "Participatory research, culture champions and employee pathways, the sustainability landscape, problem framing, idea books, prototyping, and evaluating a new team ritual.",
+      },
+    ],
+    partners: [],
+    forces: ["values", "norms", "practices"],
+  },
+  {
     slug: "winter-2023",
     year: "2023",
     term: "Winter 2023",
@@ -101,17 +130,38 @@ export const cohorts = [
     forces: ["norms", "practices"],
   },
   {
-    slug: "2024",
-    year: "2024",
-    term: "2024",
-    termLabel: "Pending audit",
-    headline: "Needs confirming — was there a distinct 2024 offering?",
+    slug: "fall-2021",
+    year: "2021",
+    term: "Fall 2021",
+    termLabel: "Fall",
+    headline: "Culture practices for happy, effective teams.",
     current: false,
+    dates: "Sept 21 – Dec 2, 2021",
+    course: "DESINST 221",
     summary:
-      "Open question rather than a cohort. The Drive folder named 2024-DOC-DesigningOrgCulture actually holds Winter 2023 material (the Scaling Org Culture syllabus and roster), so it is not yet clear whether a separate 2024 offering ran. Needs confirming before this becomes a real cohort entry.",
-    pendingAudit: true,
+      "Taught as DESINST 221 — the offering behind designorgculture.netlify.app. Framed around Ann Swidler's argument that people reach into culture as a toolkit during unsettled times: COVID, racial injustice, inequality. Three design projects built up from a team's own identity and ritual, through a culture repertoire of policy, habit, ritual and story provocations, to a culture program with a partner org. Ran an Outside-In Speaker Series across the quarter.",
+    modules: [
+      {
+        title: "Module 1: Fundamentals of Culture Design",
+        weeks: "DP1 · Crafting your team culture",
+        detail:
+          "Human-centered culture design, then core values, purpose and symbols — students design their own team identity and ritual.",
+      },
+      {
+        title: "Module 2: Forms & Principles of Organizational Culture",
+        weeks: "DP2 · Designing a culture repertoire",
+        detail:
+          "Culture as a system, as behaviors, as practices, and as stories — each paired with a principle (performance, creativity, human flourishing, DEI) and a provocation to design: a policy, a habit, a ritual, a story.",
+      },
+      {
+        title: "Module 3: Participatory Culture Design",
+        weeks: "DP3 · Culture program for a partner org",
+        detail:
+          "Participatory design research, insight crafting and journey mapping, two rounds of experience prototyping with the partner, then a final critique.",
+      },
+    ],
     partners: [],
-    forces: [],
+    forces: ["values", "norms", "practices", "stories"],
   },
   {
     slug: "winter-2020",

@@ -15,8 +15,9 @@
 // Drive, gathered by the teaching team for exactly this purpose. People
 // without one fall back to initials, so a missing photo never breaks the row.
 //
-// Sources: the Winter 2023, Winter 2025, and Autumn 2026 syllabi in the
-// Drive archive. Deliberately NOT listed: students, and partner-org contacts
+// Sources: the Fall 2021 (DESINST 221), Winter 2023, Winter 2024, Winter 2025
+// and Autumn 2026 syllabi, plus Kursat's own record of who actually showed up,
+// which is what named the coaches. Deliberately NOT listed: students, and partner-org contacts
 // who appear only in planning docs alongside personal email addresses —
 // naming a private individual publicly is the course's call to make with
 // their consent.
@@ -31,7 +32,9 @@ export const people = [
     appearances: [
       { cohort: "winter-2019", role: "instructor" },
       { cohort: "winter-2020", role: "instructor" },
+      { cohort: "fall-2021", role: "instructor" },
       { cohort: "winter-2023", role: "instructor" },
+      { cohort: "winter-2024", role: "instructor" },
       { cohort: "winter-2025", role: "instructor" },
       { cohort: "autumn-2026", role: "instructor" },
     ],
@@ -42,6 +45,7 @@ export const people = [
     affiliation: "Principal of Org Design and Development, Google DeepMind",
     appearances: [
       { cohort: "winter-2023", role: "instructor" },
+      { cohort: "winter-2024", role: "instructor" },
       { cohort: "winter-2025", role: "instructor" },
       { cohort: "autumn-2026", role: "guest" },
     ],
@@ -70,6 +74,24 @@ export const people = [
     appearances: [{ cohort: "winter-2019", role: "instructor" }],
   },
 
+  {
+    slug: "ida-benedetto",
+    name: "Ida Benedetto",
+    appearances: [{ cohort: "fall-2021", role: "instructor" }],
+  },
+  {
+    slug: "anand-upender",
+    name: "Anand Upender",
+    appearances: [{ cohort: "fall-2021", role: "instructor" }],
+  },
+  {
+    // Listed under "Teaching Team" on the Fall 2021 syllabus; whether the
+    // role was instructor or course assistant is not stated there.
+    slug: "gabi-gavrila",
+    name: "Gabi Gavrila",
+    appearances: [{ cohort: "fall-2021", role: "instructor" }],
+  },
+
   // ---- Teaching assistants ----
   {
     slug: "sonya-kotov",
@@ -77,10 +99,29 @@ export const people = [
     appearances: [{ cohort: "winter-2023", role: "ta" }],
   },
   {
+    slug: "jeung-lee",
+    name: "Jeung Lee",
+    appearances: [{ cohort: "winter-2024", role: "ta" }],
+  },
+  {
     slug: "gatsby-frimpong",
     name: "Gatsby Frimpong",
     affiliation: "MS Design ’25",
     appearances: [{ cohort: "winter-2025", role: "ta" }],
+  },
+
+  // ---- Coaches ----
+  {
+    slug: "alan-ratliff",
+    name: "Alan Ratliff",
+    topic: "Prototyping expertise during the ideation session",
+    appearances: [{ cohort: "winter-2025", role: "coach" }],
+  },
+  {
+    slug: "ian-stuart",
+    name: "Ian Stuart",
+    topic: "Joined the ideation session alongside Alan",
+    appearances: [{ cohort: "winter-2025", role: "coach" }],
   },
 
   // ---- Guest speakers ----
@@ -105,7 +146,7 @@ export const people = [
     photo: "/brand/people/gina-maya-rudan.jpg",
     name: "Gina “Maya” Rudan",
     affiliation: "Cultural Alchemist, Google X",
-    topic: "Cultural rituals at Google X",
+    topic: "Cultural practices at X, including the Día de los Muertos initiative she led",
     appearances: [{ cohort: "winter-2023", role: "guest" }],
   },
   {
@@ -139,6 +180,7 @@ export const people = [
     topic: "Employee pathways",
     appearances: [
       { cohort: "winter-2023", role: "guest" },
+      { cohort: "winter-2024", role: "guest" },
       { cohort: "winter-2025", role: "guest" },
     ],
   },
@@ -148,12 +190,6 @@ export const people = [
     slug: "laila-von-alvensleben",
     name: "Laïla von Alvensleben",
     affiliation: "Head of Culture & Collaboration, MURAL",
-    topic: "Creative rituals",
-    appearances: [{ cohort: "winter-2025", role: "guest" }],
-  },
-  {
-    slug: "alan-ratliff",
-    name: "Alan Ratliff",
     topic: "Creative rituals",
     appearances: [{ cohort: "winter-2025", role: "guest" }],
   },
@@ -171,6 +207,62 @@ export const people = [
     appearances: [{ cohort: "winter-2025", role: "guest" }],
   },
   {
+    slug: "robbie-tilleard",
+    name: "Robbie Tilleard",
+    affiliation: "Applied behavioural scientist — UK Behavioural Insights Team, Humu, Fluidly",
+    topic: "Outside-In Speaker Series I",
+    appearances: [{ cohort: "fall-2021", role: "guest" }],
+  },
+  {
+    slug: "john-paul-stephens",
+    name: "John Paul Stephens",
+    affiliation: "Associate Professor of Organizational Behavior, Case Western Reserve University",
+    topic: "Outside-In Speaker Series II",
+    appearances: [{ cohort: "fall-2021", role: "guest" }],
+  },
+  {
+    slug: "monica-worline",
+    name: "Monica C. Worline",
+    affiliation: "Center for Positive Organizations, University of Michigan Ross School of Business",
+    topic: "Human flourishing, wellbeing, and positive organizational scholarship",
+    appearances: [{ cohort: "fall-2021", role: "guest" }],
+  },
+  {
+    slug: "iris-bohnet",
+    name: "Iris Bohnet",
+    affiliation: "Albert Pratt Professor of Business and Government, Harvard Kennedy School",
+    topic: "Shaping norms — culture as stories, and DEI",
+    appearances: [{ cohort: "fall-2021", role: "guest" }],
+  },
+  {
+    slug: "natalia-vasquez",
+    name: "Natalia Vasquez",
+    affiliation: "Climate, IDEO",
+    topic: "Understanding the sustainability landscape",
+    appearances: [{ cohort: "winter-2024", role: "guest" }],
+  },
+  {
+    slug: "lisa-gross",
+    name: "Lisa Gross",
+    affiliation: "ChargePoint",
+    topic: "Scaling challenges",
+    appearances: [{ cohort: "winter-2024", role: "guest" }],
+  },
+  {
+    slug: "prasita-kutty",
+    name: "Prasita Kutty",
+    affiliation: "ChargePoint",
+    topic: "Scaling challenges",
+    appearances: [{ cohort: "winter-2024", role: "guest" }],
+  },
+  {
+    slug: "michael-hughes",
+    name: "Michael Hughes",
+    affiliation: "ChargePoint",
+    topic: "Scaling challenges",
+    appearances: [{ cohort: "winter-2024", role: "guest" }],
+  },
+  {
     slug: "bob-sutton",
     name: "Bob Sutton",
     affiliation: "Stanford University",
@@ -184,11 +276,6 @@ export const people = [
     topic: "Employee pathways",
     appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
-
-  // ---- Coaches ----
-  // The syllabi refer to coaches giving feedback during the design phase but
-  // never name them. Add them here with role "coach" on an appearance and
-  // the section appears on its own; it stays hidden while the list is empty.
 ];
 
 export const roles = [
