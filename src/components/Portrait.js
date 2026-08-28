@@ -3,7 +3,9 @@ import Image from "next/image";
 /**
  * Square portrait for a person. Most people have no photo, so the fallback
  * is part of the design rather than an error state: initials set in the mono
- * face on a tinted square, keeping every row the same rhythm.
+ * face on a tinted square, keeping every row the same rhythm. The square is
+ * outlined as well as filled, so it still reads on a cyan-wash band where the
+ * fill matches the ground.
  */
 export default function Portrait({ person, size = 72 }) {
   const initials = person.name
@@ -32,7 +34,7 @@ export default function Portrait({ person, size = 72 }) {
     <span
       aria-hidden="true"
       style={{ width: size, height: size }}
-      className="flex shrink-0 items-center justify-center bg-cyan-wash font-mono text-sm tracking-wider text-cyan-deep"
+      className="flex shrink-0 items-center justify-center border border-cyan-deep/20 bg-cyan-wash font-mono text-sm tracking-wider text-cyan-deep"
     >
       {initials}
     </span>

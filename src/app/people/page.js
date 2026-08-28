@@ -1,15 +1,89 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Portrait from "@/components/Portrait";
-import { roles, peopleByRole } from "@/content/people";
+import {
+  roles,
+  peopleByRole,
+  peopleForCohort,
+  allCohorts,
+} from "@/content/people";
 import { getCohortBySlug, getCurrentCohort } from "@/content/cohorts";
 
 export const metadata = { title: "People — Designing Org Culture" };
 
+function PersonRow({ person, years }) {
+  return (
+    <div
+      className={`grid gap-x-8 gap-y-2 border-b border-line sm:grid-cols-[1fr_auto] ${
+        person.lead ? "py-8" : "py-6"
+      }`}
+    >
+      <div className="flex items-start gap-5">
+        <Portrait person={person} size={person.lead ? 104 : 72} />
+        <div>
+          <p
+            className={`display flex flex-wrap items-baseline gap-x-3 uppercase ${
+              person.lead ? "text-2xl" : "text-xl"
+            }`}
+          >
+            {person.name}
+            {person.lead && (
+              <span className="spec border border-ink px-2 py-0.5 text-ink">
+                Lead
+              </span>
+            )}
+          </p>
+          {person.affiliation && (
+            <p className="mt-1.5 text-sm text-ink-soft">{person.affiliation}</p>
+          )}
+          {person.topic && (
+            <p className="mt-1 text-sm text-ink-faint">{person.topic}</p>
+          )}
+        </div>
+      </div>
+      <p className="spec text-ink-faint sm:pt-2 sm:text-right">
+        {years
+          .map((s) => getCohortBySlug(s)?.year)
+          .filter(Boolean)
+          .join(" · ")}
+      </p>
+    </div>
+  );
+}
+
+function RoleGroup({ label, children }) {
+  return (
+    <section className="mt-14 first:mt-0">
+      <h3 className="display border-b-2 border-ink pb-3 text-xl uppercase">
+        {label}
+      </h3>
+      {children}
+    </section>
+  );
+}
+
 export default function PeoplePage() {
   const current = getCurrentCohort();
-  const groups = roles
-    .map((r) => ({ ...r, members: peopleByRole(r.slug) }))
+
+  // This year's roster, grouped by the chair each person holds *this year* —
+  // so someone who used to instruct and now guest-lectures lands under guests.
+  const thisYear = peopleForCohort(current.slug);
+  const currentGroups = roles
+    .map((r) => ({
+      ...r,
+      members: thisYear.filter((p) => p.role === r.slug),
+    }))
+    .filter((g) => g.members.length > 0);
+
+  // Everyone else, by the roles they have held. Anyone in this year's roster is
+  // shown above instead, so nobody appears twice.
+  const pastGroups = roles
+    .map((r) => ({
+      ...r,
+      members: peopleByRole(r.slug).filter(
+        (p) => !p.appearances.some((a) => a.cohort === current.slug),
+      ),
+    }))
     .filter((g) => g.members.length > 0);
 
   return (
@@ -28,63 +102,40 @@ export default function PeoplePage() {
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl px-6 pb-16">
-          {groups.map((g) => (
-            <section key={g.slug} className="mt-14 first:mt-0">
-              <h2 className="display border-b-2 border-ink pb-3 text-xl uppercase">
-                {g.label}
-              </h2>
-              {g.members.map((p) => {
-                // scoped to this role: Martin is current as a guest, not as an instructor
-                const isCurrent = p.cohorts.includes(current.slug);
-                return (
-                  <div
-                    key={p.slug}
-                    className={`grid gap-x-8 gap-y-2 border-b border-line sm:grid-cols-[1fr_auto] ${
-                      p.lead ? "py-8" : "py-6"
-                    }`}
-                  >
-                    <div className="flex items-start gap-5">
-                      <Portrait person={p} size={p.lead ? 104 : 72} />
-                      <div>
-                        <p
-                          className={`display flex flex-wrap items-baseline gap-x-3 uppercase ${
-                            p.lead ? "text-2xl" : "text-xl"
-                          }`}
-                        >
-                          {p.name}
-                          {p.lead && (
-                            <span className="spec border border-ink px-2 py-0.5 text-ink">
-                              Lead
-                            </span>
-                          )}
-                          {isCurrent && (
-                            <span className="spec text-cyan-deep">Current</span>
-                          )}
-                        </p>
-                        {p.affiliation && (
-                          <p className="mt-1.5 text-sm text-ink-soft">
-                            {p.affiliation}
-                          </p>
-                        )}
-                        {p.topic && (
-                          <p className="mt-1 text-sm text-ink-faint">
-                            {p.topic}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <p className="spec text-ink-faint sm:pt-2 sm:text-right">
-                      {p.cohorts
-                        .map((s) => getCohortBySlug(s)?.year)
-                        .filter(Boolean)
-                        .join(" · ")}
-                    </p>
-                  </div>
-                );
-              })}
-            </section>
-          ))}
+        {/* ---- This year, first ---- */}
+        <section className="border-y border-line bg-cyan-wash">
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <p className="spec text-cyan-deep">This year</p>
+            <h2 className="display mt-4 text-[clamp(1.75rem,4vw,2.75rem)] uppercase">
+              {current.term}
+            </h2>
+            <div className="mt-10">
+              {currentGroups.map((g) => (
+                <RoleGroup key={g.slug} label={g.label}>
+                  {g.members.map((p) => (
+                    <PersonRow key={p.slug} person={p} years={allCohorts(p)} />
+                  ))}
+                </RoleGroup>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ---- Every year before it ---- */}
+        <div className="mx-auto max-w-6xl px-6 pt-14 pb-16">
+          <p className="spec text-ink-soft">Previously</p>
+          <h2 className="display mt-4 text-[clamp(1.75rem,4vw,2.75rem)] uppercase">
+            Past years
+          </h2>
+          <div className="mt-10">
+            {pastGroups.map((g) => (
+              <RoleGroup key={g.slug} label={g.label}>
+                {g.members.map((p) => (
+                  <PersonRow key={p.slug} person={p} years={p.cohorts} />
+                ))}
+              </RoleGroup>
+            ))}
+          </div>
         </div>
       </main>
       <Footer />

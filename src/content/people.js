@@ -26,6 +26,7 @@ export const people = [
   // ---- Teaching team ----
   {
     slug: "kursat-ozenc",
+    photo: "/brand/people/kursat-ozenc.jpg",
     name: "Kursat Ozenc",
     lead: true,
     affiliation: "Executive Design Director, JPMorganChase",
