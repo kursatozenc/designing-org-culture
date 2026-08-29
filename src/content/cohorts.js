@@ -35,7 +35,7 @@ export const cohorts = [
       },
       {
         title: "Module 2: Culture Program Design with Partner Org",
-        weeks: "Weeks 3–?",
+        weeks: "Weeks 3–10",
         detail:
           "Discovery through employee interviews and journey mapping, synthesis into insights, reframing the design challenge, and prototyping culture interventions with a partner org.",
       },
