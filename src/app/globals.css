@@ -11,6 +11,9 @@
   --ink-faint: #6c7679;   /* contrast-checked against paper for small labels */
   --line: #dfe4e5;
   --line-strong: #b9c2c4;
+  /* The sticky header's height, so the hero can fill exactly the rest of the
+     first screen. It stacks on narrow widths, hence the two values. */
+  --header-h: 92px;
   --cyan: #48d8e4;        /* graphic fill only — too light for text on white */
   --cyan-deep: #0c6d78;   /* the type/link-safe sibling */
   --cyan-wash: #eafafc;
@@ -24,6 +27,10 @@
   --visible: #a5ce38;
   --visible-deep: #4f6b0f;
   --paper-warm: #f7f7f7;  /* matches the paper the diagrams were drawn on */
+}
+
+@media (min-width: 640px) {
+  :root { --header-h: 50px; }
 }
 
 @theme inline {

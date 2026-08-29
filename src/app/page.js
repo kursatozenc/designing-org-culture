@@ -19,12 +19,14 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         {/* ---- Hero: the grid, stated plainly, with one hand-mark across it ---- */}
-        <section className="relative overflow-hidden border-b border-line">
+        {/* Fills the first screen so the next band does not bleed above the fold.
+            svh rather than vh so mobile browser chrome does not overshoot. */}
+        <section className="relative flex min-h-[calc(100svh-var(--header-h))] items-center overflow-hidden border-b border-line">
           <div
             className="gridlines pointer-events-none absolute inset-0 opacity-60"
             aria-hidden="true"
           />
-          <div className="relative mx-auto grid max-w-6xl gap-10 px-6 pt-20 pb-16 min-[900px]:grid-cols-[1fr_220px] min-[900px]:items-start min-[900px]:gap-14">
+          <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 min-[900px]:grid-cols-[1fr_220px] min-[900px]:items-start min-[900px]:gap-14">
             <div>
               <p className="spec text-ink-soft">
                 Stanford d.school
