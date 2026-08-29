@@ -17,19 +17,13 @@ export const metadata = { title: "People" };
 
 function PersonRow({ person, years }) {
   return (
-    <div
-      className={`grid gap-x-8 gap-y-2 border-b border-line sm:grid-cols-[1fr_auto] ${
-        person.lead ? "py-8" : "py-6"
-      }`}
-    >
+    <div className="grid gap-x-8 gap-y-2 border-b border-line py-7 sm:grid-cols-[1fr_auto]">
       <div className="flex items-start gap-5">
-        <Portrait person={person} size={person.lead ? 104 : 72} />
+        {/* One portrait size for everyone — the Lead badge carries the
+            distinction, a bigger photo just made the rows look uneven. */}
+        <Portrait person={person} size={88} />
         <div>
-          <p
-            className={`display flex flex-wrap items-baseline gap-x-3 uppercase ${
-              person.lead ? "text-2xl" : "text-xl"
-            }`}
-          >
+          <p className="display flex flex-wrap items-baseline gap-x-3 text-xl uppercase">
             {person.name}
             {person.lead && (
               <span className="spec border border-ink px-2 py-0.5 text-ink">
