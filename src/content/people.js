@@ -54,6 +54,7 @@ export const people = [
     slug: "shannon-mahon",
     photo: "/brand/people/shannon-mahon.jpg",
     name: "Shannon Mahon",
+    affiliation: "Organizational Design Lead, Google DeepMind",
     appearances: [{ cohort: "autumn-2026", role: "instructor" }],
   },
   {
