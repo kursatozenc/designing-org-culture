@@ -12,50 +12,51 @@ export default function FrameworkPage() {
       <main className="flex-1">
         {/* ---- Thesis: the model itself, at full size ---- */}
         <section className="border-b border-line">
-          <div className="mx-auto max-w-6xl px-6 pt-16 pb-20">
-            <p className="spec text-ink-soft">The model</p>
-            <h1 className="display mt-6 max-w-3xl text-[clamp(2.25rem,6vw,4rem)]">
-              Culture is a living system
-            </h1>
-            <div className="mt-12 grid gap-14 sm:grid-cols-[1fr_1.05fr] sm:items-center">
-              <div>
-                <p className="text-lg leading-relaxed text-ink-soft">
-                  Invisible and visible forces, constantly interacting. What a
-                  group believes shapes what it does; what it does feeds back
-                  into what it believes. Healthy cultures run that loop as a
-                  virtuous cycle and unhealthy ones as a vicious one. Design
-                  works on both sides: it facilitates values and norms on the
-                  invisible side, and prototypes behaviors, practices, policies
-                  and stories on the visible one.
-                </p>
-                <dl className="mt-10 grid gap-8">
-                  {layers.map((l) => (
-                    <div key={l.slug} className="flex gap-4">
-                      <span
-                        aria-hidden="true"
-                        className={`mt-1.5 h-3 w-3 shrink-0 rounded-full ${
-                          l.slug === "invisible" ? "bg-invisible" : "bg-visible"
-                        }`}
-                      />
-                      <div>
-                        <dt className="display text-base">{l.label}</dt>
-                        <dd className="mt-1.5 max-w-md text-sm leading-relaxed text-ink-soft">
-                          {l.lede}
-                        </dd>
-                      </div>
+          {/* The heading belongs in the text column, beside the drawing, rather
+              than above it — the same shape the model band uses on the
+              homepage. */}
+          <div className="mx-auto grid max-w-6xl gap-14 px-6 pt-16 pb-20 sm:grid-cols-[1fr_1.05fr] sm:items-center">
+            <div>
+              <p className="spec text-ink-soft">The model</p>
+              <h1 className="display mt-6 text-[clamp(2.25rem,6vw,4rem)]">
+                Culture is a living system
+              </h1>
+              <p className="mt-8 text-lg leading-relaxed text-ink-soft">
+                Invisible and visible forces, constantly interacting. What a
+                group believes shapes what it does; what it does feeds back into
+                what it believes. Healthy cultures run that loop as a virtuous
+                cycle and unhealthy ones as a vicious one. Design works on both
+                sides: it facilitates values and norms on the invisible side,
+                and prototypes behaviors, practices, policies and stories on the
+                visible one.
+              </p>
+              <dl className="mt-10 grid gap-8">
+                {layers.map((l) => (
+                  <div key={l.slug} className="flex gap-4">
+                    <span
+                      aria-hidden="true"
+                      className={`mt-1.5 h-3 w-3 shrink-0 rounded-full ${
+                        l.slug === "invisible" ? "bg-invisible" : "bg-visible"
+                      }`}
+                    />
+                    <div>
+                      <dt className="display text-base">{l.label}</dt>
+                      <dd className="mt-1.5 max-w-md text-sm leading-relaxed text-ink-soft">
+                        {l.lede}
+                      </dd>
                     </div>
-                  ))}
-                </dl>
-              </div>
-              <Image
-                src="/brand/diagrams/culture-forces.png"
-                alt="Culture Forces: beliefs, values and norms among the invisible forces; behaviors, artifacts and metrics among the visible ones, with arrows cycling between them."
-                width={1400}
-                height={1804}
-                priority
-                className="w-full"
-              />
+                  </div>
+                ))}
+              </dl>
             </div>
+            <Image
+              src="/brand/diagrams/culture-forces.png"
+              alt="Culture Forces: beliefs, values and norms among the invisible forces; behaviors, artifacts and metrics among the visible ones, with arrows cycling between them."
+              width={1400}
+              height={1804}
+              priority
+              className="w-full"
+            />
           </div>
         </section>
 
