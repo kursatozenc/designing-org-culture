@@ -36,6 +36,24 @@ producing for the one-pager.
 > or the ritual published without them. Either is fine; we will not publish
 > names without a yes.
 
+And a second ask, at the **end** of the quarter rather than at DP1 — you have
+been living inside your ritual for ten weeks by then, which is the only reason
+any of this is worth publishing:
+
+> **What happened when you ran it?** Three or four sentences. Did the team
+> still do it in week 8, or did it quietly die? What did you change after the
+> first try? What did it turn out to be for, once it was real?
+>
+> Say the unflattering version if that is the true one. A ritual that stopped
+> working after two weeks, with an honest account of why, is more useful to
+> the next cohort than one that is only ever described as intended.
+
+This is the field the library has never had, and its absence is the single
+biggest gap on the public page: four rituals, no evidence. The course teaches
+Metrics as one of the eight forces and then publishes work with no
+observations attached. One paragraph per ritual changes the register of the
+whole page from *assignment* to *field notes*.
+
 ## 2. For the teaching team — adding them to the site
 
 Each ritual is one object in `src/content/rituals.js`:
@@ -50,6 +68,7 @@ Each ritual is one object in `src/content/rituals.js`:
   trigger: "…",
   prop: "…",
   flow: ["…", "…"],                  // ordered steps
+  outcome: "…",                      // optional — what happened when they ran it
   insight: "…",                      // optional
   forces: ["practices", "behaviors"], // slugs from forces.js
 }
@@ -58,6 +77,13 @@ Each ritual is one object in `src/content/rituals.js`:
 Only `slug`, `name`, `cohort`, `intention`, `trigger`, `prop` and `flow` are
 required. `credits` and `poster` fields are not rendered yet — add them once
 students have agreed to be named.
+
+`outcome` renders above `insight` on the card, under the heading "What
+happened when we ran it", because a finding outranks a claim. Fill it in at
+the end of the quarter, not at DP1.
+
+Order in the file is editorial, not chronological: the homepage teases the
+first three entries, so put the strongest ritual first.
 
 Tagging `forces` is what keeps the library comparable: it lets a reader see
 that a ritual moved norms rather than artifacts, and connects back to the

@@ -10,8 +10,37 @@
 // publishing student names is a consent question, not a design one. The
 // source posters live in Drive under DP1-PsychSafetyRitual; add `poster` and
 // `credits` here once students have agreed.
+//
+// Order is editorial, not chronological — the homepage teases the first three,
+// so the strongest ritual leads.
+//
+// `outcome` is what happened when the cohort actually ran it: whether it
+// survived the quarter, what changed, what died. It is optional and mostly
+// unfilled, because it was never collected. It is the field that separates a
+// library of proposals from a library of findings, so it is worth collecting
+// from here on — see docs/adding-a-ritual.md.
 
 export const rituals = [
+  {
+    slug: "the-magic-pencil",
+    name: "The Magic Pencil",
+    cohort: "winter-2023",
+    tagline: "A ritual for giving hard feedback to a friend",
+    intention:
+      "Take the sting out of critical feedback between people who are close, by separating the work from the relationship.",
+    trigger: "When someone has feedback to deliver",
+    prop: "A pencil, standing in for the workplace",
+    flow: [
+      "The person with feedback picks up the magic object.",
+      "Holding it means the conversation is about the work, not the person.",
+      "Remotely, saying “pencil” does the same job.",
+      "They open with something the recipient did well, then give the critique.",
+      "Putting the object down ends the work frame and returns the friendship.",
+    ],
+    insight:
+      "The prop is doing the emotional work — it gives both people a shared, external signal for a shift that would otherwise be awkward to announce.",
+    forces: ["norms", "behaviors"],
+  },
   {
     slug: "musical-stories",
     name: "Musical Stories",
@@ -32,10 +61,10 @@ export const rituals = [
     forces: ["practices", "stories"],
   },
   {
-    slug: "spin-the-bottle",
-    name: "Spin the Bottle",
+    slug: "spin-the-prompt",
+    name: "Spin the Prompt",
     cohort: "winter-2023",
-    tagline: "Building team culture with a twist",
+    tagline: "A bottle full of questions, and two minutes at the top of a meeting",
     intention:
       "Give a group a fast, repeatable way to surface something personal at the top of a meeting.",
     trigger: "The beginning of a class, meeting, or gathering",
@@ -44,30 +73,10 @@ export const rituals = [
       "Set a timer for two minutes; split groups larger than five.",
       "Team members write prompts and load them into the bottle.",
       "Spin it — whoever it lands on picks a prompt for the group.",
-      "Everyone answers in turn around the circle.",
+      "Everyone answers in turn around the circle. Passing is always an option, and nobody is asked why.",
       "Close with snaps and claps, then whoever pulled the prompt replaces it with a new one.",
     ],
     forces: ["practices", "norms"],
-  },
-  {
-    slug: "the-magic-pencil",
-    name: "The Magic Pencil",
-    cohort: "winter-2023",
-    tagline: "A ritual for giving hard feedback to a friend",
-    intention:
-      "Take the sting out of critical feedback between people who are close, by separating the work from the relationship.",
-    trigger: "When someone has feedback to deliver",
-    prop: "An everyday object that stands in for the workplace — a pencil",
-    flow: [
-      "The person with feedback picks up the magic object.",
-      "Holding it means the conversation is about the work, not the person.",
-      "Remotely, saying “pencil” does the same job.",
-      "They open with something the recipient did well, then give the critique.",
-      "Putting the object down ends the work frame and returns the friendship.",
-    ],
-    insight:
-      "The prop is doing the emotional work — it gives both people a shared, external signal for a shift that would otherwise be awkward to announce.",
-    forces: ["norms", "behaviors"],
   },
   {
     slug: "toss-the-gratitude",
@@ -75,7 +84,7 @@ export const rituals = [
     cohort: "winter-2023",
     tagline: "An appreciation ritual",
     intention:
-      "Head off conflict by building camaraderie, so appreciation is routine rather than something that only appears when it is needed.",
+      "Make appreciation routine — part of how the team works week to week, rather than something that only appears once someone needs reassuring.",
     trigger: "The beginning of each team meeting",
     prop: "An object passed hand to hand around the circle",
     flow: [

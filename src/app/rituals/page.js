@@ -27,6 +27,17 @@ export default function RitualsPage() {
               small, repeatable moments — and the students have to live inside
               whatever they design.
             </p>
+            <p className="mt-8">
+              <a
+                href="https://ritualsforwork.com/generator"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="spec text-cyan hover:text-paper"
+              >
+                Here to make one? Start with the Ritual Generator{" "}
+                <span aria-hidden="true">→</span>
+              </a>
+            </p>
           </div>
         </section>
 

@@ -4,6 +4,9 @@ import ForcePill from "./ForcePill";
  * A student ritual, shown in the mechanics the class teaches: a trigger
  * moment, an intention, a prop, then the flow. The three-cell header is the
  * point — it is the course's own method applied to the course's own output.
+ *
+ * `outcome` — what happened when the cohort actually ran it — is optional and
+ * rendered above the insight, because a finding outranks a claim.
  */
 export default function RitualCard({ ritual, index }) {
   const cells = [
@@ -45,6 +48,15 @@ export default function RitualCard({ ritual, index }) {
           </li>
         ))}
       </ol>
+
+      {ritual.outcome && (
+        <div className="mt-8 max-w-2xl border border-line bg-paper-warm p-5">
+          <p className="spec text-ink-soft">What happened when we ran it</p>
+          <p className="mt-2.5 text-sm leading-relaxed text-ink">
+            {ritual.outcome}
+          </p>
+        </div>
+      )}
 
       {ritual.insight && (
         <p className="mt-6 max-w-2xl border-l-2 border-cyan pl-5 text-sm leading-relaxed text-ink-soft">
