@@ -41,10 +41,11 @@ export default function Home() {
               </h1>
 
               <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">
-                Culture is not what an organization says it values — it is the
-                policies, rituals, and artifacts people actually live inside.
-                Student teams embed with partner organizations to diagnose that
-                gap and run live culture experiments against it.
+                Culture is the policies, rituals, and artifacts people
+                actually live inside, which is usually some distance from what
+                the organization says it values. Student teams embed with
+                partner organizations to find that gap and run live culture
+                experiments against it.
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">

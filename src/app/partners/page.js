@@ -22,7 +22,7 @@ const commitment = [
   {
     label: "What you get",
     detail:
-      "A culture diagnosis grounded in your own employees' words, journey maps, and tested prototypes — a ritual, a policy, an artifact — presented back to you at the end of the quarter.",
+      "A culture diagnosis grounded in your own employees' words, journey maps, and tested prototypes (a ritual, a policy, an artifact), presented back to you at the end of the quarter.",
   },
 ];
 

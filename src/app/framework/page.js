@@ -20,13 +20,13 @@ export default function FrameworkPage() {
             <div className="mt-12 grid gap-14 sm:grid-cols-[1fr_1.05fr] sm:items-center">
               <div>
                 <p className="text-lg leading-relaxed text-ink-soft">
-                  Not a fixed set of rules, but invisible and visible forces
-                  constantly interacting. What a group believes shapes what it
-                  does; what it does feeds back into what it believes. Healthy
-                  cultures run that loop as a virtuous cycle, unhealthy ones as
-                  a vicious one — and design works on both sides: facilitating
-                  values and norms on the invisible side, prototyping
-                  behaviors, practices, policies and stories on the visible.
+                  Invisible and visible forces, constantly interacting. What a
+                  group believes shapes what it does; what it does feeds back
+                  into what it believes. Healthy cultures run that loop as a
+                  virtuous cycle and unhealthy ones as a vicious one. Design
+                  works on both sides: it facilitates values and norms on the
+                  invisible side, and prototypes behaviors, practices, policies
+                  and stories on the visible one.
                 </p>
                 <dl className="mt-10 grid gap-8">
                   {layers.map((l) => (
@@ -77,7 +77,7 @@ export default function FrameworkPage() {
               <p className="mt-6 max-w-md text-base leading-relaxed text-ink-soft">
                 A value nobody enacts is a poster. A behavior nobody believes in
                 is compliance. Rituals are the repeatable moments that move a
-                belief into practice — and practice back into belief — which is
+                belief into practice, and practice back into belief. That is
                 why they are the class&apos;s primary design material.
               </p>
             </div>

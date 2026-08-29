@@ -25,7 +25,7 @@ export const cohorts = [
     schedule: "Tuesdays & Thursdays, 3:30–5:20pm, Stanford d.school",
     course: "DESIGN 276",
     summary:
-      "In an era of rapid technological disruption, culture design must work toward both technological adoption and human flourishing. Student teams partner with forward-looking organizations to diagnose systemic challenges, map human-AI workflows, and run live culture experiments.",
+      "Culture design now has to work toward both technological adoption and human flourishing. Student teams partner with an organization to map how its people and its AI tools actually share the work, and run live culture experiments against what they find.",
     modules: [
       {
         title: "Module 1: Fundamentals of Culture Design",
