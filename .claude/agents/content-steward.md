@@ -74,9 +74,10 @@ npm run dev &          # then:
 node scripts/screenshot.mjs   # renders every route, reports console errors
 ```
 
-`scripts/screenshot.mjs` hardcodes its route list, including
-`/cohorts/autumn-2026`. When a new cohort becomes current, add its route there
-too, or the check silently stops covering the page that matters most.
+`scripts/screenshot.mjs` derives its cohort routes from `cohorts.js`, so a
+cohort you add is covered on the next run with no edit to the script. It also
+means a malformed entry shows up as a failed route rather than as a page nobody
+looked at.
 
 ## What never goes in these files
 

@@ -1,7 +1,33 @@
 import { chromium } from "playwright";
 import path from "node:path";
 
-const routes = ["/", "/cohorts", "/cohorts/autumn-2026", "/rituals", "/partners", "/people", "/framework", "/resources"];
+/** Cohort pages are a dynamic route, so the list has to come from the data
+ *  rather than be typed out here. It used to name `/cohorts/autumn-2026`
+ *  literally, which meant that the moment a new cohort became current the
+ *  check kept screenshotting last year's page and stopped covering the one
+ *  the homepage points at. Reading cohorts.js keeps every year covered,
+ *  including whichever one is current, with no edit to this file.
+ *
+ *  The import is dynamic, and the default warning listener is swapped out
+ *  first, only so Node stays quiet about the content files being ESM inside a
+ *  package with no `"type": "module"`. That warning is cosmetic, and this
+ *  script's output is meant to read as "did anything break" — every other
+ *  warning still prints. */
+process.removeAllListeners("warning");
+process.on("warning", (w) => {
+  if (w.code !== "MODULE_TYPELESS_PACKAGE_JSON") console.warn(w.stack ?? w);
+});
+const { cohorts } = await import("../src/content/cohorts.js");
+const routes = [
+  "/",
+  "/cohorts",
+  ...cohorts.map((c) => `/cohorts/${c.slug}`),
+  "/rituals",
+  "/partners",
+  "/people",
+  "/framework",
+  "/resources",
+];
 const outDir = new URL("../.screenshots/", import.meta.url).pathname;
 
 const browser = await chromium.launch({
