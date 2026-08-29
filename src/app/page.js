@@ -84,8 +84,8 @@ export default function Home() {
                 Culture is a living system
               </h2>
               <p className="mt-6 max-w-md text-base leading-relaxed text-ink-soft">
-                Invisible forces — beliefs, values, norms — and visible ones —
-                behaviors, practices, artifacts — are constantly interacting. A
+                Invisible forces (beliefs, values, norms) and visible ones
+                (behaviors, practices, artifacts) are constantly interacting. A
                 healthy culture runs that loop as a virtuous cycle; an unhealthy
                 one runs the same loop the other way. Culture design works on
                 both sides of it.
@@ -122,8 +122,8 @@ export default function Home() {
 
         {/* ---- The vocabulary, on the ground it was drawn for ---- */}
         <section className="bg-night text-paper">
-          <div className="mx-auto max-w-6xl px-6 py-20">
-            <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="mx-auto max-w-6xl px-6 py-28">
+            <div className="flex flex-wrap items-end justify-between gap-8">
               <div>
                 <p className="spec text-invisible">The vocabulary</p>
                 <h2 className="display mt-4 text-[clamp(1.75rem,4vw,2.75rem)]">
@@ -136,7 +136,7 @@ export default function Home() {
               </p>
             </div>
 
-            <ul className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-4">
+            <ul className="mt-20 grid grid-cols-2 gap-x-10 gap-y-20 sm:grid-cols-4">
               {forces.map((f) => (
                 <li key={f.slug}>
                   <Image
@@ -145,9 +145,9 @@ export default function Home() {
                     width={600}
                     height={537}
                     aria-hidden="true"
-                    className="w-24 object-contain"
+                    className="w-28 object-contain sm:w-32"
                   />
-                  <p className="display mt-4 flex items-center gap-2 text-base">
+                  <p className="display mt-6 flex items-center gap-2.5 text-lg">
                     <span
                       aria-hidden="true"
                       className={`h-1.5 w-1.5 rounded-full ${
