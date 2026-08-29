@@ -73,13 +73,15 @@ export default function PeoplePage() {
     }))
     .filter((g) => g.members.length > 0);
 
-  // Everyone else, by the roles they have held. Anyone in this year's roster is
-  // shown above instead, so nobody appears twice.
+  // Everyone else, by the roles they have held — scoped to the role, not to the
+  // person. Someone still holding a role this year is covered by the band above;
+  // someone who instructed in past years and guest-lectures now appears in both,
+  // under the right chair each time.
   const past = roles
     .map((r) => ({
       ...r,
       members: peopleByRole(r.slug).filter(
-        (p) => !p.appearances.some((a) => a.cohort === current.slug),
+        (p) => !p.cohorts.includes(current.slug),
       ),
     }))
     .filter((g) => g.members.length > 0);
