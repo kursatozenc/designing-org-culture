@@ -17,7 +17,7 @@ const commitment = [
   {
     label: "What the class does",
     detail:
-      "A team of Stanford graduate students spends ten weeks on it — interviewing your people, mapping how the culture actually works, and prototyping interventions against it.",
+      "A multidisciplinary team of Stanford students, undergraduate and graduate, spends ten weeks on it: interviewing your people, mapping how the culture actually works, and prototyping interventions against it.",
   },
   {
     label: "What you get",
@@ -78,22 +78,15 @@ export default function PartnersPage() {
                 ))}
               </dl>
 
-              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+              {/* The address lives in the mailto only — it opens the visitor's
+                  mail client without printing the address on the page. */}
+              <div className="mt-10">
                 <a
                   href={mailto}
-                  className="spec border border-ink px-6 py-3.5 text-ink hover:bg-ink hover:text-paper"
+                  className="spec inline-block border border-ink px-6 py-3.5 text-ink hover:bg-ink hover:text-paper"
                 >
                   Bring us a challenge →
                 </a>
-                <span className="text-sm text-ink-soft">
-                  Or write to{" "}
-                  <a
-                    href={mailto}
-                    className="text-cyan-deep underline underline-offset-4"
-                  >
-                    {partnerContact.email}
-                  </a>
-                </span>
               </div>
             </div>
           </section>
