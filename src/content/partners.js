@@ -30,10 +30,15 @@ export const partners = [
       "How do you increase AI adoption across employees, and how do you set expectations for managers leading both AI and human teams?",
   },
   {
+    // `open: true` turns this from a placeholder row into the recruitment slot
+    // at the top of the partners page. Replace the whole entry with the real
+    // organization once it is confirmed, and drop the flag.
     slug: "health-domain-tbd",
-    name: "Health domain partner (TBD)",
+    name: "Health domain partner",
+    open: true,
     cohorts: ["autumn-2026"],
-    challenge: "Partner confirmation in progress for Autumn 2026.",
+    challenge:
+      "This year's class is looking for a health-domain partner. The slot is open.",
   },
   {
     slug: "doerr-school-sustainability",
@@ -96,6 +101,12 @@ export const partners = [
     challenge: "Workplace ritual design for a fast-scaling org.",
   },
 ];
+
+/** Where a prospective partner writes. Published on the partners page. */
+export const partnerContact = {
+  email: "kursat@dschool.stanford.edu",
+  subject: "Partnering with Designing Org Culture",
+};
 
 export function getPartnerBySlug(slug) {
   return partners.find((p) => p.slug === slug);
