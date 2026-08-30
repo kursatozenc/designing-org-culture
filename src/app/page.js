@@ -12,7 +12,8 @@ import { rituals } from "@/content/rituals";
 
 export default function Home() {
   const current = getCurrentCohort();
-  const recent = cohorts.slice(0, 4);
+  // Every year, not a slice of them — a site whose whole point is that the
+  // years accumulate should not hide four of them behind a link.
 
   return (
     <>
@@ -242,7 +243,7 @@ export default function Home() {
             </Link>
           </div>
           <div>
-            {recent.map((c) => (
+            {cohorts.map((c) => (
               <CohortRow key={c.slug} cohort={c} />
             ))}
           </div>
