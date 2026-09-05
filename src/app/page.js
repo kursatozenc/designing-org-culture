@@ -10,6 +10,12 @@ import { resources } from "@/content/resources";
 import { roles, peopleByRole } from "@/content/people";
 import { rituals } from "@/content/rituals";
 
+// The homepage line is evergreen: the course is about culture design, and
+// flourishing is the lens it is currently read through. A cohort can override
+// it with `heroHeadline` in the year that genuinely wants its own — but the
+// default lives here rather than pretending a permanent line is this year's.
+const HERO_HEADLINE = "Cultures where people flourish";
+
 export default function Home() {
   const current = getCurrentCohort();
   // Every year, not a slice of them — a site whose whole point is that the
@@ -38,13 +44,14 @@ export default function Home() {
               </p>
 
               {/* The header wordmark already carries the course name, so the
-                  headline spends this space on the argument instead. It comes
-                  from the current cohort, so next year's framing is a data
-                  edit in cohorts.js rather than a homepage rewrite. No hard
+                  headline spends this space on the claim instead. Sentence
+                  case rather than the uppercase used elsewhere: ascenders and
+                  descenders carry a long line where a caps block turns into a
+                  wall. Sized up to compensate for the lighter mass. No hard
                   breaks — `display` sets text-wrap: balance, which reflows
                   better across widths than fixed line endings. */}
-              <h1 className="display mt-8 max-w-4xl text-[clamp(2.5rem,7.4vw,5.25rem)] uppercase">
-                {current.heroHeadline ?? current.headline}
+              <h1 className="display mt-8 max-w-3xl text-[clamp(2.75rem,8vw,5.9rem)]">
+                {current.heroHeadline ?? HERO_HEADLINE}
               </h1>
 
               <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">
