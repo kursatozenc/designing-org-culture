@@ -59,10 +59,10 @@ export default function Home() {
                   explains the invisible/visible model with the diagram and the
                   legend to carry it. The hero should not preview it worse. */}
               <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">
-                Graduate student teams spend ten weeks inside a partner
-                organization, finding the gap between what it says it values
-                and how the work actually feels &mdash; then design and test
-                changes with the people who live there.
+                Student teams spend eight weeks inside a partner organization,
+                finding improvement opportunities &mdash; then designing and
+                testing human-centered culture interventions with the people
+                who work there.
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
