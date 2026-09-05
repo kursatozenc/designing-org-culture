@@ -37,18 +37,21 @@ export default function Home() {
                 <span className="text-cyan-deep">{current.term}</span>
               </p>
 
-              <h1 className="display mt-8 text-[clamp(2.75rem,8.5vw,6rem)] uppercase">
-                Designing
-                <br />
-                Org Culture
+              {/* The header wordmark already carries the course name, so the
+                  headline spends this space on the argument instead. No hard
+                  breaks — `display` sets text-wrap: balance, which reflows
+                  better across widths than fixed line endings. */}
+              <h1 className="display mt-8 max-w-4xl text-[clamp(2.5rem,7.4vw,5.25rem)] uppercase">
+                Culture is designable, like a product
               </h1>
 
               <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">
-                Culture is the policies, rituals, and artifacts people
-                actually live inside, which is usually some distance from what
-                the organization says it values. Student teams embed with
-                partner organizations to find that gap and run live culture
-                experiments against it.
+                A culture is a living system: invisible forces &mdash; values,
+                norms, beliefs &mdash; driving visible ones &mdash; behaviors,
+                practices, artifacts &mdash; in loops that either compound or
+                corrode. Student teams spend ten weeks inside a partner
+                organization finding those loops, then prototype with cultural
+                materials to shift them.
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
