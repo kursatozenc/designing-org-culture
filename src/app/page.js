@@ -66,7 +66,8 @@ export default function Home() {
                 Student teams spend eight weeks inside a partner organization,
                 finding gaps and improvement opportunities &mdash; then
                 designing and testing human-centered culture interventions with
-                the people who work there, not for them.
+                the people who work there, and leaving the team a playbook they
+                can keep using.
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
