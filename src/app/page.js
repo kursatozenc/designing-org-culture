@@ -38,11 +38,13 @@ export default function Home() {
               </p>
 
               {/* The header wordmark already carries the course name, so the
-                  headline spends this space on the argument instead. No hard
+                  headline spends this space on the argument instead. It comes
+                  from the current cohort, so next year's framing is a data
+                  edit in cohorts.js rather than a homepage rewrite. No hard
                   breaks — `display` sets text-wrap: balance, which reflows
                   better across widths than fixed line endings. */}
               <h1 className="display mt-8 max-w-4xl text-[clamp(2.5rem,7.4vw,5.25rem)] uppercase">
-                Culture is designable, like a product
+                {current.heroHeadline ?? current.headline}
               </h1>
 
               <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">

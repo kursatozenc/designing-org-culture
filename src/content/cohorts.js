@@ -20,6 +20,12 @@ export const cohorts = [
     termLabel: "Autumn",
     headline:
       "Culture design for technological adoption and human flourishing.",
+    // The homepage hero reads `heroHeadline` when a cohort sets one, so this
+    // year's framing can be stated as a claim rather than as the descriptive
+    // one-liner the cohort ledger wants. Optional: cohorts without it fall
+    // back to `headline`, and rotating the year still means editing data here
+    // rather than touching the homepage.
+    heroHeadline: "Human flourishing through culture design",
     current: true,
     dates: "Sept 22 – Dec 6, 2026",
     schedule: "Tuesdays & Thursdays, 3:30–5:20pm, Stanford d.school",
