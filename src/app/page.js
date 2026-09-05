@@ -10,11 +10,11 @@ import { resources } from "@/content/resources";
 import { roles, peopleByRole } from "@/content/people";
 import { rituals } from "@/content/rituals";
 
-// The homepage line is evergreen: the course is about culture design, and
-// flourishing is the lens it is currently read through. A cohort can override
-// it with `heroHeadline` in the year that genuinely wants its own — but the
-// default lives here rather than pretending a permanent line is this year's.
-const HERO_HEADLINE = "Cultures where people flourish";
+// "People" rather than "employees": the partner list includes a Stanford
+// school and a medical group, whose faculty, postdocs and clinicians the
+// narrower word would write out. A cohort can override this with
+// `heroHeadline` in a year that wants its own framing.
+const HERO_HEADLINE = "Human flourishing by design";
 
 export default function Home() {
   const current = getCurrentCohort();
@@ -54,13 +54,15 @@ export default function Home() {
                 {current.heroHeadline ?? HERO_HEADLINE}
               </h1>
 
+              {/* Says what the course does, not what culture is — the section
+                  directly below is titled "Culture is a living system" and
+                  explains the invisible/visible model with the diagram and the
+                  legend to carry it. The hero should not preview it worse. */}
               <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">
-                A culture is a living system: invisible forces &mdash; values,
-                norms, beliefs &mdash; driving visible ones &mdash; behaviors,
-                practices, artifacts &mdash; in loops that either compound or
-                corrode. Student teams spend ten weeks inside a partner
-                organization finding those loops, then prototype with cultural
-                materials to shift them.
+                Graduate student teams spend ten weeks inside a partner
+                organization, finding the gap between what it says it values
+                and how the work actually feels &mdash; then design and test
+                changes with the people who live there.
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
