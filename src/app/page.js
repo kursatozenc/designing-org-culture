@@ -33,7 +33,11 @@ export default function Home() {
             className="gridlines pointer-events-none absolute inset-0 opacity-60"
             aria-hidden="true"
           />
-          <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 min-[900px]:grid-cols-[1fr_220px] min-[900px]:items-start min-[900px]:gap-14">
+          {/* The mark's column is a share of the hero rather than a fixed
+              220px, so it scales with the headline instead of shrinking
+              against it as the width grows. minmax stops it collapsing at the
+              900px breakpoint where it first appears. */}
+          <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 min-[900px]:grid-cols-[1fr_minmax(210px,30%)] min-[900px]:items-start min-[900px]:gap-14">
             <div>
               <p className="spec text-ink-soft">
                 Stanford d.school
@@ -58,11 +62,11 @@ export default function Home() {
                   directly below is titled "Culture is a living system" and
                   explains the invisible/visible model with the diagram and the
                   legend to carry it. The hero should not preview it worse. */}
-              <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft">
+              <p className="mt-11 max-w-xl text-lg leading-relaxed text-ink-soft [text-wrap:pretty]">
                 Student teams spend eight weeks inside a partner organization,
-                finding improvement opportunities &mdash; then designing and
-                testing human-centered culture interventions with the people
-                who work there.
+                finding gaps and improvement opportunities &mdash; then
+                designing and testing human-centered culture interventions with
+                the people who work there, not for them.
               </p>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
@@ -85,7 +89,7 @@ export default function Home() {
               width={900}
               height={1120}
               priority
-              className="hidden w-[220px] justify-self-end self-start min-[900px]:mt-13 min-[900px]:block"
+              className="hidden w-full justify-self-end self-start min-[900px]:mt-13 min-[900px]:block"
             />
           </div>
         </section>
