@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { resources } from "@/content/resources";
@@ -34,19 +35,32 @@ export default function ResourcesPage() {
               <span className="spec text-ink-faint">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div>
-                <h2 className="display text-xl uppercase group-hover:text-cyan-deep">
-                  {r.title}
-                </h2>
-                {r.subtitle && (
-                  <p className="mt-2 max-w-xl text-base leading-relaxed text-ink-soft">
-                    {r.subtitle}
-                  </p>
+              <div className="flex gap-5">
+                {r.cover && (
+                  <Image
+                    src={r.cover}
+                    alt=""
+                    aria-hidden="true"
+                    width={120}
+                    height={160}
+                    style={{ width: "3.25rem", height: "auto" }}
+                    className="shrink-0 border border-line object-cover"
+                  />
                 )}
-                <p className="spec mt-3 text-ink-faint">
-                  {r.author}
-                  {r.year ? ` · ${r.year}` : ""}
-                </p>
+                <div>
+                  <h2 className="display text-xl uppercase group-hover:text-cyan-deep">
+                    {r.title}
+                  </h2>
+                  {r.subtitle && (
+                    <p className="mt-2 max-w-xl text-base leading-relaxed text-ink-soft">
+                      {r.subtitle}
+                    </p>
+                  )}
+                  <p className="spec mt-3 text-ink-faint">
+                    {r.author}
+                    {r.year ? ` · ${r.year}` : ""}
+                  </p>
+                </div>
               </div>
               <span
                 aria-hidden="true"

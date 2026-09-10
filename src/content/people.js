@@ -182,12 +182,13 @@ export const people = [
     slug: "kate-judson",
     photo: "/brand/people/kate-judson.jpg",
     name: "Kate Judson",
-    affiliation: "Adobe",
+    affiliation: "Senior Director, People, Places, and Culture, Adobe",
     topic: "Employee pathways",
     appearances: [
       { cohort: "winter-2023", role: "guest" },
       { cohort: "winter-2024", role: "guest" },
       { cohort: "winter-2025", role: "guest" },
+      { cohort: "autumn-2026", role: "guest" },
     ],
   },
   {
@@ -276,13 +277,6 @@ export const people = [
     name: "Bob Sutton",
     affiliation: "Stanford University",
     topic: "Creative rituals",
-    appearances: [{ cohort: "autumn-2026", role: "guest" }],
-  },
-  {
-    slug: "elen-kiss",
-    name: "Elen Kiss",
-    affiliation: "Nubank",
-    topic: "Employee pathways",
     appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
 ];
