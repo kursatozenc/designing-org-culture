@@ -16,9 +16,9 @@ export default function ResourcesPage() {
             Resources
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft">
-            Writing on culture and ritual design that holds across cohorts. A
-            given quarter&apos;s assigned readings stay on that cohort&apos;s
-            page, where they belong.
+            Writing on culture and ritual design that holds across cohorts,
+            from current and former teaching team members, their
+            collaborators, and guest speakers.
           </p>
         </div>
 
@@ -37,15 +37,19 @@ export default function ResourcesPage() {
               </span>
               <div className="flex gap-5">
                 {r.cover && (
-                  <Image
-                    src={r.cover}
-                    alt=""
-                    aria-hidden="true"
-                    width={120}
-                    height={160}
-                    style={{ width: "3.25rem", height: "auto" }}
-                    className="shrink-0 border border-line object-cover"
-                  />
+                  <div
+                    className="relative shrink-0 bg-white"
+                    style={{ width: "3.25rem", aspectRatio: "3 / 4" }}
+                  >
+                    <Image
+                      src={r.cover}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      sizes="52px"
+                      className="object-contain"
+                    />
+                  </div>
                 )}
                 <div>
                   <h2 className="display text-xl uppercase group-hover:text-cyan-deep">

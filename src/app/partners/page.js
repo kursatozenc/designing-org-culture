@@ -78,14 +78,23 @@ export default function PartnersPage() {
                 ))}
               </dl>
 
-              {/* The address lives in the mailto only — it opens the visitor's
-                  mail client without printing the address on the page. */}
-              <div className="mt-10">
+              {/* The intake form is the primary path in; the address lives in
+                  the mailto only — it opens the visitor's mail client
+                  without printing the address on the page. */}
+              <div className="mt-10 flex flex-wrap items-center gap-6">
                 <a
-                  href={mailto}
+                  href={partnerContact.intakeFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="spec inline-block border border-ink px-6 py-3.5 text-ink hover:bg-ink hover:text-paper"
                 >
                   Bring us a challenge →
+                </a>
+                <a
+                  href={mailto}
+                  className="spec text-ink-faint underline-offset-4 hover:text-ink hover:underline"
+                >
+                  Or email us
                 </a>
               </div>
             </div>

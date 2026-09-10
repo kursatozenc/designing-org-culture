@@ -107,9 +107,11 @@ export default function PeoplePage() {
             People
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft">
-            Everyone who has taught the class or come in to teach alongside it.
-            Like the partner list, this one accumulates — a name earns a year
-            and stays, and some names come back in a different chair.
+            Everyone who has taught the class, or come in to teach alongside
+            it — a community of practice. Every year we welcome guest
+            speakers and expert coaches who bring an outside-in perspective
+            to organizational culture design, and some return later in a
+            different chair.
           </p>
         </div>
 

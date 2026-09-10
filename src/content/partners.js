@@ -106,6 +106,7 @@ export const partners = [
 export const partnerContact = {
   email: "kursat@dschool.stanford.edu",
   subject: "Partnering with Designing Org Culture",
+  intakeFormUrl: "https://forms.gle/Vu8LgW9UCW3jyMaU6",
 };
 
 export function getPartnerBySlug(slug) {
