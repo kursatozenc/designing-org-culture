@@ -50,56 +50,67 @@ export default function PartnersPage() {
           </p>
         </div>
 
-        {/* ---- The open slot, where a prospective partner lands ---- */}
-        {open.length > 0 && (
-          <section className="border-y border-line bg-cyan-wash">
-            <div className="mx-auto max-w-6xl px-6 py-14">
-              <p className="spec text-cyan-deep">{current.term} · Open</p>
-              <h2 className="display mt-4 max-w-2xl text-[clamp(1.75rem,4vw,2.75rem)]">
-                This could be your organization
-              </h2>
-              {open.map((p) => (
+        {/* ---- Where a prospective partner lands. Always shown: this is the
+                page the homepage CTA points at, so it needs a way in whether or
+                not this year still has a slot. ---- */}
+        <section className="border-y border-line bg-cyan-wash">
+          <div className="mx-auto max-w-6xl px-6 py-14">
+            <p className="spec text-cyan-deep">
+              {open.length > 0 ? `${current.term} · Open` : "Partner with us"}
+            </p>
+            <h2 className="display mt-4 max-w-2xl text-[clamp(1.75rem,4vw,2.75rem)]">
+              This could be your organization
+            </h2>
+            {open.length > 0 ? (
+              open.map((p) => (
                 <p
                   key={p.slug}
                   className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft"
                 >
                   {p.challenge}
                 </p>
+              ))
+            ) : (
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft">
+                {current.term} is full, but the class runs every year and
+                partners are chosen a quarter ahead. If your organization has a
+                culture challenge worth ten weeks of a student team&apos;s
+                attention, tell us about it now.
+              </p>
+            )}
+
+            <dl className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-3">
+              {commitment.map((c) => (
+                <div key={c.label} className="bg-paper p-6">
+                  <dt className="spec text-ink-faint">{c.label}</dt>
+                  <dd className="mt-3 text-sm leading-relaxed text-ink">
+                    {c.detail}
+                  </dd>
+                </div>
               ))}
+            </dl>
 
-              <dl className="mt-12 grid gap-px border border-line bg-line sm:grid-cols-3">
-                {commitment.map((c) => (
-                  <div key={c.label} className="bg-paper p-6">
-                    <dt className="spec text-ink-faint">{c.label}</dt>
-                    <dd className="mt-3 text-sm leading-relaxed text-ink">
-                      {c.detail}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              {/* The intake form is the primary path in; the address lives in
+            {/* The intake form is the primary path in; the address lives in
                   the mailto only — it opens the visitor's mail client
                   without printing the address on the page. */}
-              <div className="mt-10 flex flex-wrap items-center gap-6">
-                <a
-                  href={partnerContact.intakeFormUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="spec inline-block border border-ink px-6 py-3.5 text-ink hover:bg-ink hover:text-paper"
-                >
-                  Bring us a challenge →
-                </a>
-                <a
-                  href={mailto}
-                  className="spec text-ink-faint underline-offset-4 hover:text-ink hover:underline"
-                >
-                  Or email us
-                </a>
-              </div>
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <a
+                href={partnerContact.intakeFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="spec inline-block border border-ink px-6 py-3.5 text-ink hover:bg-ink hover:text-paper"
+              >
+                Bring us a challenge →
+              </a>
+              <a
+                href={mailto}
+                className="spec text-ink-faint underline-offset-4 hover:text-ink hover:underline"
+              >
+                Or email us
+              </a>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         {/* ---- Everyone who has already done it ---- */}
         <div className="mx-auto max-w-6xl px-6 pt-14 pb-16">
@@ -107,7 +118,9 @@ export default function PartnersPage() {
             <h2 className="display text-[clamp(1.75rem,4vw,2.75rem)] uppercase">
               Who we&apos;ve worked with
             </h2>
-            <p className="spec text-ink-faint">{confirmed.length} organizations</p>
+            <p className="spec text-ink-faint">
+              {confirmed.length} organizations
+            </p>
           </div>
           {confirmed.map((p) => (
             <div
