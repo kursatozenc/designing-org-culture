@@ -29,7 +29,7 @@ export const cohorts = [
     schedule: "Tuesdays & Thursdays, 3:30–5:20pm, Stanford d.school",
     course: "DESIGN 276",
     summary:
-      "Culture design now has to work toward both technological adoption and human flourishing. Student teams partner with an organization to map how its people and its AI tools actually share the work, and run live culture experiments against what they find.",
+      "Culture design now has to work toward both technological adoption and human flourishing. Student teams partner with two health organizations on the same challenge \u2014 onboarding \u2014 mapping how new people learn what is expected of them, AI agents included, and running live culture experiments against what they find.",
     modules: [
       {
         title: "Module 1: Fundamentals of Culture Design",
@@ -44,7 +44,7 @@ export const cohorts = [
           "Discovery through employee interviews and journey mapping, synthesis into insights, reframing the design challenge, and prototyping culture interventions with a partner org.",
       },
     ],
-    partners: ["health-domain-tbd"],
+    partners: ["mdlive", "san-mateo-medical-center"],
     forces: ["values", "practices", "artifacts"],
   },
   {

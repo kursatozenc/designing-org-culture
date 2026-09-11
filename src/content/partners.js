@@ -6,7 +6,13 @@
 // should be backed by that cohort's own working files, not by a summary
 // written after the fact. Kursat has confirmed no partner NDAs were signed,
 // so the names themselves are safe to publish; partner-side contacts still
-// are not, and stay out of this file.
+// are not, and stay out of this file. A `challenge` is a public claim too:
+// frame it as the goal the partner is designing toward, not as a diagnosis
+// of what is currently wrong with them.
+//
+// `open: true` turns an entry into the recruitment slot at the top of the
+// partners page. No entry carries it right now — Autumn 2026 is full — so
+// that section is not rendering. Add one back to reopen recruitment.
 
 export const partners = [
   {
@@ -30,15 +36,18 @@ export const partners = [
       "How do you increase AI adoption across employees, and how do you set expectations for managers leading both AI and human teams?",
   },
   {
-    // `open: true` turns this from a placeholder row into the recruitment slot
-    // at the top of the partners page. Replace the whole entry with the real
-    // organization once it is confirmed, and drop the flag.
-    slug: "health-domain-tbd",
-    name: "Health domain partner",
-    open: true,
+    slug: "mdlive",
+    name: "MDLIVE",
     cohorts: ["autumn-2026"],
     challenge:
-      "This year's class is looking for a health-domain partner. The slot is open.",
+      "A virtual care company in the Evernorth (Cigna) group. How do you onboard contracted physicians into the platform \u2014 its AI agents and its quality standards \u2014 so that they do good work, want to stay, and hold to the standard?",
+  },
+  {
+    slug: "san-mateo-medical-center",
+    name: "San Mateo Medical Center",
+    cohorts: ["autumn-2026"],
+    challenge:
+      "San Mateo County Health's medical center. Onboarding \u2014 how new people arrive, learn what is expected of them, and decide to stay. The specific framing is being scoped with the class.",
   },
   {
     slug: "doerr-school-sustainability",
