@@ -157,7 +157,7 @@ to be in trouble at 5:15 Thursday, so you know where to stand.
 
 ## Thursday — Build it, then be silent while it's read
 
-### 4:30 · Constraints back up (5 min)
+### 4:30 · Constraints back up (3 min)
 
 Point at the wall. Read item 5 out loud — exactly one interactive element. Then:
 
@@ -167,10 +167,41 @@ Point at the wall. Read item 5 out loud — exactly one interactive element. The
 Naming the gallery at 4:30 changes what gets built for the next forty minutes.
 Do not skip this.
 
-### 4:35 · Build (40 min)
+### 4:33 · Live build (8 min)
 
-Teams build the full draft. You and the TA circulate, still with *"show me the
-sentence that says that."*
+Build a section on the room screen, out loud, with an assistant. Not a polished
+demo — the point is that they watch you work, including the part where it goes
+wrong.
+
+Three things have to happen in the eight minutes:
+
+1. You say the claim as a sentence before you type anything.
+2. You paste the contract into the prompt, not a vague ask.
+3. **You check one number against the CSV, find it wrong or unverifiable, and
+   fix it.** If the assistant happens to get everything right, check anyway and
+   say out loud what you were looking for. This single moment is why the block
+   exists.
+
+**Use a claim no team is working on** — the metrics one about orientation
+completion is safe. Demo a claim someone is building and six readouts come out
+shaped like yours.
+
+Do not let this run past ten minutes. It is a demonstration of a working method,
+not a tutorial.
+
+### 4:41 · Build (34 min)
+
+Teams build the full draft, **in named roles**. Say it explicitly as they start:
+
+> One of you directs — you own the argument and you drive the assistant. One of
+> you checks — every number against the file it came from, every quote against
+> its speaker ID, and you click the interaction to see whether it does what the
+> caption claims. Switch at five o'clock.
+
+Nobody volunteers to be the checker and everyone assumes someone else is doing
+it. Name it, or it does not happen.
+
+You and the TA circulate, still with *"show me the sentence that says that."*
 
 Second question to add today, for teams that look finished: *"Read me the
 headings, in order, and nothing else."* If it doesn't hold as an argument, they
@@ -238,6 +269,19 @@ hire-quarter cut next to the AI cut, say nothing for a moment, and let the room
 work out what it does to three of the readouts they just read. Do not do this
 earlier — handing it to them during the build costs the lesson entirely.
 
+**Then, if there is a minute left, the question that outlasts the workshop.**
+Two columns in the systems file are paging metadata and shift records. Cedar
+Ridge collected them to run schedules. Everyone in this room just used them to
+decide whether people feel like they belong, and nobody told the 131 people.
+
+Ask it and let it sit:
+
+> Would you show this readout to the people it describes?
+
+You are not looking for an answer. You are looking for the recognition that
+choosing what to measure is itself a culture intervention — which is force
+eight, and which they just performed on 131 people without discussing it first.
+
 ---
 
 ## The URL problem
@@ -259,7 +303,7 @@ needs a link. For the workshop gallery, it does not. Run the gallery.
 
 ---
 
-## The three moments you actually have to intervene
+## The four moments you actually have to intervene
 
 Everything else runs itself. These don't:
 
@@ -271,6 +315,9 @@ Everything else runs itself. These don't:
    cheaper than shipping a decorated void.
 3. **5:25 Thursday** — the author explaining their work in the gallery. Move
    them physically. One exception granted and the block is over.
+4. **Whenever a team says a number an assistant gave them** and cannot point at
+   the row it came from. Stop and make them find it. The first time you do this
+   the room learns that rule 8 is real; if you let one through, it isn't.
 
 ---
 
@@ -289,7 +336,8 @@ Cut to 110 minutes, in this order, and lose the build:
 | 6:10 | 10 | Close |
 
 You keep the argument, which is the transferable part, and you lose the gallery,
-which is the memorable part. Assign the full readout as homework and run the
+which is the memorable part — along with the live build and the second data
+source, since one session has no room for triangulation. Assign the full readout as homework and run the
 gallery as the first 30 minutes of the next session.
 
 Do not cut the spine block to make room for more building. That inverts the

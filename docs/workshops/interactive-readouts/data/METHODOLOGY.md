@@ -63,3 +63,64 @@ employees, two hospitals, two outpatient clinics, 24-hour operation.
    it, which is not a neutral condition for a question about your manager.
 5. **n is small once you cut.** Physicians are n=14, Night shift n=19. Cut
    twice and you are reporting on six people. Say the n on the chart.
+
+---
+
+# The second stream — `cedar-ridge-systems-data.csv`
+
+The survey asks people what happened. This file records what the systems
+logged. **Neither file is the study. The study is what you find by putting them
+next to each other.**
+
+This mirrors how the Work Trend Index is actually built — survey responses
+beside Microsoft 365 telemetry — and it maps onto the course's own taxonomy:
+the invisible forces are what people tell you, the visible ones are what the
+organization records.
+
+Joins to the survey on `respondent_id`. **131 of 148 rows match.** The 17
+unmatched are per-diem and agency staff who sit on a different scheduling
+system, weighted toward Support Services and Allied Health. That gap is real
+and you should say so — a readout that reports on 148 people using data that
+only exists for 131 is wrong by 11%.
+
+| Field | Source system | Meaning |
+| --- | --- | --- |
+| `shifts_with_experienced_peer_first10` | Scheduling | How many of their first ten shifts overlapped with an experienced person on the same unit |
+| `distinct_colleagues_contacted_30d` | Directory + paging | Number of different people they contacted in their first 30 days |
+| `orientation_modules_completed_pct` | LMS | Share of assigned orientation modules completed |
+| `days_to_first_solo_task` | Scheduling + EHR | Days until first task performed unsupervised |
+| `assist_queries_30d` | Ridge Assist | Queries in the first 30 days. 0 for anyone who onboarded without it |
+| `assist_share_policy_lookup_pct` | Ridge Assist | Share of those queries classified as policy or form lookup |
+| `assist_queries_escalated_to_human` | Ridge Assist | Times a query was handed off to a named person |
+
+## What is in here, if you look
+
+**The streams agree where they should.** People who said they had a week-one
+guide averaged 6.6 paired shifts; people who said they didn't averaged 1.5. The
+survey question and the scheduling system are measuring the same thing. That
+agreement is what makes the next part meaningful.
+
+**And then they invert.** Physicians report the *lowest* sense of knowing who to
+ask in the whole dataset, and have by far the *highest* number of distinct
+colleagues contacted — roughly double the average. Support Services are the
+mirror image: the smallest contact network and the highest confidence. Contact
+volume and felt access are close to uncorrelated across groups, and at the
+extremes they run backwards.
+
+Neither file contains that finding. Only the join does.
+
+**Three escalations.** Across 1,103 Ridge Assist queries from 51 people, the
+assistant handed a question to a named human three times. Whatever you want to
+argue about the assistant, that number is evidence rather than opinion.
+
+## A question you are expected to raise, not dodge
+
+Two of these columns are paging metadata and shift records. Cedar Ridge
+collected them for scheduling and billing, and is now using them to evaluate
+whether people feel like they belong.
+
+Is that legitimate? Would you tell the 131 people that this is what their badge
+data is being used for? Does a contact count stay meaningful once people know it
+is being counted?
+
+Your readout does not have to answer this. It does have to show that you noticed.

@@ -402,9 +402,10 @@ footer.end {
   <a href="#s1">01 · The finding</a>
   <a href="#s2">02 · What it costs</a>
   <a href="#s3">03 · Who it reaches</a>
-  <a href="#s4">04 · The transmission problem</a>
-  <a href="#s5">05 · The assistant</a>
-  <a href="#s6">06 · What we would change</a>
+  <a href="#s4">04 · What the logs say</a>
+  <a href="#s5">05 · The transmission problem</a>
+  <a href="#s6">06 · The assistant</a>
+  <a href="#s7">07 · What we would change</a>
   <a href="#method">Method &amp; limits</a>
 </nav>
 
@@ -559,10 +560,87 @@ footer.end {
   </div>
 </section>
 
-<!-- 04 -->
+<!-- 04 — triangulation -->
 <section class="chapter" id="s4">
   <div class="rail">
     <div class="num">04</div>
+    <div class="railnote">two sources<br>131 of 148<br>join on id</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">The people with the largest networks are the people least sure who to ask.</h2>
+    <p>Everything above this point is self-report. Alongside it we pulled what the systems already record — scheduling, the paging directory, the learning platform, and the Ridge Assist logs — for the 131 of our 148 respondents who sit on the same systems.</p>
+    <p>Start with where the two sources agree, because it is what makes the rest readable. People who told us they had a week-one guide averaged <strong>6.6 paired shifts</strong> in their first ten; people who told us they did not averaged <strong>1.5</strong>. The survey question and the scheduling system are measuring the same thing, and they concur.</p>
+    <p>Then look at what happens when we put felt access next to actual contact.</p>
+
+    <figure>
+      <figcaption>
+        <p class="fig-title">What people say, beside what the system logged</p>
+        <p class="fig-sub">Two measures, two scales, two charts. Same row order, sorted by contact volume. Reading across a row is the point.</p>
+      </figcaption>
+
+      <p class="mono" style="margin:0 0 10px">A · &ldquo;I knew who to ask&rdquo; — survey, 1–5</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-label">Physicians<small>n = 14</small></div><div class="bar-track"><div class="bar-fill" style="width:32.25%;background:var(--informal)"></div></div><div class="bar-val">2.29</div></div>
+        <div class="bar-row"><div class="bar-label">Nursing<small>n = 38</small></div><div class="bar-track"><div class="bar-fill" style="width:59.25%;background:var(--informal)"></div></div><div class="bar-val">3.37</div></div>
+        <div class="bar-row"><div class="bar-label">IT &amp; Data<small>n = 16</small></div><div class="bar-track"><div class="bar-fill" style="width:48.50%;background:var(--informal)"></div></div><div class="bar-val">2.94</div></div>
+        <div class="bar-row"><div class="bar-label">Admin &amp; Ops<small>n = 25</small></div><div class="bar-track"><div class="bar-fill" style="width:48.00%;background:var(--informal)"></div></div><div class="bar-val">2.92</div></div>
+        <div class="bar-row"><div class="bar-label">Allied Health<small>n = 20</small></div><div class="bar-track"><div class="bar-fill" style="width:48.75%;background:var(--informal)"></div></div><div class="bar-val">2.95</div></div>
+        <div class="bar-row"><div class="bar-label">Support Services<small>n = 18</small></div><div class="bar-track"><div class="bar-fill" style="width:61.00%;background:var(--informal)"></div></div><div class="bar-val">3.44</div></div>
+      </div>
+      <div class="axis axis-inset"><span>1</span><span>5</span></div>
+
+      <p class="mono" style="margin:26px 0 10px">B · Distinct colleagues contacted in 30 days — paging logs</p>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-label">Physicians<small>n = 14</small></div><div class="bar-track"><div class="bar-fill" style="width:89.17%;background:var(--formal)"></div></div><div class="bar-val">21.4</div></div>
+        <div class="bar-row"><div class="bar-label">Nursing<small>n = 38</small></div><div class="bar-track"><div class="bar-fill" style="width:56.25%;background:var(--formal)"></div></div><div class="bar-val">13.5</div></div>
+        <div class="bar-row"><div class="bar-label">IT &amp; Data<small>n = 16</small></div><div class="bar-track"><div class="bar-fill" style="width:42.92%;background:var(--formal)"></div></div><div class="bar-val">10.3</div></div>
+        <div class="bar-row"><div class="bar-label">Admin &amp; Ops<small>n = 25</small></div><div class="bar-track"><div class="bar-fill" style="width:35.42%;background:var(--formal)"></div></div><div class="bar-val">8.5</div></div>
+        <div class="bar-row"><div class="bar-label">Allied Health<small>n = 20</small></div><div class="bar-track"><div class="bar-fill" style="width:34.58%;background:var(--formal)"></div></div><div class="bar-val">8.3</div></div>
+        <div class="bar-row"><div class="bar-label">Support Services<small>n = 18</small></div><div class="bar-track"><div class="bar-fill" style="width:28.75%;background:var(--formal)"></div></div><div class="bar-val">6.9</div></div>
+      </div>
+      <div class="axis axis-inset"><span>0</span><span>24 people</span></div>
+
+      <p class="fig-note">Two scales are never put on one axis. Chart A runs 1–5 from the floor of the scale; chart B runs from 0. Row order is identical and set by B, so a row that is long in one and short in the other is the thing to look at. Physicians n = 14.</p>
+    </figure>
+
+    <p>Physicians contact roughly twice as many people as the average new hire and are the least likely of anyone here to say they knew who to ask. Support Services are the exact inverse — the smallest network in the organization and the highest confidence in it. Across the six groups the two measures are close to uncorrelated, and at the extremes they run backwards.</p>
+
+    <p>The reading we would defend: <strong>contact volume is not access.</strong> A physician is paged by thirty people in a month and has no one to bring a problem to. A housekeeping supervisor knows four people and one of them will tell her anything. What onboarding has to produce is not a wider network — it is one relationship that can carry a stupid question.</p>
+
+    <div class="statpair">
+      <div class="stat is-gap">
+        <span class="n">3</span>
+        <span class="unit">of 1,103 queries</span>
+        <p class="desc">Times Ridge Assist handed a question to a named human, across 51 people's first 30 days.</p>
+      </div>
+      <div class="stat">
+        <span class="n">95<span style="font-size:0.5em">%</span></span>
+        <span class="unit">orientation modules completed</span>
+        <p class="desc">The number leadership sees. It has been above 90 every quarter in this window.</p>
+      </div>
+      <div class="stat">
+        <span class="n">17</span>
+        <span class="unit">people with no systems record</span>
+        <p class="desc">Per-diem and agency staff on a separate scheduling system. Every figure in this section describes 131 people, not 148.</p>
+      </div>
+    </div>
+
+    <div class="caution">
+      <h4>Where this data came from, and whether we should be using it</h4>
+      <p>Two of these columns are paging metadata and shift records. Cedar Ridge collected them to run schedules and bill correctly, and we have used them here to assess whether people feel like they belong. We think the finding justifies it and we are not certain. At minimum, the 131 people in this section should be told that this is what their badge data was used for — and it is worth asking what a contact count will mean once people know someone is counting.</p>
+    </div>
+
+    <blockquote>
+      <p>Attendings are assumed to arrive fully formed. You get credentialing and a parking code. The social layer you are expected to already have, which is a strange assumption to make about someone who has never been in the building.</p>
+      <cite>P09 · Physicians · 14 months</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="chapter" id="s5">
+  <div class="rail">
+    <div class="num">05</div>
     <div class="railnote">single-select<br>n = 148</div>
   </div>
   <div class="body-col">
@@ -595,10 +673,10 @@ footer.end {
   </div>
 </section>
 
-<!-- 05 -->
-<section class="chapter" id="s5">
+<!-- 06 -->
+<section class="chapter" id="s6">
   <div class="rail">
-    <div class="num">05</div>
+    <div class="num">06</div>
     <div class="railnote">57 with<br>91 without<br>confounded</div>
   </div>
   <div class="body-col">
@@ -667,10 +745,10 @@ footer.end {
   </div>
 </section>
 
-<!-- 06 -->
-<section class="chapter" id="s6">
+<!-- 07 -->
+<section class="chapter" id="s7">
   <div class="rail">
-    <div class="num">06</div>
+    <div class="num">07</div>
     <div class="railnote">four moves<br>tagged by<br>culture force</div>
   </div>
   <div class="body-col">
@@ -698,7 +776,7 @@ footer.end {
         <span class="idx">03</span>
         <div>
           <h4>Have Ridge Assist hand people to people</h4>
-          <p>The assistant is good and should stay. It should also stop being a terminal endpoint. Every answer it gives about how something works can name the person on this unit who knows, and the fifth question from any new hire can route to a human rather than a paragraph.</p>
+          <p>The assistant is good and should stay. It is also, on the logs, a terminal endpoint &mdash; three handoffs to a named person across 1,103 queries. Every answer it gives about how something works can name the person on this unit who knows, and the fifth question from any new hire can route to a human rather than a paragraph.</p>
           <span class="force">Artifacts</span><span class="force">Practices</span>
         </div>
       </li>
@@ -727,7 +805,7 @@ footer.end {
   </div>
   <div class="body-col">
     <h2 class="claim">Method and limits</h2>
-    <p>A survey of 148 employees hired in the previous 18 months, fielded March 2026 against a sampling frame of 239 for a 62% response rate. Five-point agreement scales unless noted; <span class="mono" style="font-size:11px">weeks to productive</span> is self-reported. Eighteen semi-structured interviews with recent hires and four with managers who onboard, 45–60 minutes, February–March 2026. Fielded by the People Experience team.</p>
+    <p>A survey of 148 employees hired in the previous 18 months, fielded March 2026 against a sampling frame of 239 for a 62% response rate. Five-point agreement scales unless noted; <span class="mono" style="font-size:11px">weeks to productive</span> is self-reported. Eighteen semi-structured interviews with recent hires and four with managers who onboard, 45–60 minutes, February–March 2026. Fielded by the People Experience team. Alongside the survey we joined scheduling, paging-directory, learning-platform and Ridge Assist records for the 131 respondents who sit on those systems; 17 per-diem and agency staff have no systems record and are excluded from section 04.</p>
 
     <details class="method">
       <summary>Five reasons to hold these findings loosely</summary>
@@ -735,8 +813,9 @@ footer.end {
         <ol>
           <li><b>Self-report throughout.</b> Weeks-to-productive is a memory, not a measurement, and people who are happy now remember ramping faster than they did.</li>
           <li><b>Survivor bias.</b> Everyone in this sample still works here. The people whose onboarding failed worst are, by construction, missing from it.</li>
-          <li><b>The assistant is confounded with recency.</b> See the caution in section 05. Nothing here supports a causal claim about Ridge Assist.</li>
+          <li><b>The assistant is confounded with recency.</b> See the caution in section 06. Nothing here supports a causal claim about Ridge Assist.</li>
           <li><b>Fielded internally.</b> Respondents knew the People Experience team would read their answers, which is not a neutral condition for a question about your manager.</li>
+          <li><b>Two sources, one of which we did not collect for this purpose.</b> The systems data was gathered to run schedules and bill correctly. Using it to assess belonging is a decision, not a neutral act, and the people it describes have not been told.</li>
           <li><b>Small cells.</b> Physicians n = 14, Night n = 19, Remote n = 17. Cut twice and you are describing six people.</li>
         </ol>
         <p>The survey instrument and the anonymized response file are available on request from People Experience.</p>

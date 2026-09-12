@@ -88,13 +88,23 @@ So the sequence is:
 | **This workshop** | `data/` — Cedar Ridge Health, 148 responses + 22 interviews | Learn the form on shared evidence. |
 | Weeks 7–10 | Their partner's actual discovery data | The real deliverable. |
 
-### The dataset
+### The dataset — three sources, not one
 
-`data/cedar-ridge-onboarding-survey.csv` — 148 rows, one per recent hire at a
-fictional regional health system, with role, shift, work mode, hire quarter, and
-eleven measures about their first month. Alongside it,
-`data/cedar-ridge-interviews.md` (22 coded excerpts) and
-`data/METHODOLOGY.md`.
+The specimens are not built on a dataset. They are built on **triangulation**:
+the Work Trend Index puts survey responses beside Microsoft 365 telemetry, and
+the authority comes from the two disagreeing in interesting places. That maps
+directly onto this course's own taxonomy — the invisible forces are what people
+tell you, the visible ones are what the organization records.
+
+So students get three sources and the study is what sits between them:
+
+| File | What it is |
+| --- | --- |
+| `data/cedar-ridge-onboarding-survey.csv` | 148 recent hires at a fictional regional health system. Role, shift, work mode, hire quarter, eleven self-report measures. |
+| `data/cedar-ridge-systems-data.csv` | What the systems logged for 131 of them: scheduling, paging directory, the learning platform, Ridge Assist. Joins on `respondent_id`. |
+| `data/cedar-ridge-interviews.md` | 22 coded interview excerpts, tagged by role and tenure. |
+
+`data/METHODOLOGY.md` describes all three and is where the limits live.
 
 It is deliberately built so that:
 
@@ -108,6 +118,19 @@ It is deliberately built so that:
   headline. This is the single most useful trap in the set.
 - **Cutting twice gets you to n = 6.** Physicians are n = 14, Night is n = 19.
   The dataset punishes a team that slices until the bar chart looks dramatic.
+- **The two sources agree, and then invert.** On the week-one guide they concur
+  exactly — 6.6 paired shifts for people who said yes, 1.5 for people who said
+  no. Then: physicians report the *lowest* sense of knowing who to ask and have
+  by far the *highest* number of colleagues contacted, roughly double the
+  average. Support Services are the mirror image. Contact volume and felt access
+  run backwards at the extremes. **That finding exists in neither file alone.**
+  A team that finds it has done something a single dataset cannot teach.
+- **It raises a measurement-ethics question on its own.** Two columns are paging
+  metadata and shift records, collected to run schedules and now being used to
+  assess whether people feel like they belong. Nobody told the 131 people. A
+  readout does not have to resolve this. It has to show it noticed.
+- **The join is incomplete.** 131 of 148. The 17 missing are per-diem and agency
+  staff. A team that reports on 148 using systems data is wrong by 11%.
 
 It is synthetic and says so on its face, in the methodology note and in the
 specimen readout. Say this out loud in class too — students should not leave
@@ -154,16 +177,19 @@ about what matters, which is the whole lesson of section 04 of the specimen.
 2. Fill in the teardown sheet for **one** of them (below). Bring it on paper.
 3. Nothing else. Do not start building.
 
-**Teardown sheet — six questions**
+**Teardown sheet — seven questions**
 
 1. What is this piece claiming? Write it in one sentence, in your own words.
 2. Where in the piece is that sentence actually written down? Quote it. If you
    cannot find it, say so — that is a finding.
 3. Count the interactive elements. For each one, write the question a reader
    can answer with it that they could not answer from a static image.
-4. Pick any chart. What does it tell you about its own sample and limits?
-5. Where did you stop reading, honestly? What was on screen?
-6. What would be lost if this were a deck? What would be gained?
+4. How many *kinds* of evidence is this piece using — survey, telemetry, case
+   study, outside research? Find a place where two of them are put side by side.
+   Do they agree?
+5. Pick any chart. What does it tell you about its own sample and limits?
+6. Where did you stop reading, honestly? What was on screen?
+7. What would be lost if this were a deck? What would be gained?
 
 ---
 
@@ -194,8 +220,9 @@ a team says they think better on a screen.
 
 | Time | Min | Block | What is happening |
 | --- | --- | --- | --- |
-| 4:30 | 5 | **Constraints back up** | The readout contract goes on the board. Point at the one-interaction rule specifically. |
-| 4:35 | 40 | **Build** | Full draft. Teaching team circulates with one question only: "show me the sentence that says that." |
+| 4:30 | 3 | **Constraints back up** | The readout contract goes on the board. Point at the one-interaction rule and at rule 8. |
+| 4:33 | 8 | **Live build** | You build a claim into a working section on the room screen, with an assistant, out loud — including checking one number against the CSV and making one revision when it comes back wrong. Use a claim no team is working on. |
+| 4:41 | 34 | **Build** | Full draft, in named roles (below). Teaching team circulates with one question only: "show me the sentence that says that." |
 | 5:15 | 5 | **Ship it** | Every team gets their page onto a URL. Nothing is critiqued as a local file — the artifact is a link or it is not done. |
 | 5:20 | 30 | **The silent gallery** | Readouts open on screens around the room. Nobody stands at their own. Each person reads four other readouts, six minutes each, in silence, and leaves a card at each. **No author may explain anything.** This is not a rule for the exercise, it is a simulation of the actual delivery condition. |
 | 5:50 | 20 | **Read your cards** | Teams return to their own screen and read their stack. Then each team says out loud: what readers thought we claimed, versus what we meant. The gap is the critique; the teaching team does not need to add much. |
@@ -236,6 +263,16 @@ Seven constraints. They go on the board and they are graded against.
    cells.
 7. **It works on a phone and it works in the dark.** Someone will open it on a
    phone in a hospital corridor. The starter handles both; do not break them.
+8. **Every quote and number traces to a source.** Quotes carry their speaker ID
+   (`P09`, `M02`), figures name their file and their n. Nothing invented, no
+   quotation tidied into something the person did not say. If an assistant
+   produced a number you cannot find in the CSV, it is not a number.
+9. **Evidence, interpretation, and proposal are visibly different things.** What
+   the data says, what you think it means, and what you want them to do must not
+   blur into one another. In the specimen the interpretation is the claim
+   heading, the evidence is the figure, and the proposals are quarantined in
+   section 07. A partner has to be able to disagree with your reading while
+   still accepting your evidence.
 
 **The diagnostic, for when a team asks if theirs is good:** screenshot each
 section and paste the screenshots into a slide deck. If nothing is lost, they
@@ -302,7 +339,20 @@ workshop and grading the first attempt suppresses the risk-taking the second
 attempt needs.
 
 **Downstream:** the reframe deliverable and the final partner share-back are
-both readouts. That is where the rubric applies.
+both readouts — and the submission is not only the page. Each team takes one
+finding from their own partner research through this method, **uses the readout
+in an actual partner conversation**, and submits:
+
+- the published readout,
+- what the partner **recognized** — the part that landed as obviously true,
+- what the partner **challenged**, and whether they were right,
+- what new question or experiment came out of the conversation.
+
+The readout is the instrument. What it produced in the room is the finding.
+A beautiful page that changed nothing is a weaker submission than a rough one
+that got a partner to say "that is not what is happening, it is this."
+
+That is where the rubric applies.
 
 | Dimension | What a strong one looks like |
 | --- | --- |
@@ -310,6 +360,7 @@ both readouts. That is where the rubric applies.
 | **Evidence** | Every claim is attached to a number or a quote that actually supports it, not adjacent to it. |
 | **Honesty** | The limits are specific and appear where they matter, not only at the bottom. A team that surfaces a confound that weakens their own headline scores above one that does not. |
 | **Chart craft** | Scales are honest, baselines are stated, n is visible, nothing is cut twice into six people. |
+| **Triangulation** | Two sources are actually put side by side, and the team says something about where they agree and where they do not. |
 | **Restraint** | The interaction earns its place. Decoration is absent. |
 | **Does it survive being read alone** | The cold-read test. Readers can state the claim without the author. |
 
