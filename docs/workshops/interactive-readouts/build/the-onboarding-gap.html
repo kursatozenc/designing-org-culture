@@ -1,0 +1,799 @@
+<title>The Onboarding Gap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --paper:        #fbfbfa;
+  --paper-raised: #ffffff;
+  --paper-sunk:   #f2f4f4;
+  --ink:          #0b0f10;
+  --ink-soft:     #4a5456;
+  --ink-faint:    #6c7679;
+  --line:         #dde3e4;
+  --line-strong:  #b9c2c4;
+  --informal:     #0d8fa3;
+  --formal:       #8a9a12;
+  --gap:          #c2561b;
+  --informal-wash:#e9f6f8;
+  --gap-wash:     #fbefe7;
+  --track:        #e7ebec;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper:        #101415;
+    --paper-raised: #171c1e;
+    --paper-sunk:   #1b2224;
+    --ink:          #f0f3f3;
+    --ink-soft:     #a6b1b3;
+    --ink-faint:    #8a9698;
+    --line:         #262f31;
+    --line-strong:  #3a4547;
+    --informal:     #20a3ba;
+    --formal:       #869a1c;
+    --gap:          #d16c2c;
+    --informal-wash:#0f2b30;
+    --gap-wash:     #2b1a10;
+    --track:        #222a2c;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper:        #101415;
+  --paper-raised: #171c1e;
+  --paper-sunk:   #1b2224;
+  --ink:          #f0f3f3;
+  --ink-soft:     #a6b1b3;
+  --ink-faint:    #8a9698;
+  --line:         #262f31;
+  --line-strong:  #3a4547;
+  --informal:     #20a3ba;
+  --formal:       #869a1c;
+  --gap:          #d16c2c;
+  --informal-wash:#0f2b30;
+  --gap-wash:     #2b1a10;
+  --track:        #222a2c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.62;
+  padding-inline: 20px;
+  padding-block: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; }
+
+/* ---------- mono utility ---------- */
+.mono {
+  font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+/* ---------- masthead ---------- */
+header.masthead {
+  border-bottom: 1px solid var(--line-strong);
+  padding-block: 40px 28px;
+  margin-bottom: 44px;
+}
+.kicker {
+  display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline;
+  margin-bottom: 26px;
+}
+h1 {
+  font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 8.5vw, 5.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0 0 22px;
+  text-wrap: balance;
+  max-width: 15ch;
+}
+.standfirst {
+  font-size: clamp(1.125rem, 2.4vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0 0 30px;
+}
+.standfirst strong { color: var(--ink); font-weight: 600; }
+
+.studymeta {
+  display: flex; flex-wrap: wrap; gap: 0;
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+}
+.studymeta div {
+  flex: 1 1 150px;
+  padding: 14px 18px;
+  border-right: 1px solid var(--line);
+}
+.studymeta div:last-child { border-right: 0; }
+.studymeta dt { margin: 0 0 4px; }
+.studymeta dd {
+  margin: 0;
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-weight: 600; font-size: 15px; line-height: 1.3;
+}
+
+.synthetic {
+  margin-top: 18px;
+  border-left: 3px solid var(--gap);
+  background: var(--gap-wash);
+  padding: 12px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.synthetic b { color: var(--ink); font-weight: 600; }
+
+/* ---------- jump nav ---------- */
+nav.jump {
+  display: flex; flex-wrap: wrap; gap: 6px 8px;
+  margin-bottom: 56px;
+}
+nav.jump a {
+  font-family: "DM Mono", monospace;
+  font-size: 12px; letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 6px 11px;
+  background: var(--paper-raised);
+}
+nav.jump a:hover { border-color: var(--informal); color: var(--informal); }
+nav.jump a:focus-visible { outline: 2px solid var(--informal); outline-offset: 2px; }
+
+/* ---------- section w/ margin rail ---------- */
+section.chapter {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 0 32px;
+  padding-block: 0 68px;
+}
+.rail { border-top: 2px solid var(--ink); padding-top: 10px; }
+.rail .num {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-weight: 700; font-size: 13px; letter-spacing: 0.1em;
+  color: var(--ink);
+}
+.rail .railnote {
+  font-family: "DM Mono", monospace;
+  font-size: 11px; line-height: 1.45; color: var(--ink-faint);
+  margin-top: 8px;
+}
+.body-col { border-top: 2px solid var(--ink); padding-top: 10px; min-width: 0; }
+
+.claim {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0 0 22px;
+  max-width: 26ch;
+}
+.body-col p { max-width: 64ch; margin: 0 0 18px; }
+.body-col p:last-child { margin-bottom: 0; }
+
+/* ---------- figures ---------- */
+figure {
+  margin: 30px 0 26px;
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+  padding: 22px 22px 18px;
+}
+figcaption { margin-bottom: 18px; }
+.fig-title {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-weight: 700; font-size: 16px; line-height: 1.3;
+  color: var(--ink); margin: 0 0 5px;
+  letter-spacing: -0.005em;
+}
+.fig-sub { font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0; max-width: 62ch; }
+.fig-note {
+  margin-top: 16px; padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-family: "DM Mono", monospace;
+  font-size: 11px; line-height: 1.5; color: var(--ink-faint);
+}
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 16px; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-soft); font-family: Archivo, Helvetica, Arial, sans-serif; }
+.swatch { width: 12px; height: 12px; border-radius: 2px; flex: none; }
+
+/* bar rows */
+.bars { display: grid; gap: 9px; }
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(96px, 172px) minmax(0, 1fr) 46px;
+  align-items: center;
+  gap: 12px;
+}
+.bar-label {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-size: 13.5px; line-height: 1.25; color: var(--ink);
+  text-wrap: pretty;
+}
+.bar-label small { display: block; font-family: "DM Mono", monospace; font-size: 10.5px; color: var(--ink-faint); letter-spacing: 0.03em; }
+.bar-track { background: var(--track); height: 22px; position: relative; }
+.bar-fill { height: 100%; border-radius: 0 4px 4px 0; }
+.bar-val {
+  font-family: "DM Mono", monospace; font-size: 13px; font-weight: 500;
+  font-variant-numeric: tabular-nums; text-align: right; color: var(--ink);
+}
+.axis {
+  display: flex; justify-content: space-between;
+  font-family: "DM Mono", monospace; font-size: 10.5px; color: var(--ink-faint);
+  margin-top: 8px; letter-spacing: 0.04em;
+}
+.axis-inset { margin-left: calc(min(172px, 30%) + 12px); margin-right: 58px; }
+
+/* grouped (AI) rows */
+.grp { display: grid; gap: 16px; }
+.grp-item { display: grid; grid-template-columns: minmax(110px, 190px) minmax(0,1fr); gap: 12px; align-items: center; }
+.grp-pair { display: grid; gap: 3px; }
+.grp-line { display: grid; grid-template-columns: minmax(0,1fr) 46px; gap: 10px; align-items: center; }
+
+/* stat pair */
+.statpair {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0; border: 1px solid var(--line); margin: 30px 0 26px;
+  background: var(--paper-raised);
+}
+.stat { padding: 22px 22px 20px; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; }
+.stat .n {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-weight: 800; font-size: clamp(2.4rem, 6vw, 3.4rem); line-height: 0.95;
+  letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+  display: block; margin-bottom: 2px;
+}
+.stat .unit { font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-soft); display:block; margin-bottom: 10px; }
+.stat .desc { font-size: 14.5px; line-height: 1.45; color: var(--ink-soft); margin: 0; }
+.stat.is-gap .n { color: var(--gap); }
+.stat.is-good .n { color: var(--informal); }
+
+/* interactive cut chart */
+.controls { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.controls button {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-size: 13px; font-weight: 600;
+  padding: 7px 13px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.controls button:hover { border-color: var(--informal); color: var(--informal); }
+.controls button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.controls button:focus-visible { outline: 2px solid var(--informal); outline-offset: 2px; }
+
+.cut-track { background: var(--track); height: 24px; position: relative; }
+.cut-fill { height: 100%; background: var(--informal); border-radius: 0 4px 4px 0; position: relative; z-index: 1; transition: width .35s cubic-bezier(.22,.61,.36,1); }
+.cut-fill.below { background: var(--gap); }
+.ref {
+  position: absolute; top: -6px; bottom: -6px; width: 0;
+  border-left: 2px dashed var(--ink);
+  opacity: 0.5;
+  z-index: 3;
+}
+.cut-row { position: relative; }
+.cut-row:hover .bar-label { color: var(--informal); }
+.reflabel {
+  font-family: "DM Mono", monospace; font-size: 10.5px; color: var(--ink-faint);
+  margin-top: 14px; letter-spacing: 0.03em;
+}
+
+/* quotes */
+blockquote {
+  margin: 26px 0;
+  padding-left: 20px;
+  border-left: 3px solid var(--informal);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+blockquote p { margin: 0 0 10px; max-width: 58ch; }
+blockquote cite {
+  font-family: "DM Mono", monospace; font-size: 11px; font-style: normal;
+  letter-spacing: 0.05em; color: var(--ink-faint); text-transform: uppercase;
+}
+
+.caution {
+  border: 1px solid var(--gap);
+  background: var(--gap-wash);
+  padding: 18px 20px;
+  margin: 26px 0;
+}
+.caution h4 {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  font-size: 14px; margin: 0 0 8px; color: var(--gap);
+  letter-spacing: 0.02em; text-transform: uppercase;
+}
+.caution p { font-size: 15.5px; line-height: 1.5; margin: 0; color: var(--ink-soft); max-width: 62ch; }
+
+/* implications */
+ol.moves { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+ol.moves li { padding: 20px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 18px; }
+ol.moves .idx { font-family: "DM Mono", monospace; font-size: 12px; color: var(--ink-faint); padding-top: 4px; }
+ol.moves h4 { font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 17px; margin: 0 0 6px; letter-spacing: -0.01em; }
+ol.moves p { font-size: 15.5px; margin: 0; color: var(--ink-soft); max-width: 60ch; }
+.force {
+  display: inline-block; font-family: "DM Mono", monospace; font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 7px; margin: 8px 5px 0 0; border: 1px solid var(--line-strong); color: var(--ink-faint);
+}
+
+/* method */
+details.method { border: 1px solid var(--line); background: var(--paper-raised); padding: 0; margin-top: 8px; }
+details.method summary {
+  cursor: pointer; padding: 16px 20px;
+  font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 15px;
+}
+details.method summary:focus-visible { outline: 2px solid var(--informal); outline-offset: -2px; }
+details.method .inner { padding: 0 20px 20px; }
+details.method p, details.method li { font-size: 15px; line-height: 1.55; color: var(--ink-soft); max-width: 64ch; }
+details.method ol { padding-left: 20px; }
+details.method li { margin-bottom: 10px; }
+
+footer.end {
+  border-top: 2px solid var(--ink);
+  margin-top: 20px; padding-block: 28px 60px;
+}
+.classnote {
+  background: var(--paper-sunk); border: 1px solid var(--line);
+  padding: 22px; margin-top: 30px;
+}
+.classnote h3 { font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 16px; margin: 0 0 10px; }
+.classnote p { font-size: 15px; color: var(--ink-soft); margin: 0 0 12px; max-width: 66ch; }
+.classnote p:last-child { margin-bottom: 0; }
+
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  section.chapter { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .rail { border-top: 2px solid var(--ink); padding-bottom: 14px; display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+  .rail .railnote { margin-top: 0; }
+  .body-col { border-top: 0; padding-top: 0; }
+  .bar-row { grid-template-columns: minmax(84px, 130px) minmax(0,1fr) 42px; gap: 9px; }
+  .grp-item { grid-template-columns: minmax(0,1fr); gap: 6px; }
+  .axis-inset { margin-left: 0; margin-right: 0; }
+  figure { padding: 16px 14px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="kicker">
+    <span class="mono">Cedar Ridge Health · People Experience</span>
+    <span class="mono">Onboarding study · March 2026</span>
+  </div>
+  <h1>The Onboarding Gap</h1>
+  <p class="standfirst">Our orientation program is working. New hires rate it <strong>4.2 out of 5</strong>. They also tell us that the thing they most needed to learn — how this place actually works — they mostly learned by <strong>getting it wrong in front of someone</strong>. Those two facts are not in tension. They are a description of what onboarding currently is.</p>
+
+  <dl class="studymeta">
+    <div><dt class="mono">Survey</dt><dd>148 hires<br>62% response</dd></div>
+    <div><dt class="mono">Interviews</dt><dd>18 new hires<br>4 managers</dd></div>
+    <div><dt class="mono">Window</dt><dd>Hired 2025 Q1<br>– 2026 Q1</dd></div>
+    <div><dt class="mono">Fielded</dt><dd>Feb – Mar 2026<br>internal team</dd></div>
+  </dl>
+
+  <p class="synthetic"><b>This is a teaching specimen.</b> Cedar Ridge Health is not a real organization and the data below is synthetic, built for Stanford d.school <span class="mono" style="font-size:11px">DESIGN 276</span> so students can practise building a research readout on shared evidence. The findings are real properties of the dataset. The organization is not.</p>
+</header>
+
+<nav class="jump" aria-label="Jump to section">
+  <a href="#s1">01 · The finding</a>
+  <a href="#s2">02 · What it costs</a>
+  <a href="#s3">03 · Who it reaches</a>
+  <a href="#s4">04 · The transmission problem</a>
+  <a href="#s5">05 · The assistant</a>
+  <a href="#s6">06 · What we would change</a>
+  <a href="#method">Method &amp; limits</a>
+</nav>
+
+<!-- 01 -->
+<section class="chapter" id="s1">
+  <div class="rail">
+    <div class="num">01</div>
+    <div class="railnote">n = 148<br>7 measures<br>1–5 scale</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">The written layer of this organization transmits cleanly. The unwritten layer does not transmit at all.</h2>
+    <p>We asked new hires seven questions about their first month. They split into two groups so cleanly that we have stopped treating them as one survey.</p>
+    <p>Everything a new hire can be <em>told</em> — the policy, the escalation path, where the equipment is — scores around four. Everything a new hire has to be <em>inducted into</em> — who to ask, what the real rules are, whether you belong here — scores around three. The program is not failing. It is succeeding at a narrower task than we thought we had assigned it.</p>
+
+    <figure>
+      <figcaption>
+        <p class="fig-title">Two layers, two different results</p>
+        <p class="fig-sub">Mean agreement, all 148 respondents. The gap between the groups is roughly one full point on a five-point scale.</p>
+      </figcaption>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--formal)"></i> Written — can be documented</span>
+        <span><i class="swatch" style="background:var(--informal)"></i> Unwritten — has to be transmitted</span>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-label">Orientation was well run</div><div class="bar-track"><div class="bar-fill" style="width:79.25%;background:var(--formal)"></div></div><div class="bar-val">4.17</div></div>
+        <div class="bar-row"><div class="bar-label">I knew the formal rules</div><div class="bar-track"><div class="bar-fill" style="width:77.25%;background:var(--formal)"></div></div><div class="bar-val">4.09</div></div>
+        <div class="bar-row"><div class="bar-label">Tools ready on day one</div><div class="bar-track"><div class="bar-fill" style="width:74.25%;background:var(--formal)"></div></div><div class="bar-val">3.97</div></div>
+        <div class="bar-row"><div class="bar-label">I would recommend working here</div><div class="bar-track"><div class="bar-fill" style="width:59.00%;background:var(--informal)"></div></div><div class="bar-val">3.36</div></div>
+        <div class="bar-row"><div class="bar-label">I felt I belonged by day 30</div><div class="bar-track"><div class="bar-fill" style="width:55.50%;background:var(--informal)"></div></div><div class="bar-val">3.22</div></div>
+        <div class="bar-row"><div class="bar-label">I understood how things really work</div><div class="bar-track"><div class="bar-fill" style="width:54.00%;background:var(--informal)"></div></div><div class="bar-val">3.16</div></div>
+        <div class="bar-row"><div class="bar-label">I knew who to ask</div><div class="bar-track"><div class="bar-fill" style="width:52.00%;background:var(--informal)"></div></div><div class="bar-val">3.08</div></div>
+      </div>
+      <div class="axis axis-inset"><span>1 — strongly disagree</span><span>5 — strongly agree</span></div>
+      <p class="fig-note">Bars run from 1, the floor of the scale, not from 0 — a respondent cannot score below 1. Ordered by mean, not by group.</p>
+    </figure>
+
+    <blockquote>
+      <p>Orientation was genuinely good. I could tell you the badge policy, the escalation chain, where to file an incident report. Then I walked onto the unit and had no idea when it was okay to interrupt a charge nurse. Nobody covers that.</p>
+      <cite>P03 · Nursing · 7 months</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="chapter" id="s2">
+  <div class="rail">
+    <div class="num">02</div>
+    <div class="railnote">73 with<br>75 without<br>self-reported</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">One informal thing predicts a new hire's first three months better than anything we run on purpose.</h2>
+    <p>We asked: <em>in your first week, did someone informally show you how things really work here?</em> Half said yes. That single yes/no is the strongest signal in the dataset — stronger than how highly someone rated orientation, stronger than whether their equipment arrived on time.</p>
+
+    <div class="statpair">
+      <div class="stat is-good">
+        <span class="n">6.4</span>
+        <span class="unit">weeks to feeling productive</span>
+        <p class="desc">For the 73 people who had someone show them the ropes in week one.</p>
+      </div>
+      <div class="stat is-gap">
+        <span class="n">11.1</span>
+        <span class="unit">weeks to feeling productive</span>
+        <p class="desc">For the 75 people who did not. Nearly five additional weeks of catching up.</p>
+      </div>
+      <div class="stat">
+        <span class="n">49<span style="font-size:0.5em">%</span></span>
+        <span class="unit">got one</span>
+        <p class="desc">Whether a new hire gets this is, at present, close to a coin flip.</p>
+      </div>
+    </div>
+
+    <figure>
+      <figcaption>
+        <p class="fig-title">What the week-one guide is worth</p>
+        <p class="fig-sub">Same questions, split by whether someone informally showed them how things work in the first week.</p>
+      </figcaption>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--informal)"></i> Had a week-one guide (n = 73)</span>
+        <span><i class="swatch" style="background:var(--gap)"></i> Did not (n = 75)</span>
+      </div>
+      <div class="grp">
+        <div class="grp-item">
+          <div class="bar-label">I knew who to ask<small>1–5 scale</small></div>
+          <div class="grp-pair">
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:72.25%;background:var(--informal)"></div></div><div class="bar-val">3.89</div></div>
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:32.25%;background:var(--gap)"></div></div><div class="bar-val">2.29</div></div>
+          </div>
+        </div>
+        <div class="grp-item">
+          <div class="bar-label">I felt I belonged by day 30<small>1–5 scale</small></div>
+          <div class="grp-pair">
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:72.00%;background:var(--informal)"></div></div><div class="bar-val">3.88</div></div>
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:39.25%;background:var(--gap)"></div></div><div class="bar-val">2.57</div></div>
+          </div>
+        </div>
+        <div class="grp-item">
+          <div class="bar-label">Weeks to productive<small>0–14 weeks, shorter is better</small></div>
+          <div class="grp-pair">
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:45.71%;background:var(--informal)"></div></div><div class="bar-val">6.4</div></div>
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:79.29%;background:var(--gap)"></div></div><div class="bar-val">11.1</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="fig-note">Likert rows run 1–5; the weeks row runs from 0. Different scales are never plotted on one axis — read each row against its own label.</p>
+    </figure>
+
+    <blockquote>
+      <p>Marisol. That is the whole answer. She was on my first three shifts and she would just narrate — "we don't page him before eight," "that form is dead, everyone uses the other one." Two weeks in I felt like I worked here. My friend started the same month on a different unit and took until March.</p>
+      <cite>P02 · Nursing · 9 months</cite>
+    </blockquote>
+
+    <p>The obvious reading is that we should assign everyone a Marisol. The more useful reading is that we already have Marisols, we have never named the role, and so it is the first thing that disappears when a unit gets busy.</p>
+  </div>
+</section>
+
+<!-- 03 — the interaction -->
+<section class="chapter" id="s3">
+  <div class="rail">
+    <div class="num">03</div>
+    <div class="railnote">interactive<br>4 cuts<br>watch small n</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">The half of the workforce that misses out is not a random half.</h2>
+    <p>If the week-one guide were distributed by chance, this section would be short. It is not distributed by chance. It follows the shape of who happens to be standing near someone else — which means it reaches the people already closest to the centre of the organization, and misses the people at its edges.</p>
+
+    <figure>
+      <figcaption>
+        <p class="fig-title">Who gets shown how things really work</p>
+        <p class="fig-sub">Share of new hires reporting a week-one guide, cut four ways. The dashed line is the organization-wide rate of 49%. Bars below it are shown in orange.</p>
+      </figcaption>
+      <div class="controls" role="group" aria-label="Choose how to cut the data">
+        <button type="button" id="cut-role" data-cut="role" aria-pressed="true">By role</button>
+        <button type="button" id="cut-shift" data-cut="shift" aria-pressed="false">By shift</button>
+        <button type="button" id="cut-mode" data-cut="mode" aria-pressed="false">By work mode</button>
+        <button type="button" id="cut-wave" data-cut="wave" aria-pressed="false">By hire quarter</button>
+      </div>
+      <div class="bars" id="cutchart" aria-live="polite"></div>
+      <p class="reflabel">— — — organization-wide rate · 49%</p>
+      <p class="fig-note">Percentages on small groups move a lot: Physicians n = 14, Night n = 19, Remote n = 17. One more person answering yes moves the Physicians bar by seven points. Treat these as directions, not measurements.</p>
+    </figure>
+
+    <p>Nursing does best, at two in three — not because nursing onboarding is better designed, but because units run a buddy arrangement that nobody has ever written down. Physicians do worst, at roughly one in five: they are assumed to arrive already knowing how organizations work. Night shift and hybrid hires sit well below the line for the same structural reason, which is that the people who could have shown them anything were not there.</p>
+
+    <blockquote>
+      <p>My shift starts at ten at night. Everyone who could have shown me anything had gone home nine hours earlier. The night has its own rules and nobody has ever written them down, so you inherit them from whoever is willing to talk.</p>
+      <cite>P18 · Support Services · 3 months</cite>
+    </blockquote>
+    <blockquote>
+      <p>On my in-office days I learn things. On my home days I do my tasks. I have been here almost a year and I still only know how it works on Tuesdays.</p>
+      <cite>P06 · Admin &amp; Ops · 11 months · hybrid</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="chapter" id="s4">
+  <div class="rail">
+    <div class="num">04</div>
+    <div class="railnote">single-select<br>n = 148</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">Orientation is the one channel we fully control, and it is where almost nobody learns the rules that matter.</h2>
+    <p>We asked people where they actually learned how things work here. Seven percent said orientation. Thirty percent said trial and error — which is not a channel, it is the absence of one.</p>
+
+    <figure>
+      <figcaption>
+        <p class="fig-title">Where new hires learned the unwritten rules</p>
+        <p class="fig-sub">Single-select, all 148 respondents. Together, people account for half; the formal program accounts for a fourteenth.</p>
+      </figcaption>
+      <div class="bars">
+        <div class="bar-row"><div class="bar-label">Trial and error<small>n = 44</small></div><div class="bar-track"><div class="bar-fill" style="width:99%;background:var(--gap)"></div></div><div class="bar-val">30%</div></div>
+        <div class="bar-row"><div class="bar-label">A peer on my team<small>n = 41</small></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--informal)"></div></div><div class="bar-val">28%</div></div>
+        <div class="bar-row"><div class="bar-label">My manager<small>n = 33</small></div><div class="bar-track"><div class="bar-fill" style="width:74%;background:var(--informal)"></div></div><div class="bar-val">22%</div></div>
+        <div class="bar-row"><div class="bar-label">The AI assistant<small>n = 11</small></div><div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--formal)"></div></div><div class="bar-val">7%</div></div>
+        <div class="bar-row"><div class="bar-label">Orientation<small>n = 10</small></div><div class="bar-track"><div class="bar-fill" style="width:23%;background:var(--formal)"></div></div><div class="bar-val">7%</div></div>
+        <div class="bar-row"><div class="bar-label">No one — still figuring it out<small>n = 9</small></div><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--gap)"></div></div><div class="bar-val">6%</div></div>
+      </div>
+      <div class="axis axis-inset"><span>0%</span><span>30%</span></div>
+      <p class="fig-note">Bars are scaled to the largest response, 30%, not to 100% — the axis label says so. Colour marks the channel type: people, program, or nothing.</p>
+    </figure>
+
+    <p>Six months of policy content is delivered well to people who mostly needed to know which of the three shared drives is the real one, that the 7am huddle is optional in writing and mandatory in practice, and where people actually eat lunch. None of that is in the handbook. All of it is culture.</p>
+
+    <blockquote>
+      <p>The handbook is 140 pages and it is accurate. That is the problem. Everything in it is true and none of it is what I needed on day four.</p>
+      <cite>P07 · IT &amp; Data · 4 months</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="chapter" id="s5">
+  <div class="rail">
+    <div class="num">05</div>
+    <div class="railnote">57 with<br>91 without<br>confounded</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">Ridge Assist answered the questions people used to have to ask a person. Fewer people then asked a person anything.</h2>
+    <p>Ridge Assist rolled out across 2025, so 57 of our respondents onboarded with it and 91 did not. On the things it was built to do, it works: policy clarity is up, orientation is rated higher, day-one tools are marginally better. And the people who had it were meaningfully less likely to end up with a human they could go to.</p>
+
+    <figure>
+      <figcaption>
+        <p class="fig-title">With and without the assistant</p>
+        <p class="fig-sub">The formal measures move up. The relational ones move down.</p>
+      </figcaption>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--formal)"></i> Onboarded with Ridge Assist (n = 57)</span>
+        <span><i class="swatch" style="background:var(--informal)"></i> Onboarded without it (n = 91)</span>
+      </div>
+      <div class="grp">
+        <div class="grp-item">
+          <div class="bar-label">I knew the formal rules<small>1–5 scale</small></div>
+          <div class="grp-pair">
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:83.25%;background:var(--formal)"></div></div><div class="bar-val">4.33</div></div>
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:73.75%;background:var(--informal)"></div></div><div class="bar-val">3.95</div></div>
+          </div>
+        </div>
+        <div class="grp-item">
+          <div class="bar-label">Orientation was well run<small>1–5 scale</small></div>
+          <div class="grp-pair">
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:82.50%;background:var(--formal)"></div></div><div class="bar-val">4.30</div></div>
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:77.25%;background:var(--informal)"></div></div><div class="bar-val">4.09</div></div>
+          </div>
+        </div>
+        <div class="grp-item">
+          <div class="bar-label">I knew who to ask<small>1–5 scale</small></div>
+          <div class="grp-pair">
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:41.25%;background:var(--formal)"></div></div><div class="bar-val">2.65</div></div>
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:58.75%;background:var(--informal)"></div></div><div class="bar-val">3.35</div></div>
+          </div>
+        </div>
+        <div class="grp-item">
+          <div class="bar-label">Had a week-one guide<small>percent of group</small></div>
+          <div class="grp-pair">
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:33%;background:var(--formal)"></div></div><div class="bar-val">33%</div></div>
+            <div class="grp-line"><div class="bar-track" style="height:18px"><div class="bar-fill" style="width:59%;background:var(--informal)"></div></div><div class="bar-val">59%</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="fig-note">Colour here marks the group, not the layer. First three rows run 1–5; the last runs 0–100%.</p>
+    </figure>
+
+    <div class="caution">
+      <h4>Read this before you quote the last two rows</h4>
+      <p>Ridge Assist rolled out over time, so everyone who had it is also a more recent hire. The assistant is confounded with recency, and with everything else that changed at Cedar Ridge in late 2025 — including a hiring surge that put more new people on units with fewer experienced ones. We cannot say the assistant caused the drop. We can say that the two arrived together, and that nothing in the rollout was designed to protect the relationship it partly replaced.</p>
+    </div>
+
+    <blockquote>
+      <p>Ridge Assist is great, honestly. PTO policy, which form, who signs it — instant. It saved me a lot of small embarrassment.</p>
+      <p>[Later in the same interview] Ask me who I'd go to if I really messed something up. …Yeah. I don't know. I think I used up all my questions on the bot.</p>
+      <cite>P13 · Admin &amp; Ops · 5 months</cite>
+    </blockquote>
+
+    <p>The mechanism a colleague described plainly: it is free to ask the assistant a stupid question, and expensive to ask a person one. Every question routed to the assistant is a question that does not become a small, low-stakes contact with a human being — and those contacts were how people used to accumulate someone to go to.</p>
+
+    <blockquote>
+      <p>It answers the questions that have answers. Most of what I needed to know didn't have an answer, it had an <em>opinion</em>, and it had to come from someone who had been here.</p>
+      <cite>P16 · Nursing · 3 months</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="chapter" id="s6">
+  <div class="rail">
+    <div class="num">06</div>
+    <div class="railnote">four moves<br>tagged by<br>culture force</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">Stop trying to improve orientation. Design the informal layer on purpose.</h2>
+    <p>Every instinct in the current program is to add content. The evidence says the content is fine and the transmission is missing. Four moves follow from that, ordered by how little permission they need.</p>
+
+    <ol class="moves">
+      <li>
+        <span class="idx">01</span>
+        <div>
+          <h4>Name the Marisol role and put it on a schedule</h4>
+          <p>The buddy arrangement already exists on nursing units. It is invisible, unnamed, and therefore the first thing cut when a unit gets busy. Give it a name, four hours of protected time in week one, and a place on the roster — the same treatment any other real task gets.</p>
+          <span class="force">Practices</span><span class="force">Norms</span>
+        </div>
+      </li>
+      <li>
+        <span class="idx">02</span>
+        <div>
+          <h4>Start with the groups below the line, not the average</h4>
+          <p>Night shift, hybrid hires, and physicians. The average hides all three, and each fails for a different structural reason: nobody present, nobody co-located, nobody who thinks they need it. Pilot three different arrangements, not one program.</p>
+          <span class="force">Policy</span><span class="force">Norms</span>
+        </div>
+      </li>
+      <li>
+        <span class="idx">03</span>
+        <div>
+          <h4>Have Ridge Assist hand people to people</h4>
+          <p>The assistant is good and should stay. It should also stop being a terminal endpoint. Every answer it gives about how something works can name the person on this unit who knows, and the fifth question from any new hire can route to a human rather than a paragraph.</p>
+          <span class="force">Artifacts</span><span class="force">Practices</span>
+        </div>
+      </li>
+      <li>
+        <span class="idx">04</span>
+        <div>
+          <h4>Change what leadership sees</h4>
+          <p>Orientation completion sits at 97%, so from the executive floor onboarding is solved. Report the week-one guide rate beside it, cut by shift and work mode. A measure that is not reported is a measure nobody is accountable for.</p>
+          <span class="force">Metrics</span>
+        </div>
+      </li>
+    </ol>
+
+    <blockquote style="margin-top:30px">
+      <p>We used to have a buddy system and it was informal, so when we got busy it was the first thing to go. Nobody decided to stop doing it.</p>
+      <cite>M02 · Nursing manager · onboards 8–10 per year</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- method -->
+<section class="chapter" id="method">
+  <div class="rail">
+    <div class="num">—</div>
+    <div class="railnote">method<br>&amp; limits</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">Method and limits</h2>
+    <p>A survey of 148 employees hired in the previous 18 months, fielded March 2026 against a sampling frame of 239 for a 62% response rate. Five-point agreement scales unless noted; <span class="mono" style="font-size:11px">weeks to productive</span> is self-reported. Eighteen semi-structured interviews with recent hires and four with managers who onboard, 45–60 minutes, February–March 2026. Fielded by the People Experience team.</p>
+
+    <details class="method">
+      <summary>Five reasons to hold these findings loosely</summary>
+      <div class="inner">
+        <ol>
+          <li><b>Self-report throughout.</b> Weeks-to-productive is a memory, not a measurement, and people who are happy now remember ramping faster than they did.</li>
+          <li><b>Survivor bias.</b> Everyone in this sample still works here. The people whose onboarding failed worst are, by construction, missing from it.</li>
+          <li><b>The assistant is confounded with recency.</b> See the caution in section 05. Nothing here supports a causal claim about Ridge Assist.</li>
+          <li><b>Fielded internally.</b> Respondents knew the People Experience team would read their answers, which is not a neutral condition for a question about your manager.</li>
+          <li><b>Small cells.</b> Physicians n = 14, Night n = 19, Remote n = 17. Cut twice and you are describing six people.</li>
+        </ol>
+        <p>The survey instrument and the anonymized response file are available on request from People Experience.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer class="end">
+  <p class="mono">Cedar Ridge Health · People Experience · March 2026</p>
+
+  <div class="classnote">
+    <h3>Note for DESIGN 276</h3>
+    <p>This page is a specimen, not a template to copy. It makes six claims, in order, and each one is a sentence you could read on its own and still follow the argument — scroll past the charts and read only the large type to test that. It has exactly one interactive element, in section 03, and that element exists because the question "is my group below the line?" is a question a static chart cannot answer. Everything else is static on purpose.</p>
+    <p>The things worth stealing are the structural ones: the study parameters visible above the fold, the claim carried in the heading rather than the chart title, the axis note under every figure, the confound flagged in the section that would otherwise be the most quotable, and the limits written as a list of five rather than a sentence saying "further research is needed."</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+const CUTS = {
+  role: { label: "role family", rows: [
+    ["Nursing", 67, 42], ["Support Services", 50, 24], ["Admin & Ops", 46, 28],
+    ["IT & Data", 44, 16], ["Allied Health", 42, 24], ["Physicians", 21, 14] ] },
+  shift: { label: "shift", rows: [ ["Day", 53, 105], ["Evening", 46, 24], ["Night", 32, 19] ] },
+  mode: { label: "work mode", rows: [ ["Onsite", 54, 111], ["Hybrid", 35, 20], ["Remote", 35, 17] ] },
+  wave: { label: "hire quarter", rows: [
+    ["2025 Q2", 62, 26], ["2025 Q3", 54, 37], ["2025 Q1", 50, 26],
+    ["2025 Q4", 42, 33], ["2026 Q1", 38, 26] ] }
+};
+const AVG = 49, MAX = 70;
+const chart = document.getElementById("cutchart");
+const buttons = Array.from(document.querySelectorAll(".controls button"));
+
+function render(key) {
+  const cut = CUTS[key];
+  chart.innerHTML = "";
+  cut.rows.forEach(([name, pct, n]) => {
+    const row = document.createElement("div");
+    row.className = "bar-row cut-row";
+    row.title = name + " — " + pct + "% of " + n + " had a week-one guide";
+    const below = pct < AVG;
+    row.innerHTML =
+      '<div class="bar-label">' + name + '<small>n = ' + n + '</small></div>' +
+      '<div class="cut-track"><div class="ref" style="left:' + (AVG / MAX * 100) + '%"></div>' +
+      '<div class="cut-fill' + (below ? ' below' : '') + '" style="width:0%"></div></div>' +
+      '<div class="bar-val">' + pct + '%</div>';
+    chart.appendChild(row);
+    requestAnimationFrame(() => {
+      row.querySelector(".cut-fill").style.width = (pct / MAX * 100) + "%";
+    });
+  });
+}
+buttons.forEach(b => b.addEventListener("click", () => {
+  buttons.forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  render(b.dataset.cut);
+}));
+render("role");
+</script>

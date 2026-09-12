@@ -1,0 +1,325 @@
+<!--
+  DESIGN 276 · interactive readout starter
+  ----------------------------------------
+  One file. No build step. Open it in a browser, edit it, refresh.
+
+  What is already handled for you:
+    · light and dark theme, driven by CSS variables in :root
+    · three typefaces with real roles (display / body / data)
+    · a bar-chart pattern that does not break at phone width
+    · a figure pattern with a caption, an axis note, and room for the n
+
+  What is NOT handled for you, because it is the assignment:
+    · the claims
+    · which cut of the data each chart shows
+    · what the one interactive element is, and why it earns its place
+    · the limits section
+
+  Search for TODO. There are nine.
+-->
+<title>TODO — name your readout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=DM+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* ---- tokens: change these first, they are the whole visual identity ---- */
+:root {
+  color-scheme: light;
+  --paper: #fbfbfa; --paper-raised: #ffffff;
+  --ink: #0b0f10; --ink-soft: #4a5456; --ink-faint: #6c7679;
+  --line: #dde3e4; --line-strong: #b9c2c4; --track: #e7ebec;
+  /* TODO 1 — your two series colours. Keep them far apart in both hue AND
+     lightness so they survive colourblindness and greyscale printing. */
+  --series-a: #0d8fa3;
+  --series-b: #8a9a12;
+  --alert:    #c2561b;
+  --alert-wash: #fbefe7;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #101415; --paper-raised: #171c1e;
+    --ink: #f0f3f3; --ink-soft: #a6b1b3; --ink-faint: #8a9698;
+    --line: #262f31; --line-strong: #3a4547; --track: #222a2c;
+    --series-a: #20a3ba; --series-b: #869a1c;
+    --alert: #d16c2c; --alert-wash: #2b1a10;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #101415; --paper-raised: #171c1e;
+  --ink: #f0f3f3; --ink-soft: #a6b1b3; --ink-faint: #8a9698;
+  --line: #262f31; --line-strong: #3a4547; --track: #222a2c;
+  --series-a: #20a3ba; --series-b: #869a1c;
+  --alert: #d16c2c; --alert-wash: #2b1a10;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 18px; line-height: 1.62;
+  padding-inline: 20px; padding-block: 0;
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+.mono {
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-faint); font-weight: 500;
+}
+
+header.masthead { border-bottom: 1px solid var(--line-strong); padding-block: 40px 28px; margin-bottom: 44px; }
+h1 {
+  font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 5rem); line-height: 0.96; letter-spacing: -0.035em;
+  margin: 20px 0; text-wrap: balance; max-width: 16ch;
+}
+.standfirst { font-size: clamp(1.1rem, 2.3vw, 1.35rem); line-height: 1.5; color: var(--ink-soft); max-width: 60ch; margin: 0 0 30px; }
+.standfirst strong { color: var(--ink); font-weight: 600; }
+
+/* the study parameters, above the fold. do not delete this. */
+.studymeta { display: flex; flex-wrap: wrap; border: 1px solid var(--line); background: var(--paper-raised); }
+.studymeta div { flex: 1 1 150px; padding: 14px 18px; border-right: 1px solid var(--line); }
+.studymeta div:last-child { border-right: 0; }
+.studymeta dt { margin: 0 0 4px; }
+.studymeta dd { margin: 0; font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 15px; line-height: 1.3; }
+
+nav.jump { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-bottom: 56px; }
+nav.jump a {
+  font-family: "DM Mono", monospace; font-size: 12px; text-decoration: none;
+  color: var(--ink-soft); border: 1px solid var(--line); padding: 6px 11px; background: var(--paper-raised);
+}
+nav.jump a:hover { border-color: var(--series-a); color: var(--series-a); }
+nav.jump a:focus-visible { outline: 2px solid var(--series-a); outline-offset: 2px; }
+
+section.chapter { display: grid; grid-template-columns: 92px minmax(0,1fr); gap: 0 32px; padding-block: 0 68px; }
+.rail { border-top: 2px solid var(--ink); padding-top: 10px; }
+.rail .num { font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; }
+.rail .railnote { font-family: "DM Mono", monospace; font-size: 11px; line-height: 1.45; color: var(--ink-faint); margin-top: 8px; }
+.body-col { border-top: 2px solid var(--ink); padding-top: 10px; min-width: 0; }
+
+/* THE CLAIM. one sentence. a reader who reads only these, in order,
+   should get the whole argument. */
+.claim {
+  font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 700;
+  font-size: clamp(1.45rem, 3.5vw, 2rem); line-height: 1.16; letter-spacing: -0.02em;
+  text-wrap: balance; margin: 0 0 22px; max-width: 26ch;
+}
+.body-col p { max-width: 64ch; margin: 0 0 18px; }
+
+figure { margin: 30px 0 26px; border: 1px solid var(--line); background: var(--paper-raised); padding: 22px 22px 18px; }
+.fig-title { font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px; margin: 0 0 5px; }
+.fig-sub { font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0 0 18px; max-width: 62ch; }
+.fig-note {
+  margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line);
+  font-family: "DM Mono", monospace; font-size: 11px; line-height: 1.5; color: var(--ink-faint);
+}
+.legend { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 16px; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-soft); font-family: Archivo, Helvetica, Arial, sans-serif; }
+.swatch { width: 12px; height: 12px; border-radius: 2px; flex: none; }
+
+.bars { display: grid; gap: 9px; }
+.bar-row { display: grid; grid-template-columns: minmax(96px, 172px) minmax(0,1fr) 46px; align-items: center; gap: 12px; }
+.bar-label { font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 13.5px; line-height: 1.25; }
+.bar-label small { display: block; font-family: "DM Mono", monospace; font-size: 10.5px; color: var(--ink-faint); }
+.bar-track { background: var(--track); height: 22px; position: relative; }
+.bar-fill { height: 100%; border-radius: 0 4px 4px 0; }
+.bar-val { font-family: "DM Mono", monospace; font-size: 13px; font-variant-numeric: tabular-nums; text-align: right; }
+.axis { display: flex; justify-content: space-between; font-family: "DM Mono", monospace; font-size: 10.5px; color: var(--ink-faint); margin-top: 8px; }
+.axis-inset { margin-left: calc(min(172px, 30%) + 12px); margin-right: 58px; }
+
+.statpair { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); border: 1px solid var(--line); margin: 30px 0; background: var(--paper-raised); }
+.stat { padding: 22px; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; }
+.stat .n { font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 800; font-size: clamp(2.2rem,5.5vw,3.2rem); line-height: 0.95; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; display: block; }
+.stat .unit { font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-soft); display: block; margin: 2px 0 10px; }
+.stat .desc { font-size: 14.5px; line-height: 1.45; color: var(--ink-soft); margin: 0; }
+
+blockquote { margin: 26px 0; padding-left: 20px; border-left: 3px solid var(--series-a); font-size: 1.06rem; line-height: 1.55; }
+blockquote p { margin: 0 0 10px; max-width: 58ch; }
+blockquote cite { font-family: "DM Mono", monospace; font-size: 11px; font-style: normal; letter-spacing: 0.05em; color: var(--ink-faint); text-transform: uppercase; }
+
+.caution { border: 1px solid var(--alert); background: var(--alert-wash); padding: 18px 20px; margin: 26px 0; }
+.caution h4 { font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 14px; margin: 0 0 8px; color: var(--alert); text-transform: uppercase; }
+.caution p { font-size: 15.5px; line-height: 1.5; margin: 0; color: var(--ink-soft); max-width: 62ch; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.controls button {
+  font-family: Archivo, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600;
+  padding: 7px 13px; border: 1px solid var(--line-strong); background: var(--paper); color: var(--ink-soft); cursor: pointer;
+}
+.controls button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.controls button:focus-visible { outline: 2px solid var(--series-a); outline-offset: 2px; }
+
+details.method { border: 1px solid var(--line); background: var(--paper-raised); }
+details.method summary { cursor: pointer; padding: 16px 20px; font-family: Archivo, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 15px; }
+details.method .inner { padding: 0 20px 20px; }
+details.method li { font-size: 15px; line-height: 1.55; color: var(--ink-soft); max-width: 64ch; margin-bottom: 10px; }
+
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  section.chapter { grid-template-columns: minmax(0,1fr); }
+  .rail { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; padding-bottom: 14px; }
+  .rail .railnote { margin-top: 0; }
+  .body-col { border-top: 0; padding-top: 0; }
+  .bar-row { grid-template-columns: minmax(84px,130px) minmax(0,1fr) 42px; gap: 9px; }
+  .axis-inset { margin-left: 0; margin-right: 0; }
+  figure { padding: 16px 14px 14px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <span class="mono">TODO 2 — organization · team · date</span>
+  <!-- TODO 3 — the title. Name the finding, not the topic.
+       "The Onboarding Gap" beats "Onboarding Research Findings". -->
+  <h1>TODO — the title</h1>
+  <!-- TODO 4 — the standfirst. Two or three sentences that give away the
+       whole argument. A readout is not a mystery novel; nobody is in the
+       room to build suspense for. -->
+  <p class="standfirst">TODO — say what you found, in the first eighty words, including the number that makes it real.</p>
+
+  <dl class="studymeta">
+    <div><dt class="mono">Survey</dt><dd>n = ?<br>? % response</dd></div>
+    <div><dt class="mono">Interviews</dt><dd>? people<br>? roles</dd></div>
+    <div><dt class="mono">Window</dt><dd>? – ?</dd></div>
+    <div><dt class="mono">Fielded by</dt><dd>your team</dd></div>
+  </dl>
+</header>
+
+<nav class="jump" aria-label="Jump to section">
+  <a href="#s1">01 · TODO</a>
+  <a href="#s2">02 · TODO</a>
+  <a href="#s3">03 · TODO</a>
+  <a href="#method">Method &amp; limits</a>
+</nav>
+
+<!-- ============ a section. duplicate this block per claim. ============ -->
+<section class="chapter" id="s1">
+  <div class="rail">
+    <div class="num">01</div>
+    <div class="railnote">n = ?<br>what cut</div>
+  </div>
+  <div class="body-col">
+    <!-- TODO 5 — the claim. A full sentence with a verb. If it could sit on
+         any organization's readout, it is not a claim, it is a topic. -->
+    <h2 class="claim">TODO — one sentence that is true, specific, and arguable.</h2>
+    <p>Two or three paragraphs. What you found, what it means, what it does not mean.</p>
+
+    <figure>
+      <p class="fig-title">TODO 6 — the chart's title says what to look at</p>
+      <p class="fig-sub">One line: what is plotted, over whom, on what scale.</p>
+
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--series-a)"></i> Series A</span>
+        <span><i class="swatch" style="background:var(--series-b)"></i> Series B</span>
+      </div>
+
+      <div class="bars">
+        <!-- width % = value ÷ scale max × 100. Keep the arithmetic honest. -->
+        <div class="bar-row">
+          <div class="bar-label">Label<small>n = ?</small></div>
+          <div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--series-a)"></div></div>
+          <div class="bar-val">3.6</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Label<small>n = ?</small></div>
+          <div class="bar-track"><div class="bar-fill" style="width:48%;background:var(--series-b)"></div></div>
+          <div class="bar-val">2.4</div>
+        </div>
+      </div>
+      <div class="axis axis-inset"><span>min</span><span>max</span></div>
+
+      <!-- TODO 7 — the axis note. What the scale is, where the bars start,
+           and anything that would let a reader mis-read the chart. Every
+           figure gets one. This is the sentence that separates a readout
+           from a slide. -->
+      <p class="fig-note">TODO — scale, baseline, and the caveat.</p>
+    </figure>
+
+    <blockquote>
+      <p>A quote that explains why the number moved. Not decoration — evidence.</p>
+      <cite>P00 · role · tenure</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ your ONE interactive element ============ -->
+<section class="chapter" id="s2">
+  <div class="rail">
+    <div class="num">02</div>
+    <div class="railnote">interactive</div>
+  </div>
+  <div class="body-col">
+    <h2 class="claim">TODO — the claim this interaction serves.</h2>
+    <!-- TODO 8 — before you build this, write the reader's question in one
+         line as an HTML comment right here. If a static chart could answer
+         it, delete the interaction and ship the static chart.
+         Reader's question: ______________________________________ -->
+    <figure>
+      <p class="fig-title">TODO</p>
+      <p class="fig-sub">TODO</p>
+      <div class="controls" role="group" aria-label="Choose a cut">
+        <button type="button" id="cut-a" data-cut="a" aria-pressed="true">Cut A</button>
+        <button type="button" id="cut-b" data-cut="b" aria-pressed="false">Cut B</button>
+      </div>
+      <div class="bars" id="chart" aria-live="polite"></div>
+      <p class="fig-note">TODO — say the n of the smallest group you are showing.</p>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ method and limits. not optional. ============ -->
+<section class="chapter" id="method">
+  <div class="rail"><div class="num">—</div><div class="railnote">method<br>&amp; limits</div></div>
+  <div class="body-col">
+    <h2 class="claim">Method and limits</h2>
+    <p>How you collected it, from whom, when, and who asked. Three or four sentences.</p>
+    <details class="method">
+      <summary>TODO 9 — reasons to hold these findings loosely</summary>
+      <div class="inner">
+        <ol>
+          <li><b>TODO.</b> Name a real limit. Self-report, survivor bias, small cells, a confound, who fielded it.</li>
+          <li><b>TODO.</b> Three is the minimum. A readout with no limits section reads as marketing.</li>
+          <li><b>TODO.</b></li>
+        </ol>
+      </div>
+    </details>
+  </div>
+</section>
+
+</div>
+
+<script>
+/* The interactive chart. Replace DATA with your own cuts.
+   Each row: [label, value, n]. SCALE_MAX is the top of the axis. */
+const DATA = {
+  a: [["Group one", 67, 42], ["Group two", 46, 28], ["Group three", 21, 14]],
+  b: [["Group four", 54, 111], ["Group five", 35, 20]]
+};
+const SCALE_MAX = 70;
+const chart = document.getElementById("chart");
+const buttons = Array.from(document.querySelectorAll(".controls button"));
+
+function render(key) {
+  chart.innerHTML = "";
+  DATA[key].forEach(([label, value, n]) => {
+    const row = document.createElement("div");
+    row.className = "bar-row";
+    row.title = label + " — " + value + "% of " + n;
+    row.innerHTML =
+      '<div class="bar-label">' + label + '<small>n = ' + n + '</small></div>' +
+      '<div class="bar-track"><div class="bar-fill" style="width:' +
+        (value / SCALE_MAX * 100) + '%;background:var(--series-a)"></div></div>' +
+      '<div class="bar-val">' + value + '%</div>';
+    chart.appendChild(row);
+  });
+}
+buttons.forEach(b => b.addEventListener("click", () => {
+  buttons.forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  render(b.dataset.cut);
+}));
+render("a");
+</script>

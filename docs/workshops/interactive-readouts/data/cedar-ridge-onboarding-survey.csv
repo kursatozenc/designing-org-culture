@@ -1,0 +1,149 @@
+respondent_id,role_family,site,shift,work_mode,hire_wave,tenure_months,ai_assisted_onboarding,orientation_rating,tools_ready_day1,policy_clarity,knew_who_to_ask,unwritten_rules_confidence,belonging_by_day30,would_recommend,weeks_to_feeling_productive,learned_unwritten_rules_from,had_week_one_peer_guide
+R001,IT & Data,Systemwide / Remote,Day,Remote,2025 Q1,16,no,4,5,3,4,2,3,4,9.2,The AI assistant,no
+R002,Admin & Ops,Bayshore Clinic,Day,Onsite,2025 Q1,17,no,3,5,5,3,3,3,2,9.2,A peer on my team,yes
+R003,IT & Data,Los Altos Clinic,Day,Onsite,2025 Q4,8,yes,4,5,4,5,4,4,3,3.3,A peer on my team,yes
+R004,Support Services,Cedar Ridge Main,Day,Onsite,2025 Q4,7,yes,4,4,4,2,3,3,3,9.4,The AI assistant,no
+R005,Admin & Ops,Systemwide / Remote,Day,Remote,2025 Q3,10,no,4,4,4,2,1,3,3,11.7,Trial and error,no
+R006,Nursing,Bayshore Clinic,Day,Onsite,2025 Q2,15,no,5,5,5,4,5,4,5,4.2,A peer on my team,yes
+R007,Nursing,Westfield Campus,Day,Onsite,2025 Q2,15,yes,4,5,5,4,3,1,3,7.1,A peer on my team,yes
+R008,Nursing,Cedar Ridge Main,Night,Onsite,2025 Q4,7,yes,5,5,5,2,3,3,3,7.2,The AI assistant,no
+R009,Physicians,Los Altos Clinic,Night,Onsite,2026 Q1,3,yes,5,5,3,2,3,4,3,12.4,Trial and error,no
+R010,Nursing,Cedar Ridge Main,Night,Hybrid,2026 Q1,6,yes,5,4,4,5,4,4,5,5.4,My manager,yes
+R011,Admin & Ops,Systemwide / Remote,Day,Remote,2025 Q3,10,no,5,5,4,3,5,5,5,5.8,My manager,yes
+R012,Physicians,Westfield Campus,Night,Onsite,2026 Q1,3,no,4,5,5,2,4,3,3,9.6,Trial and error,no
+R013,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q4,7,yes,5,3,5,1,2,3,4,9.4,The AI assistant,no
+R014,Support Services,Westfield Campus,Evening,Onsite,2025 Q4,8,yes,5,4,4,3,2,2,3,7.4,No one — still figuring it out,no
+R015,IT & Data,Systemwide / Remote,Day,Remote,2025 Q4,8,yes,2,4,4,2,3,3,3,11.1,My manager,no
+R016,Nursing,Los Altos Clinic,Evening,Onsite,2025 Q4,8,yes,5,3,5,4,4,4,4,7.7,My manager,yes
+R017,Support Services,Los Altos Clinic,Day,Onsite,2025 Q3,10,yes,5,3,4,4,3,2,1,8.5,Trial and error,no
+R018,Allied Health,Los Altos Clinic,Night,Onsite,2025 Q2,15,no,4,4,4,2,4,1,2,11.0,Trial and error,no
+R019,Admin & Ops,Systemwide / Remote,Day,Remote,2025 Q1,16,no,4,4,3,2,3,4,5,6.9,A peer on my team,yes
+R020,Physicians,Cedar Ridge Main,Evening,Onsite,2025 Q3,12,no,3,5,4,1,2,3,3,14.8,My manager,no
+R021,Admin & Ops,Bayshore Clinic,Day,Hybrid,2026 Q1,6,yes,4,3,5,2,1,2,3,14.3,Trial and error,no
+R022,Support Services,Westfield Campus,Day,Onsite,2025 Q2,15,yes,3,3,4,3,2,2,2,12.5,No one — still figuring it out,no
+R023,Support Services,Westfield Campus,Day,Onsite,2025 Q4,9,yes,5,4,5,5,4,5,4,4.3,No one — still figuring it out,yes
+R024,Nursing,Los Altos Clinic,Day,Onsite,2025 Q2,15,no,4,5,3,3,4,4,4,8.3,Orientation / formal training,yes
+R025,Allied Health,Cedar Ridge Main,Day,Onsite,2025 Q3,10,no,4,4,5,3,3,4,4,5.8,A peer on my team,yes
+R026,Nursing,Los Altos Clinic,Day,Onsite,2025 Q1,16,no,3,4,4,4,4,4,3,6.7,A peer on my team,yes
+R027,Physicians,Bayshore Clinic,Day,Onsite,2025 Q4,8,yes,4,3,5,4,4,3,4,7.2,My manager,yes
+R028,Admin & Ops,Los Altos Clinic,Day,Hybrid,2025 Q1,17,no,4,5,4,5,2,3,4,12.5,Trial and error,no
+R029,Allied Health,Bayshore Clinic,Day,Onsite,2025 Q4,8,no,3,3,4,4,3,3,2,9.9,My manager,yes
+R030,Nursing,Bayshore Clinic,Day,Onsite,2025 Q1,18,no,4,5,5,5,4,4,5,8.1,A peer on my team,yes
+R031,Admin & Ops,Westfield Campus,Day,Hybrid,2025 Q2,13,no,4,5,3,3,4,3,4,9.4,A peer on my team,yes
+R032,IT & Data,Los Altos Clinic,Day,Onsite,2025 Q3,10,no,5,4,4,3,4,4,4,7.5,A peer on my team,yes
+R033,IT & Data,Systemwide / Remote,Day,Remote,2025 Q4,7,no,4,4,4,3,3,4,4,5.3,A peer on my team,yes
+R034,Allied Health,Los Altos Clinic,Night,Onsite,2025 Q1,17,no,4,4,3,2,3,3,1,11.8,Trial and error,no
+R035,Nursing,Los Altos Clinic,Day,Onsite,2025 Q2,13,no,4,4,5,4,2,3,3,10.3,No one — still figuring it out,no
+R036,IT & Data,Cedar Ridge Main,Day,Onsite,2025 Q2,13,no,3,4,3,4,4,5,3,11.4,A peer on my team,yes
+R037,Admin & Ops,Systemwide / Remote,Day,Remote,2026 Q1,5,yes,4,5,5,1,1,1,3,11.8,The AI assistant,no
+R038,Admin & Ops,Cedar Ridge Main,Day,Hybrid,2025 Q2,15,no,4,4,4,4,5,3,3,4.4,A peer on my team,yes
+R039,Support Services,Westfield Campus,Evening,Onsite,2025 Q4,9,no,4,4,4,2,1,2,3,13.8,Trial and error,no
+R040,Support Services,Cedar Ridge Main,Evening,Onsite,2026 Q1,3,yes,3,4,5,2,4,4,3,11.2,No one — still figuring it out,no
+R041,IT & Data,Los Altos Clinic,Day,Hybrid,2025 Q4,8,yes,4,4,5,3,3,3,4,14.1,No one — still figuring it out,no
+R042,Physicians,Bayshore Clinic,Day,Hybrid,2026 Q1,4,yes,5,4,3,2,1,2,2,12.5,Trial and error,no
+R043,Nursing,Westfield Campus,Evening,Onsite,2025 Q1,18,no,5,4,4,2,2,4,5,10.2,Trial and error,no
+R044,Physicians,Los Altos Clinic,Day,Onsite,2025 Q4,9,yes,4,4,5,2,2,4,3,8.7,Trial and error,no
+R045,Support Services,Systemwide / Remote,Day,Remote,2026 Q1,4,yes,5,3,4,2,3,2,3,10.5,The AI assistant,no
+R046,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q3,12,no,3,5,5,3,4,4,3,6.8,Orientation / formal training,yes
+R047,IT & Data,Westfield Campus,Day,Hybrid,2025 Q1,18,no,4,5,4,3,3,4,5,6.3,A peer on my team,yes
+R048,Allied Health,Cedar Ridge Main,Evening,Onsite,2025 Q2,14,no,2,2,5,3,4,4,5,7.9,My manager,yes
+R049,Support Services,Bayshore Clinic,Day,Onsite,2025 Q4,9,yes,5,5,5,3,4,5,3,5.0,A peer on my team,yes
+R050,Allied Health,Westfield Campus,Day,Onsite,2025 Q2,13,no,3,5,3,5,3,4,5,5.5,A peer on my team,yes
+R051,Physicians,Los Altos Clinic,Day,Hybrid,2025 Q3,12,yes,4,4,5,1,3,2,2,10.9,No one — still figuring it out,no
+R052,IT & Data,Bayshore Clinic,Day,Hybrid,2026 Q1,4,yes,4,5,4,2,3,2,2,13.3,Trial and error,no
+R053,IT & Data,Westfield Campus,Day,Hybrid,2025 Q3,11,no,4,4,3,1,3,2,2,12.2,My manager,no
+R054,Nursing,Cedar Ridge Main,Evening,Onsite,2025 Q2,15,no,5,1,4,4,3,3,4,5.6,My manager,yes
+R055,Allied Health,Los Altos Clinic,Day,Onsite,2025 Q1,16,no,5,4,5,3,3,2,2,9.6,Trial and error,no
+R056,Allied Health,Westfield Campus,Day,Onsite,2025 Q3,12,yes,5,5,3,2,3,1,1,13.2,Trial and error,no
+R057,Allied Health,Cedar Ridge Main,Day,Onsite,2025 Q1,16,no,5,3,5,4,3,5,4,5.1,My manager,yes
+R058,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q3,11,yes,4,4,5,5,4,4,5,5.4,My manager,yes
+R059,Nursing,Bayshore Clinic,Day,Onsite,2025 Q4,9,yes,4,3,5,4,5,4,5,4.7,A peer on my team,yes
+R060,Nursing,Westfield Campus,Day,Onsite,2025 Q3,10,no,4,4,3,4,4,5,5,5.7,A peer on my team,yes
+R061,Nursing,Westfield Campus,Day,Onsite,2026 Q1,3,yes,5,4,4,2,5,5,5,6.8,My manager,yes
+R062,Support Services,Bayshore Clinic,Day,Onsite,2025 Q3,11,no,4,4,4,4,4,4,5,6.0,A peer on my team,yes
+R063,Nursing,Cedar Ridge Main,Evening,Onsite,2025 Q3,10,no,4,4,4,3,3,4,4,2.4,Trial and error,yes
+R064,Nursing,Cedar Ridge Main,Evening,Onsite,2025 Q1,17,no,4,2,4,2,2,3,3,11.0,A peer on my team,no
+R065,Admin & Ops,Cedar Ridge Main,Day,Hybrid,2025 Q1,16,no,4,3,3,2,2,3,3,11.0,Trial and error,no
+R066,Support Services,Westfield Campus,Evening,Onsite,2026 Q1,3,yes,4,4,4,2,4,3,2,12.8,My manager,no
+R067,Admin & Ops,Cedar Ridge Main,Day,Onsite,2025 Q4,7,yes,5,4,5,2,2,3,3,9.3,My manager,no
+R068,Admin & Ops,Cedar Ridge Main,Day,Hybrid,2025 Q4,7,no,4,4,4,5,3,3,3,5.9,My manager,yes
+R069,Nursing,Los Altos Clinic,Night,Onsite,2025 Q4,9,yes,4,5,2,3,3,3,5,3.1,A peer on my team,yes
+R070,Nursing,Westfield Campus,Day,Onsite,2026 Q1,5,no,4,5,5,4,3,4,4,6.6,Trial and error,yes
+R071,Support Services,Los Altos Clinic,Day,Onsite,2026 Q1,3,yes,5,4,5,2,3,2,4,9.7,Trial and error,no
+R072,IT & Data,Systemwide / Remote,Day,Remote,2025 Q4,9,no,3,5,3,4,4,4,3,8.8,My manager,yes
+R073,Physicians,Cedar Ridge Main,Day,Onsite,2025 Q2,15,no,4,5,4,4,4,4,4,3.7,A peer on my team,yes
+R074,Admin & Ops,Cedar Ridge Main,Day,Hybrid,2025 Q2,14,no,5,4,4,3,4,4,5,6.0,A peer on my team,yes
+R075,Allied Health,Cedar Ridge Main,Evening,Onsite,2025 Q4,7,yes,3,4,5,3,3,3,2,11.0,Trial and error,no
+R076,Nursing,Cedar Ridge Main,Night,Onsite,2025 Q3,12,yes,5,4,4,2,2,1,4,10.3,Orientation / formal training,no
+R077,IT & Data,Systemwide / Remote,Day,Remote,2025 Q1,16,no,4,3,4,2,2,3,3,13.2,The AI assistant,no
+R078,Physicians,Westfield Campus,Night,Onsite,2026 Q1,6,yes,5,4,3,4,5,4,3,4.6,Trial and error,yes
+R079,Allied Health,Los Altos Clinic,Day,Onsite,2026 Q1,5,yes,5,5,5,4,3,5,4,5.3,Trial and error,yes
+R080,Support Services,Westfield Campus,Day,Onsite,2025 Q1,16,no,4,4,5,5,4,3,4,8.6,A peer on my team,yes
+R081,Admin & Ops,Los Altos Clinic,Day,Hybrid,2025 Q4,9,yes,5,2,5,3,2,3,4,12.6,Orientation / formal training,no
+R082,Admin & Ops,Los Altos Clinic,Day,Onsite,2025 Q1,17,no,5,5,3,5,4,5,4,5.0,My manager,yes
+R083,Nursing,Cedar Ridge Main,Day,Onsite,2026 Q1,4,yes,5,4,3,3,4,3,3,6.5,A peer on my team,yes
+R084,Support Services,Westfield Campus,Evening,Onsite,2025 Q4,9,yes,3,3,4,1,2,2,1,12.2,Trial and error,no
+R085,Nursing,Westfield Campus,Day,Onsite,2025 Q2,13,no,4,3,5,3,3,3,2,9.2,Trial and error,no
+R086,Allied Health,Westfield Campus,Day,Onsite,2025 Q3,12,yes,5,5,4,1,3,3,4,10.4,My manager,no
+R087,Allied Health,Bayshore Clinic,Evening,Onsite,2025 Q3,12,no,5,5,4,3,2,4,3,11.0,A peer on my team,yes
+R088,Support Services,Westfield Campus,Day,Onsite,2025 Q2,13,no,3,4,4,5,4,2,3,8.7,Orientation / formal training,yes
+R089,Support Services,Westfield Campus,Day,Onsite,2025 Q3,11,no,3,3,4,3,4,4,4,9.8,Orientation / formal training,yes
+R090,Physicians,Westfield Campus,Night,Hybrid,2025 Q3,11,no,4,3,4,3,4,2,2,8.7,Trial and error,no
+R091,Support Services,Cedar Ridge Main,Night,Onsite,2026 Q1,6,yes,4,4,4,3,2,3,4,11.9,My manager,no
+R092,Physicians,Cedar Ridge Main,Day,Onsite,2025 Q1,16,no,4,5,3,2,2,5,2,13.6,Orientation / formal training,no
+R093,Admin & Ops,Systemwide / Remote,Evening,Remote,2025 Q2,14,no,4,3,4,2,2,2,2,7.3,Trial and error,no
+R094,Admin & Ops,Cedar Ridge Main,Day,Onsite,2025 Q3,12,no,4,4,3,4,4,4,3,7.3,A peer on my team,yes
+R095,Nursing,Los Altos Clinic,Night,Onsite,2025 Q3,10,yes,5,5,3,3,3,4,4,11.9,The AI assistant,no
+R096,IT & Data,Westfield Campus,Day,Onsite,2025 Q4,8,yes,4,5,5,2,3,3,4,10.9,My manager,no
+R097,Nursing,Bayshore Clinic,Evening,Onsite,2025 Q3,11,no,3,3,3,3,4,4,3,6.1,A peer on my team,yes
+R098,Allied Health,Cedar Ridge Main,Day,Onsite,2025 Q3,12,no,4,4,5,4,3,4,3,7.7,A peer on my team,yes
+R099,Support Services,Cedar Ridge Main,Night,Hybrid,2025 Q1,17,no,5,3,4,3,3,2,3,13.0,Trial and error,no
+R100,Nursing,Los Altos Clinic,Day,Onsite,2025 Q3,12,no,4,4,4,1,1,2,2,14.8,Trial and error,no
+R101,Admin & Ops,Cedar Ridge Main,Day,Onsite,2025 Q1,18,no,5,4,4,4,5,4,5,2.7,A peer on my team,yes
+R102,Physicians,Westfield Campus,Evening,Onsite,2026 Q1,5,yes,4,3,4,2,5,2,4,9.4,Trial and error,no
+R103,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q4,8,yes,4,4,3,4,5,4,3,7.1,Orientation / formal training,yes
+R104,IT & Data,Westfield Campus,Day,Hybrid,2025 Q2,14,no,4,5,4,2,2,3,4,11.4,No one — still figuring it out,no
+R105,Nursing,Westfield Campus,Day,Onsite,2025 Q1,16,no,4,4,4,4,4,4,4,7.0,A peer on my team,yes
+R106,Allied Health,Westfield Campus,Day,Onsite,2025 Q4,9,yes,4,2,4,2,2,1,3,14.1,The AI assistant,no
+R107,Support Services,Westfield Campus,Day,Onsite,2025 Q3,12,no,4,5,3,5,5,5,4,5.5,A peer on my team,yes
+R108,Admin & Ops,Los Altos Clinic,Day,Hybrid,2025 Q2,14,no,3,4,4,3,2,2,3,13.7,Trial and error,no
+R109,Allied Health,Cedar Ridge Main,Evening,Onsite,2025 Q4,9,yes,3,5,4,2,3,2,3,9.8,The AI assistant,no
+R110,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q3,10,no,5,4,5,3,3,2,4,9.6,A peer on my team,yes
+R111,Nursing,Cedar Ridge Main,Night,Onsite,2025 Q2,13,no,5,2,4,4,4,4,5,4.1,Orientation / formal training,yes
+R112,Admin & Ops,Cedar Ridge Main,Day,Onsite,2026 Q1,5,yes,4,5,4,2,3,4,4,6.5,Trial and error,no
+R113,Allied Health,Los Altos Clinic,Day,Onsite,2025 Q4,7,yes,5,5,5,2,3,2,3,9.7,A peer on my team,no
+R114,Admin & Ops,Systemwide / Remote,Day,Remote,2025 Q3,11,yes,5,3,5,1,2,1,3,12.0,Trial and error,no
+R115,Allied Health,Los Altos Clinic,Day,Onsite,2025 Q2,13,no,4,5,5,5,3,5,3,5.3,A peer on my team,yes
+R116,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q4,7,no,4,5,4,2,2,2,3,9.8,My manager,no
+R117,Nursing,Los Altos Clinic,Day,Onsite,2025 Q1,16,no,5,2,4,3,4,1,4,11.5,Orientation / formal training,no
+R118,Nursing,Cedar Ridge Main,Day,Onsite,2026 Q1,3,no,4,4,4,5,4,4,4,8.1,A peer on my team,yes
+R119,Admin & Ops,Cedar Ridge Main,Day,Hybrid,2026 Q1,5,yes,5,4,4,3,4,4,4,4.5,My manager,yes
+R120,Admin & Ops,Systemwide / Remote,Day,Remote,2025 Q3,10,no,4,4,5,3,3,2,2,11.2,Trial and error,no
+R121,Allied Health,Cedar Ridge Main,Day,Onsite,2025 Q2,13,no,4,3,4,2,3,3,3,14.1,My manager,no
+R122,IT & Data,Systemwide / Remote,Night,Remote,2025 Q4,9,yes,5,3,5,4,4,5,4,4.6,My manager,yes
+R123,Nursing,Bayshore Clinic,Evening,Onsite,2025 Q3,12,no,4,2,5,5,4,4,3,6.8,My manager,yes
+R124,Nursing,Westfield Campus,Night,Onsite,2025 Q2,15,no,4,3,4,4,2,2,2,12.3,The AI assistant,no
+R125,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q3,10,no,4,5,3,5,5,4,5,4.3,Trial and error,yes
+R126,Support Services,Westfield Campus,Day,Onsite,2025 Q4,8,no,4,4,4,5,4,4,3,6.0,My manager,yes
+R127,Allied Health,Westfield Campus,Day,Onsite,2025 Q1,18,no,4,4,5,3,1,4,3,10.1,My manager,no
+R128,Support Services,Westfield Campus,Day,Onsite,2026 Q1,5,yes,4,5,5,3,4,5,4,4.4,My manager,yes
+R129,Nursing,Westfield Campus,Evening,Onsite,2025 Q3,11,no,4,3,4,2,3,4,4,10.5,Trial and error,no
+R130,Admin & Ops,Los Altos Clinic,Day,Onsite,2025 Q3,10,no,5,3,3,4,4,4,4,5.7,A peer on my team,yes
+R131,Allied Health,Los Altos Clinic,Day,Onsite,2025 Q2,14,no,5,5,3,4,3,3,3,6.6,Trial and error,yes
+R132,Admin & Ops,Los Altos Clinic,Day,Onsite,2025 Q4,7,no,4,3,4,3,2,4,4,10.8,Trial and error,no
+R133,Nursing,Westfield Campus,Evening,Onsite,2025 Q1,16,no,5,4,4,5,4,4,5,8.2,A peer on my team,yes
+R134,Support Services,Cedar Ridge Main,Day,Onsite,2025 Q3,12,no,5,4,3,5,3,4,4,7.1,My manager,yes
+R135,Allied Health,Bayshore Clinic,Night,Onsite,2025 Q4,8,no,4,5,4,2,3,2,2,10.0,Trial and error,no
+R136,Physicians,Westfield Campus,Day,Onsite,2026 Q1,6,yes,3,3,5,1,2,2,3,12.0,Trial and error,no
+R137,Physicians,Westfield Campus,Day,Onsite,2026 Q1,4,yes,3,4,5,2,1,3,2,12.4,Trial and error,no
+R138,Admin & Ops,Systemwide / Remote,Day,Remote,2026 Q1,3,yes,5,4,4,3,4,3,3,8.8,My manager,yes
+R139,IT & Data,Systemwide / Remote,Day,Remote,2025 Q3,11,no,3,3,3,3,3,2,2,13.6,Trial and error,no
+R140,Nursing,Cedar Ridge Main,Day,Onsite,2025 Q2,14,no,5,4,4,3,3,3,4,5.3,Trial and error,no
+R141,Support Services,Cedar Ridge Main,Night,Onsite,2025 Q1,18,no,5,3,4,3,4,3,4,5.2,Trial and error,yes
+R142,Nursing,Cedar Ridge Main,Evening,Onsite,2025 Q2,13,no,3,5,4,5,5,3,3,6.3,A peer on my team,yes
+R143,Allied Health,Los Altos Clinic,Day,Onsite,2025 Q3,10,no,4,5,3,2,2,2,4,11.5,Trial and error,no
+R144,Admin & Ops,Systemwide / Remote,Day,Remote,2026 Q1,3,yes,3,4,5,3,2,4,2,10.2,No one — still figuring it out,no
+R145,Allied Health,Westfield Campus,Night,Onsite,2025 Q3,10,no,5,3,4,4,3,3,2,9.5,My manager,no
+R146,Admin & Ops,Bayshore Clinic,Day,Onsite,2025 Q1,16,no,5,2,5,2,2,1,2,14.0,A peer on my team,no
+R147,Nursing,Cedar Ridge Main,Evening,Onsite,2025 Q1,16,no,4,4,2,4,5,3,3,5.9,My manager,yes
+R148,Support Services,Los Altos Clinic,Evening,Onsite,2025 Q3,11,no,5,4,3,4,3,4,3,6.9,A peer on my team,yes
