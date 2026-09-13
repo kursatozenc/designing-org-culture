@@ -1,9 +1,10 @@
 # Workshop — Research readouts as pages, not decks
 
-A two-session workshop for DESIGN 276 in which student teams stop making slides
-and start making a thing with a URL: a scrolling, self-explaining research
-readout, in the tradition of the Microsoft Work Trend Index and the Anthropic
-Institute pieces.
+A single 110-minute workshop for DESIGN 276 in which student teams stop making
+slides and start making a thing with a URL: a scrolling, self-explaining
+research readout, in the tradition of the Microsoft Work Trend Index and the
+Anthropic Institute pieces. The session builds the argument; the page is
+finished as homework.
 
 Everything the workshop needs is in this folder. Nothing here is on the public
 site; this is teaching material.
@@ -141,104 +142,68 @@ is itself part of research honesty.
 
 ## Where it goes in the quarter
 
-**Recommended: week 6, the Tuesday/Thursday pair, immediately after synthesis.**
+**One session, 110 minutes, in week 6 — right after synthesis.** By then teams
+have discovery data and insights and the next thing they have to do is make an
+argument out of them. The format then carries the rest of the quarter: the
+reframe is a page, the prototype write-up is a page, and the final share-back is
+a page with a link.
 
-By then teams have discovery data and insights and the next thing they have to
-do is make an argument out of them. Dropping the format in here means the
-remaining four weeks of the quarter run on it — the reframe gets published as a
-page, the prototype readout is a page, the final share-back to MDLIVE and San
-Mateo Medical Center is a page. The skill gets four weeks of reps instead of
-one workshop.
+The session teaches the argument. **The page is built afterward.** That is not a
+compromise forced by the clock — the argument is the hard, transferable part and
+the part that needs a room full of strangers to test it, while building from a
+starter file with an assistant is genuinely something a team can do alone.
 
-Putting it in week 1–2 instead makes it a tool students have before they need
-it, which is usually a tool they forget. Putting it in week 9 makes it a
-last-minute format change on a deliverable that already exists.
+## The run of show
 
-Both sessions assume the real block: **4:30–6:20pm, 110 minutes.**
-
----
-
-## What students should leave able to do
-
-Write the argument of a research finding as a sequence of claims that hold up
-without a presenter, and build it as a page where every chart carries its own
-conditions and every interaction earns its place.
-
-**Forces in play:** `artifacts` — the readout is itself a culture artifact, and
-a durable one; `stories` — the piece is a narrative claim about an organization
-made to circulate inside it; `metrics` — what you choose to chart is a statement
-about what matters, which is the whole lesson of section 04 of the specimen.
-
----
-
-## Pre-work (assign the Thursday before)
-
-1. Read all three specimens. Spend at least fifteen minutes with each.
-2. Fill in the teardown sheet for **one** of them (below). Bring it on paper.
-3. Nothing else. Do not start building.
-
-**Teardown sheet — seven questions**
-
-1. What is this piece claiming? Write it in one sentence, in your own words.
-2. Where in the piece is that sentence actually written down? Quote it. If you
-   cannot find it, say so — that is a finding.
-3. Count the interactive elements. For each one, write the question a reader
-   can answer with it that they could not answer from a static image.
-4. How many *kinds* of evidence is this piece using — survey, telemetry, case
-   study, outside research? Find a place where two of them are put side by side.
-   Do they agree?
-5. Pick any chart. What does it tell you about its own sample and limits?
-6. Where did you stop reading, honestly? What was on screen?
-7. What would be lost if this were a deck? What would be gained?
-
----
-
-## Session A — Read one, take it apart
-
-*Tuesday, 4:30–6:20pm. Teams of 3–4. Laptops closed until 5:45.*
-
-| Time | Min | Block | What is happening |
+| Time | Min | Block | What happens |
 | --- | --- | --- | --- |
-| 4:30 | 10 | **Cold read, on ourselves** | Put last quarter's best student deck on screen with no narration for ninety seconds. Then close it and ask the room to write down what it claimed. Read four answers aloud. They will not match. That is the session's thesis and it takes ten minutes to prove. |
-| 4:40 | 20 | **Teardown, in pairs** | Pairs that read *different* specimens trade sheets and interrogate each other's answers to Q1–Q3. The goal is disagreement about what each piece claims. |
-| 5:00 | 15 | **Build the contract** | Whole room. Harvest the teardowns into a list on the wall of what a readout must do. Steer toward the seven in "The readout contract" below, but let them arrive at it — a rule they wrote is a rule they follow. |
-| 5:15 | 20 | **The claim spine — no screens** | Teams get the Cedar Ridge packet on paper and index cards. Write five to seven claims, one per card, each a full sentence with a verb, in order. This is the whole argument. No charts yet, no laptops. |
-| 5:35 | 10 | **Spine swap** | Trade card stacks with another team. Read a stranger's spine cold and write down: what is this readout about, and where does the argument jump? Hand the note back. |
-| 5:45 | 25 | **First section only** | Laptops open. Teams open `starter/readout-starter.html` and build exactly one section: claim, one chart, one quote, one axis note. Nothing else. Teaching team circulates. |
-| 6:10 | 10 | **Close** | Each team says one sentence: the claim they are cutting before Thursday. Cutting, not adding. |
+| 4:30 | 10 | **Cold read, on ourselves** | Last year's best student deck on screen, ninety seconds, no narration. Then: "in one sentence, what did it claim?" Four answers, none matching. The thesis, proved rather than asserted. |
+| 4:40 | 10 | **Harvest the contract** | Straight off the pre-work sheets, at the wall, in their words. No pair block — the teardown happened at home, which makes the pre-work load-bearing. |
+| 4:50 | 25 | **The claim spine — no screens** | Evidence packet on paper, index cards. Five to seven claims, one per card, full sentences with verbs, in order. Survey and interviews only. |
+| 5:15 | 20 | **The silent spine gallery** | Card stacks on tables, nobody at their own, four rotations of four minutes, cold-read cards. The gallery, run on spines rather than pages. |
+| 5:35 | 10 | **Read your cards, cut one** | Three minutes silent, then one line out loud: "readers thought we were claiming ___, we meant ___." Then physically remove a card. |
+| 5:45 | 8 | **Live build** | You build a section on the room screen with an assistant, including checking a number, finding it wrong, and fixing it. |
+| 5:53 | 17 | **Build your first section** | Starter file. Nobody finishes; the point is hitting the first obstacle while you are still in the room. Everyone publishes before they leave. |
+| 6:10 | 10 | **Close, and hand out the complication** | The homework brief, verbally as well as on paper. |
 
-**Why the spine happens on paper.** The moment a laptop opens, the work becomes
-formatting. Twenty minutes of writing sentences with no ability to style them is
-the only reliable way to get an argument first. Hold the line on this even when
-a team says they think better on a screen.
+### Why the gallery moves onto the spines
 
----
+The gallery does not need a finished page. It needs something to cold-read, and
+a card spine is the better object: no chart, no typography and no colour to hide
+a weak argument behind. Twelve index cards either hold as a case or they do not.
+This is the change that makes a single session work without losing anything
+load-bearing.
 
-## Session B — Build it, then be silent while it is read
+### The homework, and why the second source arrives late
 
-*Thursday, 4:30–6:20pm.*
+Finish the readout against the contract and publish to the URL you already have.
+Then the part that matters, handed out at 6:10 rather than at 4:50:
 
-| Time | Min | Block | What is happening |
-| --- | --- | --- | --- |
-| 4:30 | 3 | **Constraints back up** | The readout contract goes on the board. Point at the one-interaction rule and at rule 8. |
-| 4:33 | 8 | **Live build** | You build a claim into a working section on the room screen, with an assistant, out loud — including checking one number against the CSV and making one revision when it comes back wrong. Use a claim no team is working on. |
-| 4:41 | 34 | **Build** | Full draft, in named roles (below). Teaching team circulates with one question only: "show me the sentence that says that." |
-| 5:15 | 5 | **Ship it** | Every team gets their page onto a URL. Nothing is critiqued as a local file — the artifact is a link or it is not done. |
-| 5:20 | 30 | **The silent gallery** | Readouts open on screens around the room. Nobody stands at their own. Each person reads four other readouts, six minutes each, in silence, and leaves a card at each. **No author may explain anything.** This is not a rule for the exercise, it is a simulation of the actual delivery condition. |
-| 5:50 | 20 | **Read your cards** | Teams return to their own screen and read their stack. Then each team says out loud: what readers thought we claimed, versus what we meant. The gap is the critique; the teaching team does not need to add much. |
-| 6:10 | 10 | **Close** | One change each, named, before a partner sees anything in this format. |
+> Here is a second source — what the systems actually logged for 131 of the 148
+> people. Your spine was written from what people *said*; this is what the
+> organization *recorded*. Join it and answer one question in your readout: does
+> it change your argument? If it does, say how. If it doesn't, say why not.
 
-**The cold-read card** — three questions, printed, one card per reader per
-readout:
+Giving them everything up front is the obvious move and the worse one.
+Committing to an argument and *then* receiving evidence that complicates it is
+the harder exercise and a truer description of how research goes — and it makes
+triangulation something they perform rather than something they are handed.
 
-1. In one sentence, what is this readout claiming?
-2. Which single number do you remember?
-3. Where did you stop reading? Name the section.
+What is waiting in there: the two sources agree on the week-one guide almost
+exactly and then invert at the extremes. No team will have that claim on a card,
+because it is in neither file alone.
 
-Question 3 is the one that does the work. It locates the exact place a piece
-loses people, which no amount of "I really liked the visuals" ever does.
+### If you can borrow thirty minutes later
 
----
+You do not need a second block, but thirty minutes at the top of any later
+session, once the readouts are in, buys the gallery again on the finished pages
+— twenty minutes of silent reading with the "where did you stop reading" card,
+then ten for the cards and the two reveals (the confound, and whether they would
+show this to the people it describes).
+
+A full second block is better still — it trades homework for supervised
+building, which helps the least technical teams most — but not enough to be
+worth displacing something else in a ten-week quarter.
 
 ## The readout contract
 
@@ -304,8 +269,8 @@ What to tell them:
 
 This is also, unavoidably, a live demonstration of the thing the 2026 cohort is
 studying — what a capable assistant does to the work it is handed, and what
-judgment remains with the person. It is worth ten minutes of the Thursday
-debrief.
+judgment remains with the person. It is worth ten minutes when the readouts come
+back.
 
 ---
 
@@ -326,8 +291,9 @@ debrief.
   download in one click.
 - The specimen readout in `build/` open on the room screen for session A.
 - Six screens or laptops that can be left open around the room for the gallery.
-- A way for every team to get a URL by 5:20 on Thursday. Whatever the class is
-  already using is fine; decide in advance rather than at 5:18.
+- A way for every team to get a URL in under two minutes, decided in advance and
+  tested by you. The 5:53 block depends on it.
+- Table space for six card spines to be laid out and walked between.
 
 ---
 
@@ -382,11 +348,10 @@ Three rules, stated in class before week 7:
 
 ## Where this fails
 
-**A team builds a beautiful page with no argument.** The most likely failure by
-some distance, and it is visible by 5:00 on Thursday. The recovery is to make
-them close the laptop and say the five claims out loud; if they cannot, they go
-back to cards while the other teams keep building. Losing twenty minutes of
-build time is cheaper than shipping a decorated void.
+**A team goes home and never builds.** The risk you take by moving the build out
+of the room. Publishing before they leave is the whole mitigation — an
+unfinished page at a URL gets finished, a blank file does not get started. Any
+team that leaves without publishing is the team to email the next day.
 
 **Nobody finds the confound.** If no team flags that the AI cohort is also the
 newest cohort, do not tell them during the build. Let the gallery happen, then
@@ -406,7 +371,8 @@ authors standing at their own screens is how it happens, so physically move
 people. If it still breaks down, run the last ten minutes as written critique
 only and take the discussion into the next session.
 
-**Build blocks overrun and the gallery gets cut.** The gallery is the session.
-If the Thursday build is running long, cut it at 5:15 regardless of state — a
-half-finished readout being cold-read teaches more than a finished one nobody
-reads. Say this at 4:35 so it is not a surprise at 5:15.
+**The spine block overruns and the gallery gets cut.** The gallery is the session.
+If the session runs hot, the minutes come out of the 5:53 build, never out of
+the spine or the gallery. A team that leaves with fifteen minutes of building
+and an argument four strangers have already tested is in better shape than one
+with a styled page and a spine nobody read.
