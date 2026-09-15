@@ -281,6 +281,7 @@ export const people = [
   },
   {
     slug: "dan-klein",
+    photo: "/brand/people/dan-klein.jpg",
     name: "Dan Klein",
     affiliation:
       "Lecturer in Management, Stanford GSB; Advanced Lecturer, Theater and Performance Studies",
