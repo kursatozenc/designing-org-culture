@@ -279,6 +279,13 @@ export const people = [
     topic: "Creative rituals",
     appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
+  {
+    slug: "dan-klein",
+    name: "Dan Klein",
+    affiliation:
+      "Lecturer in Management, Stanford GSB; Advanced Lecturer, Theater and Performance Studies",
+    appearances: [{ cohort: "autumn-2026", role: "guest" }],
+  },
 ];
 
 export const roles = [
