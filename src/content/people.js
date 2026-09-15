@@ -285,6 +285,7 @@ export const people = [
     name: "Dan Klein",
     affiliation:
       "Lecturer in Management, Stanford GSB; Advanced Lecturer, Theater and Performance Studies",
+    topic: "Prototyping experiences with improv",
     appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
 ];
