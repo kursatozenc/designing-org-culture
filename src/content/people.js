@@ -43,7 +43,7 @@ export const people = [
   {
     slug: "martin-gonzalez",
     name: "Martin Gonzalez",
-    affiliation: "Principal of Org Design and Development, Google DeepMind",
+    affiliation: "Head of Organizational AI Research, Google DeepMind",
     appearances: [
       { cohort: "winter-2023", role: "instructor" },
       { cohort: "winter-2024", role: "instructor" },
@@ -276,7 +276,7 @@ export const people = [
     slug: "bob-sutton",
     name: "Bob Sutton",
     affiliation:
-      "Professor Emeritus, Stanford University; Co-lead, AI+Org Lab, Stanford HAI",
+      "Professor Emeritus, Stanford University; Co-lead, AI and Organizations Lab, Stanford HAI",
     topic: "Creative rituals",
     appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
