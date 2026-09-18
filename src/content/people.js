@@ -275,7 +275,8 @@ export const people = [
   {
     slug: "bob-sutton",
     name: "Bob Sutton",
-    affiliation: "Stanford University",
+    affiliation:
+      "Professor Emeritus, Stanford University; Co-lead, AI+Org Lab, Stanford HAI",
     topic: "Creative rituals",
     appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
