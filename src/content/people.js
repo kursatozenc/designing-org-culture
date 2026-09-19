@@ -43,7 +43,7 @@ export const people = [
   {
     slug: "martin-gonzalez",
     name: "Martin Gonzalez",
-    affiliation: "Principal of Org Design and Development, Google DeepMind",
+    affiliation: "Head of Organizational AI Research, Google DeepMind",
     appearances: [
       { cohort: "winter-2023", role: "instructor" },
       { cohort: "winter-2024", role: "instructor" },
@@ -273,14 +273,20 @@ export const people = [
     appearances: [{ cohort: "winter-2024", role: "guest" }],
   },
   {
+    // Titles taken from Stanford's own pages: MS&E lists him as "Professor of
+    // Management Science & Engineering, Emeritus", and HAI's AI and
+    // Organizations Lab lists him as a senior advisor and fellow — the lab is
+    // directed by Melissa Valentine, so he is not a co-lead of it.
     slug: "bob-sutton",
     name: "Bob Sutton",
-    affiliation: "Stanford University",
+    affiliation:
+      "Professor of Management Science & Engineering, Emeritus, Stanford University; Senior Advisor and Fellow, AI and Organizations Lab, Stanford HAI",
     topic: "Creative rituals",
     appearances: [{ cohort: "autumn-2026", role: "guest" }],
   },
   {
     slug: "dan-klein",
+    photo: "/brand/people/dan-klein.jpg",
     name: "Dan Klein",
     affiliation:
       "Lecturer in Management, Stanford GSB; Advanced Lecturer, Theater and Performance Studies",
